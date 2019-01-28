@@ -5,3 +5,30 @@
 	font-family: $name
 	font-style: $style
 	font-weight: $weight
+
+$proxima: 'ProximaNova'
+$sofia: 'SofiaPro'
+
+@font-face
+  +fontdefault(normal, 400, $proxima)
+  +fontpath('ProximaNova-Regular', 'ProximaNova-Regular', ProximaNova-Regular)
+
+@font-face
+  +fontdefault(normal, 600, $proxima)
+  +fontpath('ProximaNova-Semibold', 'ProximaNova-Semibold', ProximaNova-Semibold)
+
+@font-face
+  +fontdefault(normal, 700, $proxima)
+  +fontpath('ProximaNova-Bold', 'ProximaNova-Bold', ProximaNova-Bold)
+
+@font-face
+  +fontdefault(normal, 300, $sofia)
+  +fontpath('SofiaProLight', 'SofiaProLight', SofiaProLight)
+
+@font-face
+  +fontdefault(normal, 400, $sofia)
+  +fontpath('SofiaProRegular', 'SofiaProRegular', SofiaProRegular)
+
+@font-face
+  +fontdefault(normal, 900, $sofia)
+  +fontpath('SofiaProBlack', 'SofiaProBlack', SofiaProBlack)
