@@ -28,3 +28,15 @@
 </label>
 <!-- end input -->
 {% endmacro %}
+
+{% macro work(props) %}
+  <div class="work">
+    <div class="work__image-wrap">
+      <div class="work__image">
+          <img src="img/{{ props.image }}" alt="{{ props.title }}">
+      </div>
+    </div>
+    <div class="work__title title-sm">{{ props.title }}</div>
+    <div class="work__descr text-light">{{ props.descr }}</div>
+  </div>
+{% endmacro %}

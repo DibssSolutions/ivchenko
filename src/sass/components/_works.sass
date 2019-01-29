@@ -1,16 +1,44 @@
+.works
+	&_recent
+		min-height: 3000px
+	.work
+		width: calc(50% - 60px)
+		&:nth-child(2)
+			padding-top: 200px
+	&__filter-title
+		position: relative
+		display: inline-block
+		&:after
+			content: ''
+			position: absolute
+			right: -30px
+			top: 50%
+			transform: translateY(50%)
+			+arr(10, 6, $red, t)
+
 .work
-  width: 30%
-  &__image-wrap
-    overflow: hidden
-    transition: transform $tr
-    background-color: #ccc
-    backface-visibility: hidden
-    +hover
-      transform: scale(0.97)
-      .work__image
-        transform: scale(1.1)
-  &__image
-    transition: transform $tr
-    img
-      max-width: 100%
-      display: block
+	// width: 20%
+	padding-bottom: 110px
+	&__image-wrap
+		overflow: hidden
+		transition: transform $tr
+		background-color: #ccc
+		backface-visibility: hidden
+		+hover
+			transform: scale(0.97)
+			.work__image
+				transform: scale(1.1)
+	&__image
+		transition: transform $tr
+		img
+			max-width: 100%
+			// width: 100%
+			display: block
+
+.grid-sizer
+	width: calc(50% - 60px)
+
+.gutter-sizer
+	width: 120px
+	+md
+		width: 100px
