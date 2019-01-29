@@ -1,0 +1,16 @@
+.work
+  width: 30%
+  &__image-wrap
+    overflow: hidden
+    transition: transform $tr
+    background-color: #ccc
+    backface-visibility: hidden
+    +hover
+      transform: scale(0.97)
+      .work__image
+        transform: scale(1.1)
+  &__image
+    transition: transform $tr
+    img
+      max-width: 100%
+      display: block
