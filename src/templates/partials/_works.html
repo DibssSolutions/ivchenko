@@ -1,17 +1,50 @@
 {% import "partials/_mixins.html" as mixins %}
 
 {% macro works(props) %}
-<div class="works works_recent">
+  <div class="works works_recent">
     <div class="works__inner inner">
       {% if props.works %}
-        <h2 class="works__title title">Recent works</h2>
-        <p>Please, select work for view</p>
+      <div data-scroll-trigger>
+        <h2 class="works__title title" data-anim-text-parent><span data-anim-text-from="bottom">Recent works</span></h2>
+        <p data-anim-text-parent><span data-anim-text-from="bottom">Please, select work for view</span></p>
+      </div>
       {% endif %}
       {% if props.filter %}
-        <h2 class="works__title works__filter-title title">Show me Everything</h2>
-        
+      <div class="works__filter-wrapper" data-scroll-trigger>
+        <h2 class="works__title works__filter-title title">
+          Show me Everything
+        </h2>
+        <div class="works__filter">
+          <ul class="filter-controls">
+            {% for item in [
+              {
+                data: '*',
+                text: 'Everything'
+              },
+              {
+                data: 'mobile-app',
+                text: 'Mobile App Design'
+              },
+              {
+                data: 'web-app',
+                text: 'Web App Design'
+              },
+              {
+                data: 'website',
+                text: 'Website Design'
+              }
+            ] %}
+            <li class="filter-controls__item">
+              <button class="filter-btn" data-filter="{% if loop.first %}*{% else %}.{{ item.data }}{% endif %}">
+                {{ item.text }}
+              </button>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
       {% endif %}
-      <div class="works__container js-filter">
+      <div class="works__container js-masonry{% if props.filter %} js-filter{% endif %}">
         {% for item in [
           {
             image: "works_Straboo.jpg",
@@ -52,10 +85,12 @@
             descr: "Web App Design, Mobile App Design"
           }
         ] %}
-          {{ mixins.work(item) }}
+          <div class="works__item js-masonry-item {{ ['mobile-app', 'web-app', 'website'] | random }}">
+            {{ mixins.work(item) }}
+          </div>
         {% endfor %}
-        <div class="grid-sizer"></div>
-        <div class="gutter-sizer"></div>
+        <div class="js-masonry-width"></div>
+        <div class="js-masonry-gutter"></div>
       </div>
     </div>
   </div>

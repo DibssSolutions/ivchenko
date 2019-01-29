@@ -30,10 +30,11 @@
 {% endmacro %}
 
 {% macro work(props) %}
-  <div class="work">
+
+  <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
     <div class="work__image-wrap">
       <div class="work__image">
-          <img src="img/{{ props.image }}" alt="{{ props.title }}">
+          <img data-src="img/{{ props.image }}" alt="{{ props.title }}" data-lazy data-masonry-lazy>
       </div>
     </div>
     <div class="work__title title-sm">{{ props.title }}</div>
