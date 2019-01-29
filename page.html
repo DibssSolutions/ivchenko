@@ -14,84 +14,119 @@
   <body>
     <!-- BEGIN content -->
     <div class="out">
+      <div class="test" style="height: 1000px"></div>
       <div class="works works_recent">
         <div class="works__inner inner">
-          <h2 class="works__title works__filter-title title">Show me Everything</h2>
-          <div class="works__container js-filter">
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Straboo.jpg" alt="Straboo">
-                </div>
-              </div>
-              <div class="work__title title-sm">Straboo</div>
-              <div class="work__descr text-light">Web App Design, Website Design</div>
+          <div class="works__filter-wrapper" data-scroll-trigger>
+            <h2 class="works__title works__filter-title title"> Show me Everything </h2>
+            <div class="works__filter">
+              <ul class="filter-controls">
+                <li class="filter-controls__item">
+                  <button class="filter-btn" data-filter="*"> Everything </button>
+                </li>
+                <li class="filter-controls__item">
+                  <button class="filter-btn" data-filter=".mobile-app"> Mobile App Design </button>
+                </li>
+                <li class="filter-controls__item">
+                  <button class="filter-btn" data-filter=".web-app"> Web App Design </button>
+                </li>
+                <li class="filter-controls__item">
+                  <button class="filter-btn" data-filter=".website"> Website Design </button>
+                </li>
+              </ul>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Chesseberry.jpg" alt="Chesseberry">
+          </div>
+          <div class="works__container js-masonry js-filter">
+            <div class="works__item js-masonry-item web-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Straboo.jpg" alt="Straboo" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Straboo</div>
+                <div class="work__descr text-light">Web App Design, Website Design</div>
               </div>
-              <div class="work__title title-sm">Chesseberry</div>
-              <div class="work__descr text-light">Mobile App Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Target.jpg" alt="Target">
+            <div class="works__item js-masonry-item mobile-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Chesseberry</div>
+                <div class="work__descr text-light">Mobile App Design</div>
               </div>
-              <div class="work__title title-sm">Target</div>
-              <div class="work__descr text-light">Mobile App Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Crossfit.jpg" alt="Crossfit">
+            <div class="works__item js-masonry-item website">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Target</div>
+                <div class="work__descr text-light">Mobile App Design</div>
               </div>
-              <div class="work__title title-sm">Crossfit</div>
-              <div class="work__descr text-light">Web App Design, Mobile App Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Straboo.jpg" alt="Straboo">
+            <div class="works__item js-masonry-item web-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Crossfit.jpg" alt="Crossfit" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Crossfit</div>
+                <div class="work__descr text-light">Web App Design, Mobile App Design</div>
               </div>
-              <div class="work__title title-sm">Straboo</div>
-              <div class="work__descr text-light">Web App Design, Website Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Chesseberry.jpg" alt="Chesseberry">
+            <div class="works__item js-masonry-item website">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Straboo.jpg" alt="Straboo" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Straboo</div>
+                <div class="work__descr text-light">Web App Design, Website Design</div>
               </div>
-              <div class="work__title title-sm">Chesseberry</div>
-              <div class="work__descr text-light">Mobile App Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Target.jpg" alt="Target">
+            <div class="works__item js-masonry-item web-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Chesseberry</div>
+                <div class="work__descr text-light">Mobile App Design</div>
               </div>
-              <div class="work__title title-sm">Target</div>
-              <div class="work__descr text-light">Mobile App Design</div>
             </div>
-            <div class="work">
-              <div class="work__image-wrap">
-                <div class="work__image">
-                  <img src="img/works_Crossfit.jpg" alt="Crossfit">
+            <div class="works__item js-masonry-item mobile-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
+                  </div>
                 </div>
+                <div class="work__title title-sm">Target</div>
+                <div class="work__descr text-light">Mobile App Design</div>
               </div>
-              <div class="work__title title-sm">Crossfit</div>
-              <div class="work__descr text-light">Web App Design, Mobile App Design</div>
             </div>
-            <div class="grid-sizer"></div>
-            <div class="gutter-sizer"></div>
+            <div class="works__item js-masonry-item website">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Crossfit.jpg" alt="Crossfit" data-lazy data-masonry-lazy>
+                  </div>
+                </div>
+                <div class="work__title title-sm">Crossfit</div>
+                <div class="work__descr text-light">Web App Design, Mobile App Design</div>
+              </div>
+            </div>
+            <div class="js-masonry-width"></div>
+            <div class="js-masonry-gutter"></div>
           </div>
         </div>
       </div>
