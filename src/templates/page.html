@@ -22,7 +22,8 @@ title: Index page
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div> #}
   {# {{ worksBuilder.works({ works: true }) }} #}
-  {{ worksBuilder.works({ filter: true }) }}
+	{{ worksBuilder.works({ filter: true }) }}
+	{% include "partials/_services.html" %}
 	{# {% include "partials/_main-loader.html" %} #}
 
 {% endblock %}
