@@ -7,7 +7,8 @@ title: Index page
 {% block content %}
 	
 	{% include "partials/_header.html" %}
-	
 	{{ worksBuilder.works({ filter: true }) }}
+	{% include "partials/_services.html" %}
+	{# {% include "partials/_main-loader.html" %} #}
 
 {% endblock %}

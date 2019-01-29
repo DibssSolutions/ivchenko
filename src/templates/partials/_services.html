@@ -1,0 +1,59 @@
+{% import "partials/_mixins.html" as mixins %}
+
+<div class="services">
+    <div class="services__inner inner-lg-pl">
+        <div class="services__content">
+            <div class="services__bg section-bg"></div>
+            <div class="services__header">
+                <h2 class="services__title title">
+                    Services
+                </h2>
+                <p>I create unique product design by combining design and expirience, while keeping my focus.</p>
+            </div>
+            <div class="services__tabs tabs">
+                {{ mixins.tabs([
+                    {
+                        id: 'strategy',
+                        text: 'Strategy',
+                        sublist: [
+                            'Userflows',
+                            'Sitemapping',
+                            'Wireframing',
+                            'Prototyping'
+                        ]
+                    },
+                    {
+                        id: 'branding',
+                        text: 'Branding',
+                        sublist: [
+                            'Sitemapping',
+                            'Userflows',
+                            'Wireframing',
+                            'Prototyping'
+                        ]
+                    },
+                    {
+                        id: 'design',
+                        text: 'Interface Design',
+                        sublist: [
+                            'Sitemapping',
+                            'Userflows',
+                            'Prototyping',
+                            'Wireframing'
+                        ]
+                    },
+                    {
+                        id: 'experience',
+                        text: 'User Experience',
+                        sublist: [
+                            'Prototyping',
+                            'Sitemapping',
+                            'Userflows',
+                            'Wireframing'
+                        ]
+                    }
+                ]) }}
+            </div>
+        </div>
+    </div>
+</div>

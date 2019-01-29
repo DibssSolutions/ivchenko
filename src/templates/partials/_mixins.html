@@ -30,13 +30,42 @@
 {% endmacro %}
 
 {% macro work(props) %}
-  <div class="work">
+
+  <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
     <div class="work__image-wrap">
       <div class="work__image">
-          <img src="img/{{ props.image }}" alt="{{ props.title }}">
+          <img data-src="img/{{ props.image }}" alt="{{ props.title }}" data-lazy data-masonry-lazy>
       </div>
     </div>
     <div class="work__title title-sm">{{ props.title }}</div>
     <div class="work__descr text-light">{{ props.descr }}</div>
   </div>
+{% endmacro %}
+
+{% macro tabs(props) %}
+	<div class="tabs__out">
+			<ul class="tabs__list">
+				{% for item in props %}
+					
+					<li class="tabs__item" data-tabs-control="{{ item.id }}">{{ item.text }}</li>
+
+				{% endfor %}
+			</ul>
+	</div>
+	<div class="tabs__wrapper">
+		{% for items in props %}
+			<div class="tabs__container" data-tabs-container="{{ items.id }}">
+				<ul class="tabs__sublist">
+
+					{% for item in items.sublist %}
+				
+						<li class="tabs__subitem">{{ item }}</li>
+
+					{% endfor %}
+
+				</ul>
+			</div>
+			
+		{% endfor %}
+	</div>
 {% endmacro %}

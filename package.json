@@ -67,6 +67,8 @@
   },
   "dependencies": {
     "gsap": "^2.0.2",
-    "isotope-layout": "^3.0.6"
+    "imagesloaded": "^4.1.4",
+    "isotope-layout": "^3.0.6",
+    "vanilla-lazyload": "^8.17.0"
   }
 }
