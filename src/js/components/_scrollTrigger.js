@@ -20,10 +20,10 @@ export default class SCROLLTRIGGER {
         : itemOffset = itemData || this._offset || 50;
       
       const show = () => {
-        
+
         const thisOffset = item.offset().top + itemOffset;
         const windowOffset = WIN.scrollTop() + WIN.outerHeight();
-        
+
         if (thisOffset <= windowOffset) {
 
           WIN.off('scroll', show);
@@ -45,6 +45,6 @@ export default class SCROLLTRIGGER {
 
 new SCROLLTRIGGER({
   onStart: () => {
-    console.log('dddd');
+    console.log('trigger start on section');
   }
 });

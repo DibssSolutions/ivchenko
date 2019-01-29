@@ -5,11 +5,12 @@ title: Index page
 
 {% block content %}
 	
-	{% include "partials/_header.html" %}
+	{# {% include "partials/_header.html" %} #}
   <h1 class="hero-title">
     Design
   </h1>
   I'm Alexandr Ivchenko
+  	<p data-rows>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad perferendis, fugiat, vitae possimus provident aspernatur saepe, maiores debitis sapiente aliquid optio architecto perspiciatis impedit mollitia nihil! Quidem veritatis, quas necessitatibus accusantium repellendus, vitae et voluptate ex, nemo ipsa voluptates doloribus voluptatibus in rerum, nulla quam ducimus. Reprehenderit corporis asperiores quia maiores atque molestiae, autem ea optio deserunt vero sint repellat fugiat cumque doloribus ullam expedita ipsa, eveniet sed aliquid tempore placeat. Qui explicabo, quasi provident quos deserunt fugiat ad quia rem, blanditiis, unde pariatur quis neque sunt, earum assumenda aliquam eos quaerat velit! Aliquam in a, error nulla deserunt porro.</p>
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div>
@@ -20,5 +21,7 @@ title: Index page
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div>
+
+	{% include "partials/_main-loader.html" %}
 
 {% endblock %}
