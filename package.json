@@ -66,6 +66,7 @@
     "webpack-bundle-analyzer": "^1.5.3"
   },
   "dependencies": {
-    "gsap": "^2.0.2"
+    "gsap": "^2.0.2",
+    "isotope-layout": "^3.0.6"
   }
 }

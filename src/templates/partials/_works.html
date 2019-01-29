@@ -1,0 +1,62 @@
+{% import "partials/_mixins.html" as mixins %}
+
+{% macro works(props) %}
+<div class="works works_recent">
+    <div class="works__inner inner">
+      {% if props.works %}
+        <h2 class="works__title title">Recent works</h2>
+        <p>Please, select work for view</p>
+      {% endif %}
+      {% if props.filter %}
+        <h2 class="works__title works__filter-title title">Show me Everything</h2>
+        
+      {% endif %}
+      <div class="works__container js-filter">
+        {% for item in [
+          {
+            image: "works_Straboo.jpg",
+            title: "Straboo",
+            descr: "Web App Design, Website Design"
+          },
+          {
+            image: "works_Chesseberry.jpg",
+            title: "Chesseberry",
+            descr: "Mobile App Design"
+          },
+          {
+            image: "works_Target.jpg",
+            title: "Target",
+            descr: "Mobile App Design"
+          },{
+            image: "works_Crossfit.jpg",
+            title: "Crossfit",
+            descr: "Web App Design, Mobile App Design"
+          },
+          {
+            image: "works_Straboo.jpg",
+            title: "Straboo",
+            descr: "Web App Design, Website Design"
+          },
+          {
+            image: "works_Chesseberry.jpg",
+            title: "Chesseberry",
+            descr: "Mobile App Design"
+          },
+          {
+            image: "works_Target.jpg",
+            title: "Target",
+            descr: "Mobile App Design"
+          },{
+            image: "works_Crossfit.jpg",
+            title: "Crossfit",
+            descr: "Web App Design, Mobile App Design"
+          }
+        ] %}
+          {{ mixins.work(item) }}
+        {% endfor %}
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

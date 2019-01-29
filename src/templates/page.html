@@ -2,11 +2,12 @@
 title: Index page
 ---
 {% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as worksBuilder %}
 
 {% block content %}
 	
 	{# {% include "partials/_header.html" %} #}
-  <h1 class="title-lg">
+  {# <h1 class="title-lg">
     Design
   </h1>
   I'm Alexandr Ivchenko
@@ -19,9 +20,9 @@ title: Index page
 	<div data-scroll-trigger="2"></div>
 	<div data-scroll-trigger></div>
 	<div data-scroll-trigger></div>
-	<div data-scroll-trigger></div>
-	<div data-scroll-trigger></div>
-  {% include "partials/_recent-works.html" %}
+	<div data-scroll-trigger></div> #}
+  {# {{ worksBuilder.works({ works: true }) }} #}
+  {{ worksBuilder.works({ filter: true }) }}
 	{# {% include "partials/_main-loader.html" %} #}
 
 {% endblock %}
