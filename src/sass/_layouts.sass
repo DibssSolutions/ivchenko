@@ -1,7 +1,21 @@
-.inner
-  max-width: 1100px
+.inner,
+.inner-lg,
+.inner-lg-pl
+  max-width: 1340px
   width: 100%
   margin: 0 auto
   padding: 0 30px
+  +lg
+    padding: 0 60px
+.inner-lg-pl
+  padding-left: 148px
+  +lg
+    padding-left: 10.9385%
   +md
-    max-width: 960px
+    padding: 0 30px
+.inner
+  padding: 0 150px
+  +lg
+    padding: 0 10.9385%
+  +md
+    padding: 0 30px
