@@ -3,15 +3,18 @@ title: Index page
 ---
 {% extends "layouts/_layout.html" %}
 {% import "partials/_works.html" as worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
 
 {% block content %}
-	
-	{% include "partials/_header.html" %}
-	{% include "partials/_hero.html" %}
-  {{ worksBuilder.works({ works: true }) }}
-  {# {{ worksBuilder.works({ filter: true }) }} #}
-  {% include "partials/_services.html" %}
-  {% include "partials/_clients.html" %}
+	<div class="main-wrapper">
+		{% include "partials/_header.html" %}
+		{% include "partials/_hero.html" %}
+		{{ worksBuilder.works({ works: true }) }}
+		{# {{ worksBuilder.works({ filter: true }) }} #}
+		{% include "partials/_services.html" %}
+		{% include "partials/_clients.html" %}
+	</div>
+	{{ footerBuilder.hero_footer() }}
 	{# <p data-scroll-trigger data-rows="text-row-parent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur.</p> #}
 	{# {% include "partials/_main-loader.html" %} #}
 

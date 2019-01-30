@@ -5,4 +5,5 @@ import './_initLazy';
 import './_initIsotope';
 import './_tabs';
 import './_toggleFilter';
+import './_footerScroll';
 import './helpers/_stagerGroups';
