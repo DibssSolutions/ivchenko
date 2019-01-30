@@ -1,14 +1,18 @@
 {% import "partials/_mixins.html" as mixins %}
 
-<div class="services">
+<div class="services"  data-scroll-trigger>
     <div class="services__inner inner-lg-pl">
         <div class="services__content">
             <div class="services__bg section-bg"></div>
-            <div class="services__header">
-                <h2 class="services__title title">
-                    Services
-                </h2>
-                <p>I create unique product design by combining design and expirience, while keeping my focus.</p>
+            <div class="services__header"> 
+                <div data-anim-group="5">
+                    <h2 class="services__title title" data-rows="text-row-parent">
+                        Services
+                    </h2>
+                </div>
+                <div data-anim-group="10">
+                    <p data-rows="text-row-parent">I create unique product design by combining design and expirience, while keeping my focus.</p>
+                </div>
             </div>
             <div class="services__tabs tabs" data-tabs>
                 {{ mixins.tabs([

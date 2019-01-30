@@ -2,6 +2,7 @@ import { WIN, ANIMATE } from '../constants';
 import { IS_FUNC } from '../utils';
 
 import { STAGGER } from './helpers/_stagger';
+import { STAGGERGROUPS } from './helpers/_stagerGroups';
 
 export default class SCROLLTRIGGER {
 
@@ -45,17 +46,32 @@ export default class SCROLLTRIGGER {
   }
 
 };
-
+const staggerAnimation = (item) => {
+  const selector = item.find('[data-anim-text-from="bottom"]');
+  const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
+  STAGGER({
+    elements: selector,
+    onComplete: () => {
+      animContainers.css('display', 'inline');
+    }
+  });
+};
 window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
 new SCROLLTRIGGER({
   onStart: (item) => {
-    const selector = item.find('[data-anim-text-from="bottom"]');
-    const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
-    STAGGER({
-      elements: selector,
-      onComplete: () => {
-        animContainers.css('display', 'inline');
-      }
-    });
+    const group = item.find('[data-anim-group]');
+    if (!group.length) {
+      staggerAnimation(item);
+    }
+    else {
+
+      // init animation groups stagger
+      STAGGERGROUPS({
+        callback: (container) => {
+          staggerAnimation(container);
+        },
+        parent: item
+      });
+    }
   }
 });
