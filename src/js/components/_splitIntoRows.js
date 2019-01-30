@@ -67,6 +67,6 @@ rows.forEach(el => {
   new SplitIntoRows({ container: el });
   const textRows = container.find('.js-text-row');
   textRows
-    .attr('data-anim-text-from', 'bottom')
+    .attr('data-anim', 'text-from-bottom')
     .wrap(`<span class='js-text-parent ${wrap}' data-anim-text-parent></span>`);
 });
