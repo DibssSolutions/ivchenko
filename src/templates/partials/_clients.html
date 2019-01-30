@@ -1,0 +1,20 @@
+<div class="clients">
+  <div class="clients__inner inner">
+    <h2 class="clients__title title">Working For</h2>
+    <div class="clients__descr">
+      I have worked on various amazing projects in a team or as a freelancer. These companies trusted in my expertise.
+    </div>
+    <div class="clients__logos">
+      {% for item in [
+        'eco-mail.svg',
+        'buzzweb.svg',
+        'Fireart.svg'
+      ] %}
+      <div class="clients__logo">
+        <img src="img/{{ item }}" alt="{{ item | capitalize }}">
+      </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>

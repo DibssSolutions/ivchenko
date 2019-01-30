@@ -53,12 +53,12 @@
 	</div>
 	<div class="tabs__wrapper" data-tabs-wrapper>
 		{% for items in props %}
-			<div class="tabs__container" data-tabs-container="{{ items.id }}">
+			<div class="tabs__container" data-tabs-container="{{ items.id }}" {% if loop.first %} data-anim-group=".5" data-duration-anim="1" {% endif %}data-duration-anim=".5">
 				<ul class="tabs__sublist">
 
 					{% for item in items.sublist %}
 				
-						<li class="tabs__subitem">{{ item }}</li>
+						<li class="tabs__subitem" data-anim="from-top">{{ item }}</li>
 
 					{% endfor %}
 

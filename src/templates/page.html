@@ -10,8 +10,9 @@ title: Index page
 	{% include "partials/_hero.html" %}
   {{ worksBuilder.works({ works: true }) }}
   {# {{ worksBuilder.works({ filter: true }) }} #}
-	{% include "partials/_services.html" %}
-	<p data-scroll-trigger data-rows="text-row-parent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur.</p>
+  {% include "partials/_services.html" %}
+  {% include "partials/_clients.html" %}
+	{# <p data-scroll-trigger data-rows="text-row-parent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos vel temporibus veniam sit iusto dolorum consequuntur eaque officia ducimus aperiam doloribus molestias, placeat deserunt excepturi magnam maxime ullam ad. Tenetur.</p> #}
 	{# {% include "partials/_main-loader.html" %} #}
 
 {% endblock %}
