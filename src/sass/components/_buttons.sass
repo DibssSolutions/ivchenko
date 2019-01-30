@@ -1,8 +1,37 @@
 .filter-btn
-  background-color: transparent
-  font-family: $proxima
-  font-size: 18px
-  line-height: 1.667
-  color: $greyMid
-  &.is-active
-    color: #F03454
+	background-color: transparent
+	font-family: $proxima
+	font-size: 18px
+	line-height: 1.667
+	color: $greyMid
+	&.is-active
+		color: #F03454
+
+.anim-btn
+	position: relative
+	display: inline-block
+	padding-right: 48px
+	font-family: $proxima
+	line-height: 1.667
+	font-size: 18px
+	color: $greyHigh
+	text-decoration: none
+	background-color: transparent
+	// background-color: #fff
+	&:hover
+		.anim-btn__text
+			transform: translateX(24px)
+		&:after
+			transform: translate(0px, -50%)
+	&__text
+		display: inline-block
+		vertical-align: top
+		transition: transform 0.8s
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 100%
+		transform: translate(-32px, -50%)
+		+arr(6, 10, $red, r)
+		transition: transform 0.8s

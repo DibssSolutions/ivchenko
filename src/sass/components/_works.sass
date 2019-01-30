@@ -1,10 +1,15 @@
 .works
-	margin: 227px auto
+	background-color: rgba(#FF6F61, 0.2)
+	// margin: 227px auto
+	padding: 227px 0 227px
 	overflow: hidden
 	&_recent
 		// min-height: 3000px
+	&__title-wrapper
+		margin-bottom: 110px
 	&__title
 		position: relative
+		margin-bottom: 30px
 		&_filter
 			span
 				display: inline-block !important
@@ -13,12 +18,12 @@
 				display: inline-block
 				vertical-align: middle
 				+arr(10, 6, $red, t)
-				transition: opacity 0.8s 1s
+				transition: opacity 0.8s 1s, transform 0.8s
 				opacity: 0
-				// [data-rows] &
-				// 	opacity: 0
 				.is-animate &
 					opacity: 1
+				.is-open &
+					transform: rotate(-180deg)
 	&__container
 		position: relative
 		opacity: 0
@@ -37,10 +42,17 @@
 			top: 0 !important
 			left: auto !important
 			height: 200px
+	&__filter-wrapper
+		margin-bottom: 82px
+	&__filter
+		display: none
+		margin-top: 87px
 	&__filter-btn
 		@extend .title
 		background-color: transparent
-
+	&__btn
+		.anim-line
+			margin-right: 40px
 
 .work
 	// width: 20%
@@ -76,3 +88,10 @@
 	align-items: center
 	&__item
 		+flex-size(20%)
+
+.anim-line
+	display: inline-block
+	vertical-align: middle
+	height: 1px
+	width: 40px
+	background-color: $greyMid

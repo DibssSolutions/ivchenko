@@ -28,13 +28,8 @@ iso = new Isotope(masonry, {
 iso.on('layoutComplete', () => $(masonry).addClass(INIT));
 
 iso.on('arrangeComplete', function(filteredItems) {
-  // $(filteredItems).each((index, el) => {
-  //   // console.log(el.querySelector('[data-anim-from]'));
-  //   console.log(el);
-  // });
   [...filteredItems].forEach((el, index) => {
-    console.log(index);
-    if (index < 3) {
+    if (index < 2) {
       const container = el.element;
       const animatedElement = container.querySelector('[data-anim-from]');
       animatedElement.classList.add(ANIMATE);
