@@ -16,5 +16,4 @@ $(dropToggler).click(e => {
     parent.removeClass(OPEN);
     $(hiddenContent).slideUp(750);
   }
-  
 });

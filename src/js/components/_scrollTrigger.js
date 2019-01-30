@@ -2,6 +2,7 @@ import { WIN, ANIMATE } from '../constants';
 import { IS_FUNC } from '../utils';
 
 import { STAGGER } from './helpers/_stagger';
+import { STAGGERGROUPS } from './helpers/_stagerGroups';
 
 export default class SCROLLTRIGGER {
 
@@ -46,20 +47,38 @@ export default class SCROLLTRIGGER {
 
 };
 
+const staggerAnimation = (item) => {
+  const selector = item.find('[data-anim]');
+  const animDelay = item.data('[delay-anim]');
+  const animDuration = item.data('[duration-anim]');
+  const animEase = item.data('[ease-anim]');
+  const animContainers = item.find('[data-anim-text-parent], [data-anim="text-from-bottom"]');
+  STAGGER({
+    elements: selector,
+    duration: animDuration,
+    delay: animDelay,
+    ease: animEase,
+    onComplete: () => {
+      animContainers.css('display', 'inline');
+    }
+  });
+};
 window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
 new SCROLLTRIGGER({
   onStart: (item) => {
-    const selector = item.find('[data-anim-text-from="bottom"]');
-    const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
-    const animDuration = item.data('anim-duration');
-    const animDelay = item.data('anim-delay');
-    STAGGER({
-      elements: selector,
-      duration: animDuration,
-      delay: animDelay,
-      onComplete: () => {
-        animContainers.css('display', 'inline');
-      }
-    });
+    const group = item.find('[data-anim-group]');
+    if (!group.length) {
+      staggerAnimation(item);
+    }
+    else {
+
+      // init animation groups stagger
+      STAGGERGROUPS({
+        callback: (container) => {
+          staggerAnimation(container);
+        },
+        parent: item
+      });
+    }
   }
 });

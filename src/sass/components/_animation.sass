@@ -1,4 +1,4 @@
-[data-anim-from]
+[data-anim]
   position: relative
   &.is-animate
     opacity: 1
@@ -19,7 +19,7 @@
   //         transition-delay: $transition-delay
   //         $transition-delay: $transition-delay + .25s
 
-[data-anim-text-from="bottom"]
+[data-anim="text-from-bottom"]
   display: inline-block
   position: relative
   transform: translateY(102%)
@@ -27,15 +27,18 @@
   [data-rows] &
     transition: inherit
 
+[data-anim="line-from-left"]
+  transform: translateX(-100%)
+  opacity: 0
   // transition: transform 2s
   // .is-animate &
   //   transform: translateY(0)
 
-[data-anim-from="bottom"]
+[data-anim="from-bottom"]
   transition: opacity 1s, visibility 1s, transform 1s
   transform: translateY(20%)
   opacity: 0
-  visibility: hidden
+  // visibility: hidden
 
 [data-rows]
   visibility: hidden
