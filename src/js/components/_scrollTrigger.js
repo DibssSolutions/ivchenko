@@ -1,6 +1,8 @@
 import { WIN, ANIMATE } from '../constants';
 import { IS_FUNC } from '../utils';
 
+import { STAGGER } from './helpers/_stagger';
+
 export default class SCROLLTRIGGER {
 
   constructor(prop) {
@@ -28,10 +30,11 @@ export default class SCROLLTRIGGER {
 
           WIN.off('scroll', show);
 
+          if (IS_FUNC(this._onStart)) this._onStart(item);
+
           if ( item.hasClass(ANIMATE) ) return;
           item.addClass(ANIMATE);
 
-          if (IS_FUNC(this._onStart)) this._onStart();
         }
       };
 
@@ -43,8 +46,16 @@ export default class SCROLLTRIGGER {
 
 };
 
+window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
 new SCROLLTRIGGER({
-  onStart: () => {
-    console.log('trigger start on section');
+  onStart: (item) => {
+    const selector = item.find('[data-anim-text-from="bottom"]');
+    const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
+    STAGGER({
+      elements: selector,
+      onComplete: () => {
+        animContainers.css('display', 'inline');
+      }
+    });
   }
 });
