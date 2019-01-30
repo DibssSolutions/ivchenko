@@ -51,8 +51,12 @@ new SCROLLTRIGGER({
   onStart: (item) => {
     const selector = item.find('[data-anim-text-from="bottom"]');
     const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
+    const animDuration = item.data('anim-duration');
+    const animDelay = item.data('anim-delay');
     STAGGER({
       elements: selector,
+      duration: animDuration,
+      delay: animDelay,
       onComplete: () => {
         animContainers.css('display', 'inline');
       }
