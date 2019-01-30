@@ -41,7 +41,7 @@ export default class SplitIntoRows {
       if (i === wordsLength - 1) {
         row.removeAttribute('style');
         row.className = 'text-row js-text-row';
-      } 
+      }
     }
   }
 
@@ -57,19 +57,16 @@ export default class SplitIntoRows {
     this._text = this._container.textContent;
     this._init();
   }
-};
+}
 
 const rows = document.querySelectorAll('[data-rows]');
 rows.forEach(el => {
   const container = $(el);
-  const wrap = container.data('rows');
+  const wrap = container.data('rows') || '';
 
-  new SplitIntoRows({container: el});
-  if ( wrap ) {
-    const textRows = container.find('.js-text-row');
-    textRows
-      .attr('data-anim-text-from', 'bottom')
-      .wrap(`<span class='js-text-parent ${wrap}' data-anim-text-parent></span>`);
-  }
-  
+  new SplitIntoRows({ container: el });
+  const textRows = container.find('.js-text-row');
+  textRows
+    .attr('data-anim-text-from', 'bottom')
+    .wrap(`<span class='js-text-parent ${wrap}' data-anim-text-parent></span>`);
 });

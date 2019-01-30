@@ -3,16 +3,22 @@
 	overflow: hidden
 	&_recent
 		// min-height: 3000px
-	&__filter-title
+	&__title
 		position: relative
-		display: inline-block
-		&:after
-			content: ''
-			position: absolute
-			right: -30px
-			top: 50%
-			transform: translateY(50%)
-			+arr(10, 6, $red, t)
+		&_filter
+			span
+				display: inline-block !important
+			&:after
+				content: ''
+				display: inline-block
+				vertical-align: middle
+				+arr(10, 6, $red, t)
+				transition: opacity 0.8s 1s
+				opacity: 0
+				// [data-rows] &
+				// 	opacity: 0
+				.is-animate &
+					opacity: 1
 	&__container
 		position: relative
 		opacity: 0
@@ -25,11 +31,16 @@
 		width: calc(50% - 60px)
 		+md
 			width: calc(50% - 50px)
-		&:nth-child(2)
-			padding-top: 200px
-	// 	position: relative
-	// 	.work
-	// 		+coverdiv
+		&_padding
+			position: absolute
+			right: 0 !important
+			top: 0 !important
+			left: auto !important
+			height: 200px
+	&__filter-btn
+		@extend .title
+		background-color: transparent
+
 
 .work
 	// width: 20%
@@ -41,7 +52,7 @@
 		backface-visibility: hidden
 		+hover
 			transform: scale(0.97)
-			.work__image
+			.work__image_scale
 				transform: scale(1.1)
 	&__image
 		transition: transform $tr
@@ -59,3 +70,9 @@
 	width: 120px
 	+md
 		width: 100px
+
+.filter-controls
+	display: flex
+	align-items: center
+	&__item
+		+flex-size(20%)

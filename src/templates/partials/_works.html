@@ -4,17 +4,20 @@
   <div class="works works_recent">
     <div class="works__inner inner">
       {% if props.works %}
-      <div data-scroll-trigger>
-        <h2 class="works__title title" data-anim-text-parent><span data-anim-text-from="bottom">Recent works</span></h2>
-        <p data-anim-text-parent><span data-anim-text-from="bottom">Please, select work for view</span></p>
+      <div class="works__title-wrapper" data-scroll-trigger data-anim-duration='2' data-anim-delay='1'>
+        <h2 class="works__title title" data-rows>Recent works</h2>
+        <p data-rows>Please, select work for view</p>
       </div>
       {% endif %}
       {% if props.filter %}
-      <div class="works__filter-wrapper" data-scroll-trigger>
-        <h2 class="works__title works__filter-title title">
-          Show me Everything
+      <div class="works__filter-wrapper" data-scroll-trigger data-anim-duration="1">
+        <h2 class="works__title works__title_filter title" data-anim-text-parent>
+          <span data-anim-text-from="bottom">
+            <span class="text-light">Show me </span>
+            <button class="works__filter-btn js-filter-category-text">Everything</button>
+          </span>
         </h2>
-        <div class="works__filter">
+         <div class="works__filter">
           <ul class="filter-controls">
             {% for item in [
               {
@@ -35,7 +38,7 @@
               }
             ] %}
             <li class="filter-controls__item">
-              <button class="filter-btn" data-filter="{% if loop.first %}*{% else %}.{{ item.data }}{% endif %}">
+              <button class="filter-btn js-filter-btn{% if loop.first %} is-active{% endif %}" data-filter="{% if loop.first %}*{% else %}.{{ item.data }}{% endif %}">
                 {{ item.text }}
               </button>
             </li>
@@ -45,6 +48,7 @@
       </div>
       {% endif %}
       <div class="works__container js-masonry{% if props.filter %} js-filter{% endif %}">
+          <div class="works__item works__item_padding js-masonry-stamp"></div>
         {% for item in [
           {
             image: "works_Straboo.jpg",
@@ -54,12 +58,14 @@
           {
             image: "works_Chesseberry.jpg",
             title: "Chesseberry",
-            descr: "Mobile App Design"
+            descr: "Mobile App Design",
+            imageScale: true
           },
           {
             image: "works_Target.jpg",
             title: "Target",
-            descr: "Mobile App Design"
+            descr: "Mobile App Design",
+            imageScale: true
           },{
             image: "works_Crossfit.jpg",
             title: "Crossfit",
@@ -73,12 +79,35 @@
           {
             image: "works_Chesseberry.jpg",
             title: "Chesseberry",
-            descr: "Mobile App Design"
+            descr: "Mobile App Design",
+            imageScale: true
           },
           {
             image: "works_Target.jpg",
             title: "Target",
-            descr: "Mobile App Design"
+            descr: "Mobile App Design",
+            imageScale: true
+          },{
+            image: "works_Crossfit.jpg",
+            title: "Crossfit",
+            descr: "Web App Design, Mobile App Design"
+          },
+          {
+            image: "works_Straboo.jpg",
+            title: "Straboo",
+            descr: "Web App Design, Website Design"
+          },
+          {
+            image: "works_Chesseberry.jpg",
+            title: "Chesseberry",
+            descr: "Mobile App Design",
+            imageScale: true
+          },
+          {
+            image: "works_Target.jpg",
+            title: "Target",
+            descr: "Mobile App Design",
+            imageScale: true
           },{
             image: "works_Crossfit.jpg",
             title: "Crossfit",

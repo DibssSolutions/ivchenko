@@ -51,6 +51,8 @@ const staggerAnimation = (item) => {
   const animContainers = item.find('[data-anim-text-parent], [data-anim-text-from="bottom"]');
   STAGGER({
     elements: selector,
+    // duration: animDuration,
+    // delay: animDelay,
     onComplete: () => {
       animContainers.css('display', 'inline');
     }
