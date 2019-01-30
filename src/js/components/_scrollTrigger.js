@@ -64,25 +64,25 @@ export const staggerAnimation = (item) => {
 };
 
 
-window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
-// setTimeout(() => {
-//   new SCROLLTRIGGER({
-//     onStart: (item) => {
-//       const group = item.find('[data-anim-group]');
-//       if (!group.length) {
-//         staggerAnimation(item);
-//       }
-//       else {
+// window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
+setTimeout(() => {
+  new SCROLLTRIGGER({
+    onStart: (item) => {
+      const group = item.find('[data-anim-group]');
+      if (!group.length) {
+        staggerAnimation(item);
+      }
+      else {
 
-//         // init animation groups stagger
-//         STAGGERGROUPS({
-//           callback: (container) => {
-//             staggerAnimation(container);
-//           },
-//           parent: item
-//         });
-//       }
-//     }
-//   });
+        // init animation groups stagger
+        STAGGERGROUPS({
+          callback: (container) => {
+            staggerAnimation(container);
+          },
+          parent: item
+        });
+      }
+    }
+  });
 
-// }, 1000);
+}, 300);
