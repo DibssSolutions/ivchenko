@@ -47,12 +47,12 @@
 			<ul class="tabs__list">
 				{% for item in props %}
 					
-					<li class="tabs__item" data-tabs-control="{{ item.id }}">{{ item.text }}</li>
+					<li class="tabs__item menu-item" data-tabs-control="{{ item.id }}">{{ item.text }}</li>
 
 				{% endfor %}
 			</ul>
 	</div>
-	<div class="tabs__wrapper">
+	<div class="tabs__wrapper" data-tabs-wrapper>
 		{% for items in props %}
 			<div class="tabs__container" data-tabs-container="{{ items.id }}">
 				<ul class="tabs__sublist">
