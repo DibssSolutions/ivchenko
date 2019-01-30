@@ -8,14 +8,24 @@
 [data-anim-text-parent]
   overflow: hidden
   position: relative
+  display: block
+  // [data-scroll-trigger].is-animate &
+  //   $transition-delay: 0s
+  //   @for $i from 1 through 100
+  //     &:nth-child(#{$i})
+  //       [data-anim-text-from="bottom"]
+  //         transition: transform .6s
+  //         transform: translateY(0)
+  //         transition-delay: $transition-delay
+  //         $transition-delay: $transition-delay + .25s
 
 [data-anim-text-from="bottom"]
   display: inline-block
   position: relative
   transform: translateY(102%)
-  transition: transform 2s
-  .is-animate &
-    transform: translateY(0)
+  // transition: transform 2s
+  // .is-animate &
+  //   transform: translateY(0)
 
 [data-anim-from="bottom"]
   transition: opacity 1s, visibility 1s, transform 1s
@@ -23,3 +33,14 @@
   opacity: 0
   visibility: hidden
 
+[data-rows]
+  visibility: hidden
+  &.is-animate,
+  [data-scroll-trigger].is-animate &
+    visibility: visible
+    
+    
+    
+    
+    
+    

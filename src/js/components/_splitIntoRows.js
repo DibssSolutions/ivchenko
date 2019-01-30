@@ -27,7 +27,7 @@ export default class SplitIntoRows {
       //create line with text value minus current word
       if (row.offsetWidth > parentWidth) {
         let newLine = document.createElement('span');
-        newLine.className = 'text-row';
+        newLine.className = 'text-row js-text-row';
         newLine.textContent = oldTextValue;
         container.insertBefore(newLine, row);
         //reset row text value to current words with space
@@ -40,7 +40,7 @@ export default class SplitIntoRows {
       //if it's last word - remove white space and use this span for last line
       if (i === wordsLength - 1) {
         row.removeAttribute('style');
-        row.className = 'text-row';
+        row.className = 'text-row js-text-row';
       } 
     }
   }
@@ -60,4 +60,16 @@ export default class SplitIntoRows {
 };
 
 const rows = document.querySelectorAll('[data-rows]');
-rows.forEach(el => new SplitIntoRows({container: el}));
+rows.forEach(el => {
+  const container = $(el);
+  const wrap = container.data('rows');
+
+  new SplitIntoRows({container: el});
+  if ( wrap ) {
+    const textRows = container.find('.js-text-row');
+    textRows
+      .attr('data-anim-text-from', 'bottom')
+      .wrap(`<span class='js-text-parent ${wrap}' data-anim-text-parent></span>`);
+  }
+  
+});
