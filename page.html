@@ -82,26 +82,32 @@
       <!-- end hero -->
       <div class="works works_recent">
         <div class="works__inner inner">
-          <div class="works__filter-wrapper" data-scroll-trigger>
-            <h2 class="works__title works__filter-title title"> Show me Everything </h2>
+          <div class="works__filter-wrapper" data-scroll-trigger data-anim-duration="1">
+            <h2 class="works__title works__title_filter title" data-anim-text-parent>
+              <span data-anim-text-from="bottom">
+                <span class="text-light">Show me </span>
+                <button class="works__filter-btn js-filter-category-text">Everything</button>
+              </span>
+            </h2>
             <div class="works__filter">
               <ul class="filter-controls">
                 <li class="filter-controls__item">
-                  <button class="filter-btn" data-filter="*"> Everything </button>
+                  <button class="filter-btn js-filter-btn is-active" data-filter="*"> Everything </button>
                 </li>
                 <li class="filter-controls__item">
-                  <button class="filter-btn" data-filter=".mobile-app"> Mobile App Design </button>
+                  <button class="filter-btn js-filter-btn" data-filter=".mobile-app"> Mobile App Design </button>
                 </li>
                 <li class="filter-controls__item">
-                  <button class="filter-btn" data-filter=".web-app"> Web App Design </button>
+                  <button class="filter-btn js-filter-btn" data-filter=".web-app"> Web App Design </button>
                 </li>
                 <li class="filter-controls__item">
-                  <button class="filter-btn" data-filter=".website"> Website Design </button>
+                  <button class="filter-btn js-filter-btn" data-filter=".website"> Website Design </button>
                 </li>
               </ul>
             </div>
           </div>
           <div class="works__container js-masonry js-filter">
+            <div class="works__item works__item_padding js-masonry-stamp"></div>
             <div class="works__item js-masonry-item mobile-app">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
@@ -113,10 +119,10 @@
                 <div class="work__descr text-light">Web App Design, Website Design</div>
               </div>
             </div>
-            <div class="works__item js-masonry-item web-app">
+            <div class="works__item js-masonry-item mobile-app">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
-                  <div class="work__image">
+                  <div class="work__image work__image_scale">
                     <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
                   </div>
                 </div>
@@ -124,10 +130,10 @@
                 <div class="work__descr text-light">Mobile App Design</div>
               </div>
             </div>
-            <div class="works__item js-masonry-item mobile-app">
+            <div class="works__item js-masonry-item website">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
-                  <div class="work__image">
+                  <div class="work__image work__image_scale">
                     <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
                   </div>
                 </div>
@@ -135,7 +141,7 @@
                 <div class="work__descr text-light">Mobile App Design</div>
               </div>
             </div>
-            <div class="works__item js-masonry-item web-app">
+            <div class="works__item js-masonry-item mobile-app">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
                   <div class="work__image">
@@ -160,7 +166,7 @@
             <div class="works__item js-masonry-item website">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
-                  <div class="work__image">
+                  <div class="work__image work__image_scale">
                     <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
                   </div>
                 </div>
@@ -171,7 +177,7 @@
             <div class="works__item js-masonry-item mobile-app">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
-                  <div class="work__image">
+                  <div class="work__image work__image_scale">
                     <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
                   </div>
                 </div>
@@ -179,7 +185,51 @@
                 <div class="work__descr text-light">Mobile App Design</div>
               </div>
             </div>
-            <div class="works__item js-masonry-item web-app">
+            <div class="works__item js-masonry-item mobile-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Crossfit.jpg" alt="Crossfit" data-lazy data-masonry-lazy>
+                  </div>
+                </div>
+                <div class="work__title title-sm">Crossfit</div>
+                <div class="work__descr text-light">Web App Design, Mobile App Design</div>
+              </div>
+            </div>
+            <div class="works__item js-masonry-item mobile-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image">
+                    <img data-src="img/works_Straboo.jpg" alt="Straboo" data-lazy data-masonry-lazy>
+                  </div>
+                </div>
+                <div class="work__title title-sm">Straboo</div>
+                <div class="work__descr text-light">Web App Design, Website Design</div>
+              </div>
+            </div>
+            <div class="works__item js-masonry-item mobile-app">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image work__image_scale">
+                    <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
+                  </div>
+                </div>
+                <div class="work__title title-sm">Chesseberry</div>
+                <div class="work__descr text-light">Mobile App Design</div>
+              </div>
+            </div>
+            <div class="works__item js-masonry-item website">
+              <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
+                <div class="work__image-wrap">
+                  <div class="work__image work__image_scale">
+                    <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
+                  </div>
+                </div>
+                <div class="work__title title-sm">Target</div>
+                <div class="work__descr text-light">Mobile App Design</div>
+              </div>
+            </div>
+            <div class="works__item js-masonry-item website">
               <div class="work" data-scroll-trigger='50' data-anim-from='bottom'>
                 <div class="work__image-wrap">
                   <div class="work__image">
