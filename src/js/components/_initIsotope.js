@@ -28,26 +28,14 @@ iso = new Isotope(masonry, {
 iso.on('layoutComplete', () => $(masonry).addClass(INIT));
 
 iso.on('arrangeComplete', function(filteredItems) {
-  // $(filteredItems).each((index, el) => {
-  //   // console.log(el.querySelector('[data-anim-from]'));
-  //   console.log(el);
-  // });
   [...filteredItems].forEach((el, index) => {
-    console.log(index);
-    if (index < 3) {
+    if (index < 2) {
       const container = el.element;
-      const animatedElement = container.querySelector('[data-anim-from]');
+      const animatedElement = container.querySelector('[data-anim]');
       animatedElement.classList.add(ANIMATE);
     }
   });
 });
-//   // const filteredElements = $(filteredItems).find('[data-anim-from="bottom"]');
-//   $(filteredItems).each((index, el) => {
-//     $()
-//   });
-//   // console.log(filteredElements);
-//   // $(filteredElements).addClass(ANIMATE);
-// });
 
 $('[data-filter]').click(function() {
   /*
@@ -64,8 +52,6 @@ $('[data-filter]').click(function() {
     $(el).removeClass(ACTIVE);
   });
   $(this).addClass(ACTIVE);
-  // Make all items visible
-  // $('[data-anim-from]').addClass(ANIMATE);
 });
 
 /*
