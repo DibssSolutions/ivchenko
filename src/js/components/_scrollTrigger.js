@@ -46,18 +46,18 @@ export default class SCROLLTRIGGER {
   }
 
 };
-const staggerAnimation = (item) => {
+export const staggerAnimation = (item) => {
   const selector = item.find('[data-anim]');
-  const animDelay = item.data('[delay-anim]');
-  const animDuration = item.data('[duration-anim]');
-  const animEase = item.data('[ease-anim]');
+  const animDelay = item.data('delay-anim');
+  const animDuration = item.data('duration-anim');
+  const animEase = item.data('ease-anim');
   const animContainers = item.find('[data-anim-text-parent], [data-anim="text-from-bottom"]');
   STAGGER({
     elements: selector,
     duration: animDuration,
     delay: animDelay,
     ease: animEase,
-    onComplete: () => {
+    onComplete: tl => {
       animContainers.css('display', 'inline');
     }
   });

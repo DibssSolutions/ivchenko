@@ -1,4 +1,5 @@
 import {ACTIVE, OPEN, DISABLED, BODY} from '../constants';
+import { STAGGER } from './helpers/_stagger';
 
 export default (() => {
 
@@ -7,6 +8,9 @@ export default (() => {
     constructor(options) {
       this.cache = {};
       this.options = options || {};
+      this.activeContainerTL;
+      this.clearFlag = false;
+      this.clickFlag = true;
       this.init();
     }
 
@@ -52,10 +56,37 @@ export default (() => {
 
         control.on('click', e => {
           e.preventDefault();
+          if (!this.clickFlag) return;
           if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
           controls.removeClass(ACTIVE);
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
+          const selector = container.find('[data-anim]');
+          const animDelay = container.data('delay-anim');
+          const animDuration = container.data('duration-anim');
+          const animEase = container.data('ease-anim');
+          //   if (this.activeContainerTL) this.activeContainerTL.set($('[data-anim]'),{clearProps:'all'});
+          //   this.flag = false;
+          STAGGER({
+            elements: selector,
+            duration: animDuration,
+            delay: animDelay,
+            ease: animEase,
+            onStart: tl => {
+              if (this.clearFlag) {
+                this.activeContainerTL.set($('[data-anim]'),{clearProps:'all'});
+                this.clearFlag = false;
+                this.clickFlag = false;
+              }
+            //   console.log(flag);
+            },
+            onComplete: tl => {
+              this.activeContainerTL = tl;
+              this.clearFlag = true;
+              this.clickFlag = true;
+              console.log(this.flag);
+            }
+          });
         });
       });
     }

@@ -4,4 +4,3 @@ import './_mainLoader';
 import './_initLazy';
 import './_initIsotope';
 import './_tabs';
-import './helpers/_stagerGroups';
