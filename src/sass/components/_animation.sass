@@ -27,7 +27,7 @@
   [data-rows] &
     transition: inherit
 
-[data-anim="line-from-left"]
+[data-anim-inner="line-from-left"]
   transform: translateX(-100%)
   opacity: 0
   // transition: transform 2s
@@ -48,5 +48,17 @@
 
 [data-anim="from-top"]
   position: relative
-  transform: translateY(-100%)
+  transform: translateY(-35px)
   opacity: 0
+
+[data-anim="sphere-from-top"]
+  position: relative
+  transform: translateY(-350px)
+  // opacity: 0
+[data-anim="from-left"]
+  position: absolute
+  transform: translateX(-100%)
+
+[data-anim="logo-from-left"]
+  opacity: 0
+  transform: translateX(-60%)
