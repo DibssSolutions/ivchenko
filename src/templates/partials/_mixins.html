@@ -43,10 +43,10 @@
 
 {% macro tabs(props) %}
 	<div class="tabs__out">
-			<ul class="tabs__list" data-anim-group="1.1" data-duration-anim=".5">
+			<ul class="tabs__list" data-anim-group=".9" data-duration-anim=".5" data-delay-anim=".115">
 				{% for item in props %}
 					
-					<li class="tabs__item menu-item" data-tabs-control="{{ item.id }}" data-anim="from-top" data-anim-group="4.7" data-group-inner="true" data-duration-anim=".8">
+					<li class="tabs__item menu-item" data-tabs-control="{{ item.id }}" data-anim="from-top" data-anim-group="3.5" data-group-inner="true" data-duration-anim=".8">
 						{{ item.text }}
 						<span class="menu-item__line" data-anim-inner="line-from-left"></span>
 					</li>
@@ -54,10 +54,10 @@
 				{% endfor %}
 			</ul>
 	</div>
-	<div class="tabs__wrapper js-accordeon-parent" data-tabs-wrapper  data-anim-group="3.7" data-duration-anim=".5" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
+	<div class="tabs__wrapper js-accordeon-parent" data-tabs-wrapper  data-anim-group="2.85" data-duration-anim=".5" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
 		{% for items in props %}
 			<div class="tabs__container" data-tabs-container="{{ items.id }}">
-				<div class="tabs__mobile js-accordeon-head" data-anim-group="1.1" data-duration-anim=".5">
+				<div class="tabs__mobile js-accordeon-head" data-anim-group="1.{{loop.index}}" data-duration-anim=".5">
 					<h4 class="tabs__container-head" data-anim="from-top" data-anim-group="2" data-group-inner="true">
 						{{ items.text }}
 						<span class="tabs__container-icon" data-anim-inner="line-from-left">{{ icon('chevron-right') }}</span>
