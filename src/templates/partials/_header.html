@@ -11,24 +11,24 @@
 		</div>
 		<div class="header__right">
 			<a href="#" class="header__btn btn">Get in touch</a>
-			<button class="btn-menu" type="button">
+			<button class="btn-menu js-btn-menu" type="button">
 				<span class="btn-menu__line"></span>
 				<span class="btn-menu__line"></span>
 			</button>
 		</div>
 	</div>
-	<div class="header__menu">
+	<div class="header__menu js-header-menu">
 		<div class="header__inner inner-lg">
 			<div class="header__wrap">
 				<div class="header__center">
 					<div class="header__text">
-						<div class="title-lg">Menu</div>
+						<div class="title-lg text-extra-light">Menu</div>
 					</div>
 					<nav class="header__nav nav">
-						<ul class="nav__list">
+						<ul class="menu-list">
 							{% for value in ['Home', 'Works', 'Services', 'Services', 'Contacts'] %}
-							<li class="nav__item">
-								<a href="#" class="nav__link">{{ value }}</a>
+							<li class="menu-item">
+								<a href="#" class="menu-item__link">{{ value }}</a>
 							</li>
 							{% endfor %}
 						</ul>
