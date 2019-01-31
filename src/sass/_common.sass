@@ -12,10 +12,41 @@ body
 	position: absolute
 	top: 0
 	bottom: 0
-	right: 0
+	width: 100%
 	background-color: rgba(152, 149, 162, 0.1)
 
 .main-wrapper
 	position: relative
 	z-index: 200
 	background-color: $white
+
+.sphere
+	opacity: 0.3
+	img
+		display: block
+		max-width: 100%
+	&_lg
+		width: 211px
+		height: 188px
+		+lg
+			width: 148px
+			height: 132px
+		+sm
+			width: 95px
+			height: 85px
+	&_md
+		width: 120px
+		height: 107px
+		+lg
+			width: 85px
+			height: 75px
+		+sm
+			display: none
+	&_sm
+		width: 80px
+		height: 71px
+		+lg
+			width: 53px
+			height: 47px
+		+sm
+			display: none

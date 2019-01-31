@@ -3,8 +3,20 @@
 <div class="services"  data-scroll-trigger>
     <div class="services__inner inner-lg-pl">
         <div class="services__content">
-            <div class="services__bg section-bg"></div>
-            <div class="services__header" data-anim-group="1">
+            <div class="services__bg">
+                <div data-anim-group="2.45" data-duration-anim=".7" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
+                    <div class="section-bg" data-anim="from-left"></div>
+                </div>
+                <div data-anim-group="3.05" data-duration-anim=".7" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
+                    <div class="services__sphere services__sphere_lg" data-anim="sphere-from-top">
+                        {{ mixins.sphere('lg') }}
+                    </div>
+                    <div class="services__sphere services__sphere_sm" data-anim="sphere-from-top">
+                        {{ mixins.sphere('sm') }}
+                    </div>
+                </div>
+            </div>
+            <div class="services__header" data-anim-group>
                 <h2 class="services__title title" data-rows="text-row-parent">
                     Services
                 </h2>
