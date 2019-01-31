@@ -29,12 +29,36 @@
     justify-content: space-between
     &__out
         width: 50%
+        +lg
+            width: 47.77%
+        +sm
+            display: none
     &__wrapper
         width: 50%
-    &__container
+        counter-reset: number1
+        +lg
+            width: 52.23%
+        +sm
+            width: 100%
+    .tabs__container
         padding: 4px 0 0 140px
+        +sm
+            padding: 0
+            opacity: 1
+            visibility: visible
+            position: relative
+            // display: flex
+            // flex-direction: column
+            // align-items: center
+    &__mobile
+        width: 100%
     &__list
         counter-reset: number
+    &__sublist
+        +sm
+            display: none
+            padding-left: 90px
+            margin: 15px 0
     &__subitem
         position: relative
         padding-left: 31px
@@ -50,6 +74,52 @@
             background-color: $red
         &:not(:first-child)
             margin-top: 20px
+            +sm
+                margin-top: 10px
+    &__container-head
+        display: none
+        position: relative
+        padding: 0 10px 0 46px
+        font-weight: 400
+        font-family: $sofia
+        font-size: 18px
+        color: $greyMid
+        transition: color .3s
+        align-items: center
+        cursor: pointer
+        +sm
+            display: flex
+        &:before
+            counter-increment: number1
+            content: "0"counter(number1)
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            font-size: 14px
+        // &:after
+        //     content: ">"
+        //     position: absolute
+        //     right: 0
+        //     top: 50%
+        //     transform: translateY(-50%)
+        //     font-size: 10px
+        //     line-height: 1
+        &:not(:first-child)
+            margin-top: 10px
+        .is-active &
+            color: $red
+            .icon
+                transform: rotate(90deg)
+                color: $red
+    &__container-icon
+        position: absolute
+        font-size: 10px
+        right: 0
+        .icon
+            display: block
+            transition: transform .35s, color .3s
+            color: $greyLow
 
 
 .menu-item
@@ -63,6 +133,8 @@
     align-items: center
     +hover
         color: $greyHigh
+    +sm
+        font-size: 18px
     &:before
         counter-increment: number
         content: "0"counter(number)
