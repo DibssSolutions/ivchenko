@@ -3,10 +3,33 @@
         position: relative
         padding: 265px 0 320px
     &__bg
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
         width: 50%
+        overflow: hidden
+        +lg
+            width: 52.23%
+        +sm
+            display: none
     &__title
         margin-bottom: 35px
     &__header
         max-width: 400px
     &__tabs
         margin-top: 110px
+    &__sphere
+        position: absolute
+        &_lg
+            top: 113px
+            right: 119px
+            +lg
+                top: 89px
+                right: 100px
+        &_sm
+            top: 273px
+            left: 80px
+            +lg
+                top: 221px
+                left: 124px

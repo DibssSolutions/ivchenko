@@ -74,7 +74,7 @@ export default (() => {
             ease: animEase,
             onStart: tl => {
               if (this.clearFlag) {
-                this.activeContainerTL.set($('[data-anim]'),{clearProps:'all'});
+                this.activeContainerTL.set(selector,{clearProps:'all'});
                 this.clearFlag = false;
                 this.clickFlag = false;
               }
