@@ -30,7 +30,7 @@
     visibility: hidden
     transition: opacity $tr, visibility $tr
     margin: 0 -60px
-    +md
+    +lg
       margin: 0 -50px
     +sm
       margin: 0 auto
@@ -39,16 +39,17 @@
       visibility: visible
   &__item
     width: 50%
+    padding-bottom: 107px
+    padding-left: 60px
+    padding-right: 60px
+    +lg
+      padding-bottom: 111px
+      padding-left: 50px
+      padding-right: 50px
     +sm
+      padding-right: 0
+      padding-left: 0
       width: 100%
-    &_padding
-      position: absolute
-      right: 0 !important
-      top: 0 !important
-      left: auto !important
-      height: 200px
-      +md
-        height: 140px
   &__filter-wrapper
     margin-bottom: 82px
   &__filter
@@ -57,17 +58,17 @@
   &__filter-btn
     @extend .title
     background-color: transparent
-  &__btn[data-anim-text-parent]
+  &__btn
     position: absolute
     z-index: 5
     width: 100%
     left: 0
     bottom: 0
     // height: 30px
-    display: flex
-    align-items: center
+    // display: flex
+    // align-items: center
     padding-left: 60px
-    +md
+    +lg
       padding-left: 50px
     +sm
       padding-left: 0
@@ -79,16 +80,6 @@
 
 .work
   // width: 20%
-  padding-left: 60px
-  padding-right: 60px
-  padding-bottom: 107px
-  +md
-    padding-bottom: 70px
-    padding-left: 50px
-    padding-right: 50px
-  +sm
-    padding-right: 0
-    padding-left: 0
   &__image-wrap
     margin-bottom: 30px
     overflow: hidden
@@ -119,6 +110,8 @@
   top: 0
   height: 210px
   width: 40%
+  +lg
+    height: 165px
 
 
 .filter-controls
@@ -127,9 +120,9 @@
   &__item
     +flex-size(20%)
 
-.anim-line
-  display: inline-block
-  vertical-align: middle
-  height: 1px
-  width: 40px
-  background-color: $greyMid
+// .anim-line
+//   display: inline-block
+//   vertical-align: middle
+//   height: 1px
+//   width: 40px
+//   background-color: $greyMid

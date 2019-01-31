@@ -1,7 +1,7 @@
-const footer = document.querySelector('.footer');
+const footerMask = document.querySelector('.js-footer-mask');
 
 window.addEventListener('scroll', () => {
-  const size = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollSize = window.pageYOffset || document.documentElement.scrollTop;
   const fullHeight = Math.max(
     document.body.scrollHeight,
     document.documentElement.scrollHeight,
@@ -12,11 +12,13 @@ window.addEventListener('scroll', () => {
   );
   const innerHeight = window.innerHeight;
 
-  if (size > fullHeight - 2 * innerHeight) {
+  if (scrollSize > fullHeight - 2 * innerHeight) {
     // let sizer = Math.abs((fullHeight - 2 * innerHeight - size) / innerHeight);
-    let sizer = ((size + 2 * innerHeight - fullHeight) / innerHeight).toFixed(
-      5
-    );
-    footer.style.opacity = sizer;
+    let sizer = (
+      (fullHeight - scrollSize - innerHeight) /
+      innerHeight
+    ).toFixed(5);
+    console.log(sizer);
+    footerMask.style.opacity = sizer;
   }
 });
