@@ -69,6 +69,7 @@
     "gsap": "^2.0.2",
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
+    "jquery-bridget": "^2.0.1",
     "vanilla-lazyload": "^8.17.0"
   }
 }
