@@ -1,20 +1,22 @@
-<div class="clients">
+<div class="clients" data-scroll-trigger='500'>
   <div class="clients__inner inner">
-    <h2 class="clients__title title">Working For</h2>
-    <div class="clients__descr">
-      I have worked on various amazing projects in a team or as a freelancer. These companies trusted in my expertise.
+    <div class="client__text" data-anim-group>
+      <h2 class="clients__title title" data-rows>Working For</h2>
+      <div class="clients__descr">
+        <p  data-rows>I have worked on various amazing projects in a team or as a freelancer.</p> 
+        <p  data-rows>These companies trusted in my expertise.</p> 
+      </div>
     </div>
-    <div class="clients__logos">
+    <div class="clients__logos" data-anim-group='0.5' data-duration-anim=".6" data-delay-anim=".2" data-ease-anim="Power1.easeOut">
       {% for item in [
         'eco-mail.svg',
-        'buzzweb.svg',
-        'Fireart.svg'
+        'Fireart.svg',
+        'buzzweb.svg'
       ] %}
-      <div class="clients__logo">
-        <img src="img/{{ item }}" alt="{{ item | capitalize }}">
+      <div class="clients__logo-wrapper">
+        <img class="clients__logo" src="img/{{ item }}" alt="{{ item | capitalize }}" data-anim="logo-from-left">
       </div>
       {% endfor %}
-      
     </div>
   </div>
 </div>

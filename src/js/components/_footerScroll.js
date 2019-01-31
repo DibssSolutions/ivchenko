@@ -14,7 +14,9 @@ window.addEventListener('scroll', () => {
 
   if (size > fullHeight - 2 * innerHeight) {
     // let sizer = Math.abs((fullHeight - 2 * innerHeight - size) / innerHeight);
-    let sizer = Math.abs((size + 2 * innerHeight - fullHeight) / innerHeight);
+    let sizer = ((size + 2 * innerHeight - fullHeight) / innerHeight).toFixed(
+      5
+    );
     footer.style.opacity = sizer;
   }
 });

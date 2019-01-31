@@ -13,19 +13,27 @@ var myLazyLoad = new LazyLoad({
 
 myLazyLoad.loadAll();
 
-const masonry = '.js-masonry';
+const masonry = '.js-filter';
 
 iso = new Isotope(masonry, {
   itemSelector: '.js-masonry-item',
   stamp: '.js-masonry-stamp',
+  // stamp: '.stamp',
   masonry: {
-    columnWidth: '.js-masonry-width',
-    gutter: '.js-masonry-gutter'
+    columnWidth: '.js-masonry-width'
   },
   filter: '*'
 });
 
-iso.on('layoutComplete', () => $(masonry).addClass(INIT));
+iso.on('layoutComplete', () => {
+  $(masonry).addClass(INIT);
+  const lastElPosition = $('.js-masonry-item:last-child').position().left;
+  if (lastElPosition > 0) {
+    $(masonry).addClass('btn-to-left');
+  } else {
+    $(masonry).removeClass('btn-to-left');
+  }
+});
 
 iso.on('arrangeComplete', function(filteredItems) {
   [...filteredItems].forEach((el, index) => {
@@ -36,6 +44,12 @@ iso.on('arrangeComplete', function(filteredItems) {
     }
   });
 });
+
+// window.addEventListener('resize', () => {
+//   var stamp = $(masonry).find('.js-masonry-stamp');
+//   iso.stamp(stamp);
+//   iso.layout();
+// });
 
 $('[data-filter]').click(function() {
   /*
@@ -53,11 +67,3 @@ $('[data-filter]').click(function() {
   });
   $(this).addClass(ACTIVE);
 });
-
-/*
-  CHANGING FILTER BUTTON CLASS
-  */
-// $(".filter__buttons")
-//   .find(".is-active")
-//   .removeClass("is-active");
-// $(this).addClass("is-active");

@@ -1,15 +1,15 @@
 .works
-  background-color: rgba(#FF6F61, 0.2)
+  // background-color: rgba(#FF6F61, 0.2)
   // margin: 227px auto
   padding: 227px 0 227px
   overflow: hidden
   &_recent
     // min-height: 3000px
   &__title-wrapper
-    margin-bottom: 80px
+    margin-bottom: 110px
   &__title
     position: relative
-    margin-bottom: 30px
+    margin-bottom: 28px
     &_filter
       span
         display: inline-block !important
@@ -29,20 +29,26 @@
     opacity: 0
     visibility: hidden
     transition: opacity $tr, visibility $tr
+    margin: 0 -60px
+    +md
+      margin: 0 -50px
+    +sm
+      margin: 0 auto
     &.is-init
       opacity: 1
       visibility: visible
   &__item
-    width: calc(50% - 60px)
-    +md
-      width: calc(50% - 50px)
+    width: 50%
+    +sm
+      width: 100%
     &_padding
       position: absolute
       right: 0 !important
       top: 0 !important
       left: auto !important
-      float: right
       height: 200px
+      +md
+        height: 140px
   &__filter-wrapper
     margin-bottom: 82px
   &__filter
@@ -51,22 +57,40 @@
   &__filter-btn
     @extend .title
     background-color: transparent
-  &__btn
-    width: 100%
+  &__btn[data-anim-text-parent]
     position: absolute
+    z-index: 5
     width: 100%
-    left: 0 !important
-    height: 30px
-    &:nth-child(even)
-      top: auto !important
-      bottom: 140px !important
+    left: 0
+    bottom: 0
+    // height: 30px
+    display: flex
+    align-items: center
+    padding-left: 60px
+    +md
+      padding-left: 50px
+    +sm
+      padding-left: 0
+      bottom: 0
+    .btn-to-left &
+      bottom: 117px
     .anim-line
-      margin-right: 40px
+      margin-right: 16px
 
 .work
   // width: 20%
-  padding-bottom: 110px
+  padding-left: 60px
+  padding-right: 60px
+  padding-bottom: 107px
+  +md
+    padding-bottom: 70px
+    padding-left: 50px
+    padding-right: 50px
+  +sm
+    padding-right: 0
+    padding-left: 0
   &__image-wrap
+    margin-bottom: 30px
     overflow: hidden
     transition: transform $tr
     background-color: #ccc
@@ -81,16 +105,21 @@
       max-width: 100%
       // width: 100%
       display: block
+  &__title
+    margin-bottom: 8px
 
 .js-masonry-width
-  width: calc(50% - 60px)
-  +md
-    width: calc(50% - 50px)
+  width: 50%
+  +sm
+    width: 100%
 
-.js-masonry-gutter
-  width: 120px
-  +md
-    width: 100px
+.js-masonry-stamp
+  position: absolute
+  right: 0
+  top: 0
+  height: 210px
+  width: 40%
+
 
 .filter-controls
   display: flex

@@ -5,18 +5,25 @@
     display: inline-block
     vertical-align: middle
   &__title
-    margin-bottom: 30px
+    padding-bottom: 26px
   &__descr
+    margin-bottom: 65px
     line-height: 1.4
     font-family: $proxima
     font-weight: 400
     font-size: 18px
     line-height: 1.667
     color: $greyHigh
+    p
+      +sm
+        display: inline-block
   &__logos
     display: flex
     align-items: center
     justify-content: center
     margin: 0 -45px
-  &__logo
+  &__logo-wrapper
     padding: 0 45px
+    position: relative
+    img
+      display: block
