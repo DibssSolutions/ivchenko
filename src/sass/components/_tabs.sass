@@ -55,6 +55,9 @@
     &__list
         counter-reset: number
     &__sublist
+        +rmin(768)
+            display: block!important
+
         +sm
             display: none
             padding-left: 90px
@@ -119,6 +122,7 @@
         position: absolute
         font-size: 10px
         right: 0
+        top: 10px
         .icon
             display: block
             transform-origin: center
@@ -163,7 +167,7 @@
             height: 1px
             background-color: $red
             transform: translateX(-100%)
-            animation: lineHideRight .5s cubic-bezier(.8,0,.2,1) forwards
+            animation: lineHideRight .3s cubic-bezier(.8,0,.2,1) forwards
     &:not(:first-child)
         margin-top: 10px
     &.is-active
@@ -174,7 +178,7 @@
             // opacity: 1
             visibility: visible
             &-inner
-                animation: lineAppearLeft .5s ease-out .3s forwards
+                animation: lineAppearLeft .3s ease-out .1s forwards
 
 
 @keyframes lineHideRight
