@@ -49,7 +49,6 @@ export default class SCROLLTRIGGER {
 export const staggerAnimation = (item) => {
   let selector;
   if (item.attr('data-group-inner')) {
-    console.log('inner');
     selector = item.find('[data-anim-inner]');
   } else {
     selector = item.find('[data-anim]');
