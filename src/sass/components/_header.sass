@@ -9,15 +9,24 @@
 		flex-wrap: wrap
 		justify-content: space-between
 		align-items: center
+		+sm
+			align-items: flex-start
 	&__left
 	&__menu
 		display: none
-	&__inner
 	&__wrap
 	&__center
 	&__text
 	&__nav
 	&__right
+		position: relative
+		padding-right: 26px
+		text-align: right
+		min-width: 50%
+	&__btn
+		margin-right: 40px
+		+sm
+			display: none
 	&__footer
 .logo
 	img
@@ -25,8 +34,33 @@
 		display: block
 
 .btn-menu
+	position: relative
+	z-index: 100
+	width: 26px
+	height: 40px
+	vertical-align: top
+	background-color: transparent 
+	display: inline-block
+	.header &
+		position: fixed
+	&:before
+		position: absolute
+		content: ""
+		top: 0
+		left: -7px
+		right: -7px 
+		bottom: 0
 	&__line
-	&__line
+		position: absolute
+		left: 0
+		width: 26px
+		height: 2px
+		background-color: #3E3852
+		display: block 
+		&:first-child
+			top: 14px
+		&:last-child
+			top: 24px
 .nav
 	&__list
 	&__item
