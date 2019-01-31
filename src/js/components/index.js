@@ -7,3 +7,4 @@ import './_tabs';
 import './_toggleFilter';
 import './_footerScroll';
 import './helpers/_stagerGroups';
+import './_accordeon';

@@ -2,6 +2,10 @@
     &__content
         position: relative
         padding: 265px 0 320px
+        +lg
+            padding: 135px 0 148px
+        +sm
+            padding: 45px 0
     &__bg
         position: absolute
         top: 0
@@ -9,16 +13,21 @@
         right: 0
         width: 50%
         overflow: hidden
+        backface-visibility: hidden
         +lg
             width: 52.23%
         +sm
             display: none
     &__title
         margin-bottom: 35px
+        +sm
+            margin-bottom: 10px
     &__header
         max-width: 400px
     &__tabs
         margin-top: 110px
+        +sm
+            margin-top: 25px
     &__sphere
         position: absolute
         &_lg
