@@ -33,28 +33,49 @@
 
 .anim-btn
   position: relative
-  display: inline-block
+  display: inline-flex
+  align-items: center
   font-family: $proxima
   line-height: 1.667
   font-size: 18px
   color: $greyHigh
   text-decoration: none
   background-color: transparent
-  &:hover
+  +hover
     .anim-btn__text
       transform: translateX(24px)
+    .anim-btn__text-wrapper
       &:before
         animation: shadeAnimIn .5s cubic-bezier(.8,0,.2,1) forwards
-    &:after
-      transform: translate(24px, -50%)
+      &:after
+        transform: translate(0, -50%)
+    .anim-btn__line
+      transform: translateX(-50%)
+    .anim-btn__line-wrapper
+      transform: translateX(-10px)
   &__text
     position: relative
-    display: inline-block
+    display: block
     vertical-align: top
-    transition: transform 0.8s
+    transition: transform 0.5s
+     // padding-left: 24px
+    // padding-right: 22px
+  &__text-wrapper
+    position: relative
+    display: inline-block
     overflow: hidden
-    padding-left: 24px
-    padding-right: 24px
+    margin-left: 40px
+    // padding-right: 22px
+    padding-right: 54px
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      margin-top: 1px
+      transform: translate(-32px, -50%)
+      +arr(6, 10, $red, r)
+      transition: transform 0.5s
     &:before
       content: ''
       position: absolute
@@ -65,15 +86,16 @@
       background-color: rgba(152, 149, 162, 0.1)
       transform: translateX(103%)
       animation: shadeAnimOut .5s cubic-bezier(.8,0,.2,1) forwards
-  &:after
-    content: ''
-    position: absolute
-    top: 50%
-    left: 100%
-    margin-top: 1px
-    transform: translate(-8px, -50%)
-    +arr(6, 10, $red, r)
-    transition: transform 0.8s
+  &__line-wrapper
+    width: 40px
+    overflow: hidden
+    display: inline-block
+    vertical-align: middle
+    transition: transform 0.3s
+  &__line
+    height: 1px
+    background-color: $greyMid
+    display: block
 
 @keyframes shadeAnimIn
   0%
@@ -98,30 +120,3 @@
   &.is-active
     color: $red
 
-.anim-btn
-  position: relative
-  display: inline-block
-  padding-right: 48px
-  font-family: $proxima
-  line-height: 1.667
-  font-size: 18px
-  color: $greyHigh
-  text-decoration: none
-  background-color: transparent
-  &:hover
-    .anim-btn__text
-      transform: translateX(24px)
-    &:after
-      transform: translate(0px, -50%)
-  &__text
-    display: inline-block
-    vertical-align: top
-    transition: transform 0.8s
-  &:after
-    content: ''
-    position: absolute
-    top: 50%
-    left: 100%
-    transform: translate(-32px, -50%)
-    +arr(6, 10, $red, r)
-    transition: transform 0.8s

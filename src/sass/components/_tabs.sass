@@ -53,6 +53,9 @@
     &__mobile
         width: 100%
     &__sublist
+        +rmin(768)
+            display: block!important
+
         +sm
             display: none
             padding-left: 90px
@@ -117,6 +120,7 @@
         position: absolute
         font-size: 10px
         right: 0
+        top: 10px
         .icon
             display: block
             transform-origin: center

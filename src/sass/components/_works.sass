@@ -7,9 +7,13 @@
     // min-height: 3000px
   &__title-wrapper
     margin-bottom: 110px
+    +sm
+      margin-bottom: 28px
   &__title
     position: relative
-    margin-bottom: 28px
+    margin-bottom: 20px
+    +sm
+      margin-bottom: 3px
     &_filter
       span
         display: inline-block !important
@@ -30,25 +34,28 @@
     visibility: hidden
     transition: opacity $tr, visibility $tr
     margin: 0 -60px
-    +md
+    +lg
       margin: 0 -50px
     +sm
       margin: 0 auto
+      padding-bottom: 40px
     &.is-init
       opacity: 1
       visibility: visible
   &__item
     width: 50%
+    padding-bottom: 107px
+    padding-left: 60px
+    padding-right: 60px
+    +lg
+      padding-bottom: 111px
+      padding-left: 50px
+      padding-right: 50px
     +sm
+      padding-bottom: 42px
+      padding-right: 0
+      padding-left: 0
       width: 100%
-    &_padding
-      position: absolute
-      right: 0 !important
-      top: 0 !important
-      left: auto !important
-      height: 200px
-      +md
-        height: 140px
   &__filter-wrapper
     margin-bottom: 82px
   &__filter
@@ -57,44 +64,38 @@
   &__filter-btn
     @extend .title
     background-color: transparent
-  &__btn[data-anim-text-parent]
+  &__btn
     position: absolute
     z-index: 5
     width: 100%
     left: 0
     bottom: 0
     // height: 30px
-    display: flex
-    align-items: center
+    // display: flex
+    // align-items: center
     padding-left: 60px
-    +md
+    +lg
       padding-left: 50px
     +sm
       padding-left: 0
       bottom: 0
     .btn-to-left &
       bottom: 117px
+      +sm
+        bottom: 0
     .anim-line
       margin-right: 16px
 
 .work
   // width: 20%
-  padding-left: 60px
-  padding-right: 60px
-  padding-bottom: 107px
-  +md
-    padding-bottom: 70px
-    padding-left: 50px
-    padding-right: 50px
-  +sm
-    padding-right: 0
-    padding-left: 0
   &__image-wrap
     margin-bottom: 30px
     overflow: hidden
     transition: transform $tr
     background-color: #ccc
     backface-visibility: hidden
+    +sm
+      margin-bottom: 20px
     +hover
       transform: scale(0.97)
       .work__image_scale
@@ -107,6 +108,8 @@
       display: block
   &__title
     margin-bottom: 8px
+    +sm
+      margin-bottom: 5px
 
 .js-masonry-width
   width: 50%
@@ -119,6 +122,10 @@
   top: 0
   height: 210px
   width: 40%
+  +lg
+    height: 165px
+  +sm 
+    height: 0
 
 
 .filter-controls
@@ -127,9 +134,9 @@
   &__item
     +flex-size(20%)
 
-.anim-line
-  display: inline-block
-  vertical-align: middle
-  height: 1px
-  width: 40px
-  background-color: $greyMid
+// .anim-line
+//   display: inline-block
+//   vertical-align: middle
+//   height: 1px
+//   width: 40px
+//   background-color: $greyMid

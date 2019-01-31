@@ -1,12 +1,14 @@
 .footer
   height: 100vh
-  // background-color: rgba(152, 149, 162, 0.1)
-  background-color: $red
+  background-color: $white
   position: fixed
   bottom: 0
   z-index: 100
   left: 0
   right: 0
+  &__mask
+    +coverdiv
+    background-color: $black
   &__inner
     height: 100%
     display: flex
