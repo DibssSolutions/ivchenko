@@ -82,8 +82,15 @@
               <h2 class="works__title title" data-rows>Recent works</h2>
               <p data-rows>Please, select work for view</p>
             </div>
-            <div class="works__container js-masonry">
-              <div class="works__item works__item_padding js-masonry-stamp"></div>
+            <div class="works__container js-filter">
+              <div class="js-masonry-width"></div>
+              <div class="js-masonry-stamp"></div>
+              <div class="works__btn" data-scroll-trigger="150" data-anim-text-parent>
+                <span class="anim-line" data-anim="line-from-left"></span>
+                <a href="#" class="anim-btn" data-anim="text-from-bottom">
+                  <span class="anim-btn__text">All works</span>
+                </a>
+              </div>
               <div class="works__item js-masonry-item website">
                 <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
                   <div class="work__image-wrap">
@@ -95,18 +102,7 @@
                   <div class="work__descr text-light">Web App Design, Website Design</div>
                 </div>
               </div>
-              <div class="works__item js-masonry-item mobile-app">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image work__image_scale">
-                      <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Chesseberry</div>
-                  <div class="work__descr text-light">Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item mobile-app">
+              <div class="works__item js-masonry-item web-app">
                 <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
                   <div class="work__image-wrap">
                     <div class="work__image work__image_scale">
@@ -114,6 +110,17 @@
                     </div>
                   </div>
                   <div class="work__title title-sm">Target</div>
+                  <div class="work__descr text-light">Mobile App Design</div>
+                </div>
+              </div>
+              <div class="works__item js-masonry-item website">
+                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
+                  <div class="work__image-wrap">
+                    <div class="work__image work__image_scale">
+                      <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
+                    </div>
+                  </div>
+                  <div class="work__title title-sm">Chesseberry</div>
                   <div class="work__descr text-light">Mobile App Design</div>
                 </div>
               </div>
@@ -128,80 +135,6 @@
                   <div class="work__descr text-light">Web App Design, Mobile App Design</div>
                 </div>
               </div>
-              <div class="works__item js-masonry-item website">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image">
-                      <img data-src="img/works_Straboo.jpg" alt="Straboo" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Straboo</div>
-                  <div class="work__descr text-light">Web App Design, Website Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item mobile-app">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image work__image_scale">
-                      <img data-src="img/works_Chesseberry.jpg" alt="Chesseberry" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Chesseberry</div>
-                  <div class="work__descr text-light">Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item mobile-app">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image work__image_scale">
-                      <img data-src="img/works_Target.jpg" alt="Target" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Target</div>
-                  <div class="work__descr text-light">Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item mobile-app">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image">
-                      <img data-src="img/works_Crossfit.jpg" alt="Crossfit" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Crossfit</div>
-                  <div class="work__descr text-light">Web App Design, Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item website">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image">
-                      <img data-src="img/3.jpeg" alt="Crossfit" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Crossfit</div>
-                  <div class="work__descr text-light">Web App Design, Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__item js-masonry-item website">
-                <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
-                  <div class="work__image-wrap">
-                    <div class="work__image">
-                      <img data-src="img/3.jpeg" alt="Crossfit" data-lazy data-masonry-lazy>
-                    </div>
-                  </div>
-                  <div class="work__title title-sm">Crossfit</div>
-                  <div class="work__descr text-light">Web App Design, Mobile App Design</div>
-                </div>
-              </div>
-              <div class="works__btn js-masonry-item" data-scroll-trigger data-anim-text-parent>
-                <span class="anim-line" data-anim="line-from-left"></span>
-                <a href="#" class="anim-btn" data-anim="text-from-bottom">
-                  <span class="anim-btn__text">All works</span>
-                </a>
-              </div>
-              <div class="js-masonry-width"></div>
-              <div class="js-masonry-gutter"></div>
             </div>
           </div>
         </div>
@@ -263,16 +196,19 @@
         <div class="clients">
           <div class="clients__inner inner">
             <h2 class="clients__title title">Working For</h2>
-            <div class="clients__descr"> I have worked on various amazing projects in a team or as a freelancer. These companies trusted in my expertise. </div>
+            <div class="clients__descr">
+              <p>I have worked on various amazing projects in a team or as a freelancer.</p>
+              <p>These companies trusted in my expertise.</p>
+            </div>
             <div class="clients__logos">
               <div class="clients__logo">
                 <img src="img/eco-mail.svg" alt="Eco-mail.svg">
               </div>
               <div class="clients__logo">
-                <img src="img/buzzweb.svg" alt="Buzzweb.svg">
+                <img src="img/Fireart.svg" alt="Fireart.svg">
               </div>
               <div class="clients__logo">
-                <img src="img/Fireart.svg" alt="Fireart.svg">
+                <img src="img/buzzweb.svg" alt="Buzzweb.svg">
               </div>
             </div>
           </div>
