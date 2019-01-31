@@ -61,7 +61,10 @@ export default (() => {
           controls.removeClass(ACTIVE);
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
-          const selector = container.find('[data-anim]');
+          let selector = container.find('[data-anim]');
+          // let lines = control.find('[data-anim-inner]');
+          // selector.push(lines[0]);
+          // console.log(selector);
           const animDelay = container.data('delay-anim');
           const animDuration = container.data('duration-anim');
           const animEase = container.data('ease-anim');
@@ -78,13 +81,11 @@ export default (() => {
                 this.clearFlag = false;
                 this.clickFlag = false;
               }
-            //   console.log(flag);
             },
             onComplete: tl => {
               this.activeContainerTL = tl;
               this.clearFlag = true;
               this.clickFlag = true;
-              console.log(this.flag);
             }
           });
         });
