@@ -53,6 +53,10 @@
       transform: translateX(-50%)
     .anim-btn__line-wrapper
       transform: translateX(-10px)
+  &_no-scroll-anim
+    +hover
+      .anim-btn__line
+        transform: none
   &__text
     position: relative
     display: block
@@ -64,10 +68,10 @@
     position: relative
     display: inline-block
     overflow: hidden
-    // padding-right: 22px
+    margin-left: 40px
     padding-right: 54px
-    .anim-btn_with-line &
-      margin-left: 40px
+    .anim-btn_no-scroll-anim &
+      margin-left: 32px
     &:after
       content: ''
       position: absolute

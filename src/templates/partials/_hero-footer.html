@@ -1,14 +1,17 @@
+{% import "partials/_mixins.html" as mixins %}
+
 {% macro hero_footer(props) %}
   <footer class="footer">
     <div class="footer__mask js-footer-mask"></div>
+    <a href="#footer-link-1" class="footer__link"></a>
     <div class="footer__inner inner-lg">
       <div class="footer__wrapper footer__wrapper_left">
-        Next section
+        Next Section
       </div>
-      <div class="footer__title title-lg">About Me</div>
+      <div class="footer__title title-lg">{{ props.title }}</div>
       <div class="footer__wrapper footer__wrapper_right">
         <div class="footer__btn-wrapper">
-          <a href="#" class="anim-btn anim-btn_with-line anim-btn_no-scroll-anim">
+          <a href="#footer-link-2" class="anim-btn anim-btn_with-line anim-btn_no-scroll-anim">
             <span class="anim-btn__line-wrapper">
               <span class="anim-btn__line"></span>
             </span>
@@ -17,7 +20,13 @@
             </span>
           </a>
         </div>
-        
+      </div>
+      <div class="footer__spheres">
+        {% for sphere in props.spheres %}
+          <div class="footer__sphere footer__sphere_{{ sphere.class }}">
+              {{ mixins.sphere(sphere.size) }}
+          </div>
+        {% endfor %}
       </div>
     </div>
     <div class="footer__info">

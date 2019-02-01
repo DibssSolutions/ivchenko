@@ -7,7 +7,7 @@
 	font-weight: $weight
 
 $proxima: 'ProximaNova'
-$sofia: 'SofiaPro'
+$averta: 'Averta'
 $montserrat: 'Montserrat'
 
 @font-face
@@ -23,17 +23,21 @@ $montserrat: 'Montserrat'
   +fontpath('ProximaNova-Bold', 'ProximaNova-Bold', ProximaNova-Bold)
 
 @font-face
-  +fontdefault(normal, 300, $sofia)
-  +fontpath('SofiaProLight', 'SofiaProLight', SofiaProLight)
+  +fontdefault(normal, 300, $averta)
+  +fontpath('Averta-Light', 'Averta-Light', Averta-Light)
 
 @font-face
-  +fontdefault(normal, 400, $sofia)
-  +fontpath('SofiaProRegular', 'SofiaProRegular', SofiaProRegular)
+  +fontdefault(normal, 400, $averta)
+  +fontpath('Averta-Regular', 'Averta-Regular', Averta-Regular)
 
 @font-face
-  +fontdefault(normal, 900, $sofia)
-  +fontpath('SofiaProBlack', 'SofiaProBlack', SofiaProBlack)
-  
+  +fontdefault(normal, 900, $averta)
+  +fontpath('Averta-Black', 'Averta-Black', Averta-Black)
+
+@font-face
+  +fontdefault(normal, 400, 'Averta-Bold')
+  +fontpath('Averta-Bold', 'Averta-Bold', Averta-Bold)
+
 // Montserrat-SemiBold / Montserrat-Bold
 // @font-face
 //   +fontdefault(normal, 700, $montserrat)
