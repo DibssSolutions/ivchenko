@@ -1,7 +1,8 @@
 {% import "partials/_mixins.html" as mixins %}
 
 {% macro hero_footer(props) %}
-  <footer class="footer">
+{# <div class="footer-wrapper"> #}
+  <footer class="footer js-footer">
     <div class="footer__mask js-footer-mask"></div>
     <a href="#footer-link-1" class="footer__link"></a>
     <div class="footer__inner inner-lg">
@@ -33,4 +34,5 @@
       {% include "partials/_footer-info.html" %}
     </div>
   </footer>
+{# </div> #}
 {% endmacro %}
