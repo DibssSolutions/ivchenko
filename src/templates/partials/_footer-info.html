@@ -1,0 +1,21 @@
+{% import "partials/_mixins.html" as mixins %}
+
+<div class="footer-info">
+  <div class="footer-info__inner inner-lg">
+    <div class="footer-info__copyright">
+      <div class="copyright">
+        © 2019 Ivchenko Design
+      </div>
+    </div>
+    <div class="footer-info__social">
+      <ul class="social-links">
+        {% for item in [ 'dribbble', 'behance', 'instagram', 'facebook',
+        'linkedIn' ]%}
+        <li class="social-links__item">
+          <a href="#" class="social-links__link">{{ mixins.icon(item) }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

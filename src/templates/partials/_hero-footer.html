@@ -1,8 +1,27 @@
 {% macro hero_footer(props) %}
   <footer class="footer">
     <div class="footer__mask js-footer-mask"></div>
-    <div class="footer__inner inner">
-      <div class="title-lg">Works</div>
+    <div class="footer__inner inner-lg">
+      <div class="footer__wrapper footer__wrapper_left">
+        Next section
+      </div>
+      <div class="footer__title title-lg">About Me</div>
+      <div class="footer__wrapper footer__wrapper_right">
+        <div class="footer__btn-wrapper">
+          <a href="#" class="anim-btn anim-btn_with-line anim-btn_no-scroll-anim">
+            <span class="anim-btn__line-wrapper">
+              <span class="anim-btn__line"></span>
+            </span>
+            <span class="anim-btn__text-wrapper">
+              <span class="anim-btn__text">Lets go</span>
+            </span>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer__info">
+      {% include "partials/_footer-info.html" %}
     </div>
   </footer>
 {% endmacro %}

@@ -18,7 +18,6 @@ window.addEventListener('scroll', () => {
       (fullHeight - scrollSize - innerHeight) /
       innerHeight
     ).toFixed(5);
-    console.log(sizer);
     footerMask.style.opacity = sizer;
   }
 });
