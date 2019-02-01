@@ -1,12 +1,12 @@
 {% import "partials/_mixins.html" as mixins %}
 
 <!-- begin hero -->
-<div class="hero js-hero" data-scroll-trigger >
-	<div class="hero__bg js-bg">
+<div class="hero js-hero">
+	<div class="hero__bg js-hero-bg">
 		<div class="section-bg" data-anim="from-left"></div>
 	</div>
 	<div class="hero__inner inner-lg-pl">
-		<div class="hero__content js-content">
+		<div class="hero__content js-hero-content">
 			<div class="hero__sphere hero__sphere_sm" data-anim="sphere-from-left">
 				{{ mixins.sphere('sm') }}
 			</div>
@@ -16,19 +16,19 @@
 			<div class="hero__sphere hero__sphere_lg" data-anim="sphere-from-left">
 				{{ mixins.sphere('lg') }}
 			</div>
-			<h2 class="hero__title title-lg" data-rows="text-row-parent">Design</h2>
-			<h4 class="hero__subtitle title-sm" data-rows="text-row-parent">for web and apps</h4>
-			<div class="hero__splitter">
+			<h2 class="hero__title title-lg js-hero-title" data-rows="text-row-parent">Design</h2>
+			<h4 class="hero__subtitle title-sm js-hero-title" data-rows="text-row-parent">for web and apps</h4>
+			<div class="hero__splitter js-hero-splitter">
 				<span class="hero__line" data-anim="from-top"></span>
 			</div>
-			<div class="hero__text">
+			<div class="hero__text js-hero-text">
 				<p data-rows="text-row-parent">
 					I’m Alexandr Ivchenko</p>
 				<p data-rows="text-row-parent">Creative professional from Ukraine, working as a freelance designer. I developing design for website, web and mobile apps.</p>
 			</div>
 		</div>
 	</div>
-	<div class="hero__footer">
+	<div class="hero__footer js-hero-footer">
 		<div class="hero__footer-wrap inner-lg-pl">
 			<div class="hero__btn">
 				<a href="#" class="anim-btn">
