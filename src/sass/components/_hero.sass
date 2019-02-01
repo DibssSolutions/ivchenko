@@ -1,5 +1,64 @@
 .hero
 	padding: 120px 0 80px
 	min-height: 100vh
+	height: 100%
 	display: flex
 	align-items: center
+	position: relative
+	&__inner
+		position: relative
+	&__content
+		// width: 100%
+	&__sphere
+		position: absolute
+		&_sm
+			top: -50px
+			left: 171px
+		&_md
+			top: 100%
+			right: 325px
+		&_lg
+			top: 10px
+			right: 190px
+	&__bg
+		position: absolute
+		width: calc((100% - 1340px)/2 + 1340px - 510px)
+		overflow: hidden
+		top: 0
+		right: 0
+		bottom: 0
+	&__content
+		position: relative
+	&__title
+		line-height: 1.4
+		margin-left: -.07em
+	&__subtitle
+		margin-top: -30px
+	&__splitter
+		margin: 68px 0 84px
+		overflow: hidden
+	&__line
+		display: block
+		width: 1px
+		height: 30px
+		background-color: $greyMid
+		// transform: translateY(-100%)
+	&__text
+		max-width: 545px
+	&__footer
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		padding-bottom: 58px
+		&-wrap
+			display: flex
+			justify-content: space-between
+			align-items: center
+	&__btn
+		&:not(:first-child)
+			margin-left: 15px
+	&__link
+		display: block
+		color: $greyHigh
+		text-decoration: none

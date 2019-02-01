@@ -1,9 +1,44 @@
+{% import "partials/_mixins.html" as mixins %}
+
 <!-- begin hero -->
 <div class="hero" data-scroll-trigger >
-	<div class="hero__inner inner-lg">
-		<p data-rows="text-row-parent">
-		I’m Alexandr Ivchenko</p>
-		<p data-rows="text-row-parent">Creative professional from Ukraine, working as a freelance designer. I developing design for website, web and mobile apps.</p>
+	<div class="hero__bg">
+		<div class="section-bg" data-anim="from-left"></div>
+	</div>
+	<div class="hero__inner inner-lg-pl">
+		<div class="hero__content">
+			<div class="hero__sphere hero__sphere_sm" data-anim="sphere-from-left">
+				{{ mixins.sphere('sm') }}
+			</div>
+			<div class="hero__sphere hero__sphere_md" data-anim="sphere-from-left">
+				{{ mixins.sphere('md') }}
+			</div>
+			<div class="hero__sphere hero__sphere_lg" data-anim="sphere-from-left">
+				{{ mixins.sphere('lg') }}
+			</div>
+			<h2 class="hero__title title-lg" data-rows="text-row-parent">Design</h2>
+			<h4 class="hero__subtitle title-sm" data-rows="text-row-parent">for web and apps</h4>
+			<div class="hero__splitter">
+				<span class="hero__line" data-anim="from-top"></span>
+			</div>
+			<div class="hero__text">
+				<p data-rows="text-row-parent">
+					I’m Alexandr Ivchenko</p>
+				<p data-rows="text-row-parent">Creative professional from Ukraine, working as a freelance designer. I developing design for website, web and mobile apps.</p>
+			</div>
+		</div>
+	</div>
+	<div class="hero__footer">
+		<div class="hero__footer-wrap inner-lg-pl">
+			<div class="hero__btn">
+				<a href="#" class="anim-btn">
+					<span class="anim-btn__text-wrapper"  data-anim="btn-text-from-bottom">
+							<span class="anim-btn__text">Works</span>
+					</span>
+				</a>
+			</div>
+			<div class="hero__btn"><a href="#" class="hero__link" data-anim="btn-text-from-bottom"><span>Drop me a line</span></a></div>
+		</div>
 	</div>
 
 </div>
