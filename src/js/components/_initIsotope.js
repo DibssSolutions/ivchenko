@@ -45,12 +45,6 @@ iso.on('arrangeComplete', function(filteredItems) {
   });
 });
 
-// window.addEventListener('resize', () => {
-//   var stamp = $(masonry).find('.js-masonry-stamp');
-//   iso.stamp(stamp);
-//   iso.layout();
-// });
-
 $('[data-filter]').click(function() {
   /*
   FILTERING
