@@ -1,53 +1,81 @@
 import { OPEN, BODY } from '../constants';
 import { TimelineMax } from 'gsap';
 
-const header = $('.js-header');
+// const header = $('.js-header');
 // const btn = $('.js-btn-menu');
 // const wrap = $('.js-header-menu');
 
-const items = $('.js-hero [data-anim="from-top"]');
-const bg = $('.js-bg [data-anim]');
-const spheres = $('js-content [data-anim="sphere-from-left"]')
-const topEllements = $('.js-header-top');
-const textElements = $('.js-header [data-anim="text-from-bottom"]');
+// const items = $('.js-hero [data-anim="from-top"]');
+const bg = $('.js-hero-bg [data-anim="from-left"]');
+const spheres = $('.js-hero-content [data-anim="sphere-from-left"]');
+const header = $('.js-header .inner-lg [data-anim]');
+const titles = $('.js-hero-title [data-anim="text-from-bottom"]');
+const splitter = $('.js-hero-splitter [data-anim="from-top"]');
+console.log(splitter);
+const text = $('.js-hero-text [data-anim="text-from-bottom"]');
+const footer = $('.js-hero-footer [data-anim]');
+// const topEllements = $('.js-header-top');
+// const textElements = $('.js-header [data-anim="text-from-bottom"]');
 
-const tlWrap = new TimelineMax({ paused: true });
+// const tlWrap = new TimelineMax({ paused: true });
+$('.js-hero [data-rows]').addClass('is-animate');
 const tlItems = new TimelineMax({ paused: true });
 
 tlItems
-  .to(topEllements, 0.7, {
-    y: 0,
+  .to(bg, 1, {
+    x: 0,
     opacity: 1,
-    ease: Power4.easeOut
+    ease: Power2.easeOut
   })
-  .to(textElements, 1.2, {
+  .staggerTo(spheres, 1, {
+    x: 0,
+    opacity: 1,
+    ease: Power4.easeOut
+  }, 0.00001, 1)
+  .staggerTo(header, 1, {
     y: 0,
     opacity: 1,
     ease: Power4.easeOut
-  }, 0.5)
-  .staggerTo( items, 1.3, {
+  }, 0.00001, 2)
+  .staggerTo(titles, 1, {
+    y: 0,
+    opacity: 1,
+    ease: Power4.easeOut
+  }, 0.00001, 3)
+  .to(splitter, 1, {
+    y: 0,
+    opacity: 1,
+    ease: Power4.easeOut
+  }, 0.00001, 4)
+  .staggerTo( text, 1, {
     y: 0,
     opacity: 1,
     ease: Circ.easeOut
-  }, 0.1, 0.9);
-
-tlWrap
-  .to(wrap, 0.4, {
+  }, 0.00001, 5)
+  .staggerTo( footer, 1, {
+    y: 0,
     opacity: 1,
-    visibility: 'visible',
-    ease: Power4.easeInOut
-  })
-  .eventCallback('onComplete', () => tlItems.play(0) )
-  .eventCallback('onReverseComplete', () => TweenMax.set( [items, topEllements, textElements], { clearProps: 'all' }) );
+    ease: Circ.easeOut
+  }, 0.00001, 6);
 
-btn.on('click', () => {
-  if (!btn.hasClass(OPEN)) {
-    btn.addClass(OPEN);
-    tlWrap.play();
-  }
-  else {
-    btn.removeClass(OPEN);
-    tlWrap.reverse();
-    tlItems.pause();
-  }
-});
+// tlWrap
+//   .to(wrap, 0.4, {
+//     opacity: 1,
+//     visibility: 'visible',
+//     ease: Power4.easeInOut
+//   })
+//   .eventCallback('onComplete', () => tlItems.play(0) )
+//   .eventCallback('onReverseComplete', () => TweenMax.set( [items, topEllements, textElements], { clearProps: 'all' }) );
+
+// btn.on('click', () => {
+//   if (!btn.hasClass(OPEN)) {
+//     btn.addClass(OPEN);
+//     tlWrap.play();
+//   }
+//   else {
+//     btn.removeClass(OPEN);
+//     tlWrap.reverse();
+//     tlItems.pause();
+//   }
+// });
+tlItems.play(0);

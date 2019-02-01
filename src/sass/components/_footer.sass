@@ -1,26 +1,24 @@
 .footer
-  height: 100vh
-  background-color: $white
-  position: fixed
-  bottom: 0
-  z-index: 100
-  left: 0
-  right: 0
   display: flex
   align-items: center
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  background-color: $white
+  z-index: 100
   overflow: hidden
+  position: fixed
   &__mask
     +coverdiv
     z-index: 20
     pointer-events: none
     background-color: $black
-    // opacity: 0
   &__inner
     position: relative
     display: block
     padding-top: 100px
     padding-bottom: 100px
-    cursor: url('../img/cursor.svg') 50 50, pointer
     +lg
       padding-top: 100px
       padding-bottom: 100px
@@ -31,7 +29,7 @@
     height: 100vh
     width: 100vw
     +vcenter
-    z-index: 2
+    z-index: 3
     cursor: url('../img/cursor.svg') 50 50, pointer
   &__title
     padding: 3.9vw 0 4.7vw
@@ -40,7 +38,6 @@
     max-width: 566px
     margin: 0 auto
     position: relative
-    z-index: 2
     +sm
       text-align: center
     &_left
@@ -48,16 +45,14 @@
     &_right
       text-align: right
   &__btn-wrapper
+    position: relative
     margin-right: -30px
-    z-index: 3
+    z-index: 5
   &__info
     position: absolute
-    // padding: 20px 0
-    // bottom: 30px
-    cursor: url('../img/cursor.svg') 50 50, pointer
     width: 100%
     bottom: 0
-    z-index: 2
+    // z-index: 3
     .social-links
       cursor: pointer
   &__sphere
@@ -92,9 +87,13 @@
     +sm
       justify-content: center
   &__social
+    position: relative
+    z-index: 5
     +sm
       display: none
-
+  &__copyright
+    position: relative
+    z-index: 5
 
 .social-links
   display: flex
