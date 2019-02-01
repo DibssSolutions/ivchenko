@@ -30,7 +30,7 @@
 {% endmacro %}
 
 {% macro work(props) %}
-  <div class="work" data-scroll-trigger='20' data-anim='from-bottom'>
+  <a href="#" class="work" data-scroll-trigger='20' data-anim='from-bottom'>
     <div class="work__image-wrap">
       <div class="work__image{% if props.imageScale %} work__image_scale{% endif %}">
           <img data-src="img/{{ props.image }}" alt="{{ props.title }}" data-lazy data-masonry-lazy>
@@ -38,7 +38,7 @@
     </div>
     <div class="work__title title-sm">{{ props.title }}</div>
     <div class="work__descr text-light">{{ props.descr }}</div>
-  </div>
+  </a>
 {% endmacro %}
 
 {% macro tabs(props) %}
