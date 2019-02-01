@@ -1,23 +1,51 @@
-import { OPEN } from '../constants';
+import { OPEN, BODY } from '../constants';
 import { TimelineMax } from 'gsap';
 
 const header = $('.js-header');
-const btnMenu = $('.js-btn-menu');
-const menuWrap = $('.js-header-menu');
-const timelineOpen = new TimelineMax({ paused: true }).addLabel('startStagger');
+const btn = $('.js-btn-menu');
+const wrap = $('.js-header-menu');
 
+const items = $('.js-header-menu [data-anim="from-top"]');
+const topEllements = $('.js-header-top');
+const textElements = $('.js-header [data-anim="text-from-bottom"]');
 
-timelineOpen
-  .to(menuWrap, 0.5, {
-    y: 0
-  });
+const tlWrap = new TimelineMax({ paused: true });
+const tlItems = new TimelineMax({ paused: true });
 
-btnMenu.on('click', () => {
-  if (!btnMenu.hasClass(OPEN)) {
-    btnMenu.addClass(OPEN);
-    timelineOpen.play();
+tlItems
+  .to(topEllements, 0.7, {
+    y: 0,
+    opacity: 1,
+    ease: Power4.easeOut
+  })
+  .to(textElements, 1.2, {
+    y: 0,
+    opacity: 1,
+    ease: Power4.easeOut
+  }, 0.5)
+  .staggerTo( items, 1.3, {
+    y: 0,
+    opacity: 1,
+    ease: Circ.easeOut
+  }, 0.1, 0.9);
+
+tlWrap
+  .to(wrap, 0.4, {
+    opacity: 1,
+    visibility: 'visible',
+    ease: Power4.easeInOut
+  })
+  .eventCallback('onComplete', () => tlItems.play(0) )
+  .eventCallback('onReverseComplete', () => TweenMax.set( [items, topEllements, textElements], { clearProps: 'all' }) );
+
+btn.on('click', () => {
+  if (!btn.hasClass(OPEN)) {
+    btn.addClass(OPEN);
+    tlWrap.play();
   }
   else {
-    btnMenu.removeClass(OPEN);
+    btn.removeClass(OPEN);
+    tlWrap.reverse();
+    tlItems.pause();
   }
 });

@@ -18,16 +18,31 @@
 		</div>
 	</div>
 	<div class="header__menu js-header-menu">
+		<div class="header__menu-top js-header-top">
+			<div class="header__inner inner-lg" js-header-top>
+				<div class="header__left">
+					<!-- begin logo -->
+					<a href="#" class="logo">
+						<h1 hidden>IVCHENKO. DESIGn</h1>
+						<img src="./img/logo.svg" alt="logo">
+					</a>
+					<!-- end logo -->
+				</div>
+				<div class="header__right">
+					<a href="#" class="header__btn btn">Get in touch</a>
+				</div>
+			</div>
+		</div>
 		<div class="header__inner inner-lg">
 			<div class="header__wrap">
 				<div class="header__center">
 					<div class="header__text">
-						<div class="title-lg text-extra-light">Menu</div>
+						<div class="title-lg text-extra-light" data-anim-text-parent><span data-anim="text-from-bottom">Menu</span></div>
 					</div>
 					<nav class="header__nav nav">
 						<ul class="menu-list">
 							{% for value in ['Home', 'Works', 'Services', 'Services', 'Contacts'] %}
-							<li class="menu-item">
+							<li class="menu-item{% if loop.first %} is-active{% endif %}" data-anim="from-top">
 								<a href="#" class="menu-item__link">{{ value }}</a>
 							</li>
 							{% endfor %}
