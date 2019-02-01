@@ -22,41 +22,41 @@ $('.js-hero [data-rows]').addClass('is-animate');
 const tlItems = new TimelineMax({ paused: true });
 
 tlItems
-  .to(bg, 1, {
+  .to(bg, 1.6, {
     x: 0,
     opacity: 1,
     ease: Power2.easeOut
   })
-  .staggerTo(spheres, 1, {
+  .staggerTo(spheres, 2.5, {
     x: 0,
     opacity: 1,
-    ease: Power4.easeOut
-  }, 0.00001, 1)
-  .staggerTo(header, 1, {
+    ease: Circ.easeOut
+  }, 0, 1.3)
+  .staggerTo(header, 1.1, {
     y: 0,
     opacity: 1,
-    ease: Power4.easeOut
-  }, 0.00001, 2)
+    ease: Power3.easeOut
+  }, 0.00001, 2.8)
   .staggerTo(titles, 1, {
     y: 0,
     opacity: 1,
     ease: Power4.easeOut
-  }, 0.00001, 3)
-  .to(splitter, 1, {
+  }, 0.6, 3.4)
+  .to(splitter, 1.5, {
     y: 0,
     opacity: 1,
     ease: Power4.easeOut
-  }, 0.00001, 4)
-  .staggerTo( text, 1, {
+  }, 4.3)
+  .staggerTo( text, 0.5, {
     y: 0,
     opacity: 1,
     ease: Circ.easeOut
-  }, 0.00001, 5)
-  .staggerTo( footer, 1, {
+  }, 0.3, 5.1)
+  .staggerTo( footer, 0.5, {
     y: 0,
     opacity: 1,
     ease: Circ.easeOut
-  }, 0.00001, 6);
+  }, 0.00001, 6.3);
 
 // tlWrap
 //   .to(wrap, 0.4, {
