@@ -5,6 +5,9 @@
 	display: flex
 	align-items: center
 	position: relative
+	+sm
+		padding: 75px 0 80px
+		min-height: 0
 	&__inner
 		position: relative
 	&__content
@@ -12,17 +15,33 @@
 	&__sphere
 		position: absolute
 		&_sm
-			top: -50px
-			left: 171px
+			top: -148px
+			left: 152px
 			transform: translateX(calc(1px - (100vw - 1340px) / 2 - 171px - 148px - 80px))
+			+lg
+				display: none
 		&_md
 			top: 100%
 			right: 325px
+			margin-top: -12px
 			transform: translateX(calc(1px - (100vw - 1340px) / 2 - 717px - 148px - 120px))
+			+lg
+				top: auto
+				bottom: 8.4vw
+				right: 328px
+				margin-top: 0 
+			+sm
+				display: none
 		&_lg
-			top: 10px
+			top: -51px
 			right: 190px
 			transform: translateX(calc(1px - (100vw - 1340px) / 2 - 761px - 148px - 211px))
+			+lg
+				right: 152px
+				top: 0.5vw 
+			+md
+				right: 0px
+				top: 75px
 	&__bg
 		position: absolute
 		width: calc((100% - 1340px)/2 + 1340px - 510px)
@@ -30,16 +49,31 @@
 		top: 0
 		right: 0
 		bottom: 0
+		+sm
+			width: 50%
 	&__content
 		position: relative
 	&__title
 		line-height: 1.2
 		margin-left: -.05em
+		+lg
+			margin-left: -.08em 
 	&__subtitle
 		margin-top: -30px
+		+lg
+			margin-top: -20px 
+		+md
+			margin-top: -10px
+		+sm
+			padding-right: 80px 
+			margin-top: 3px 
 	&__splitter
-		margin: 68px 0 84px
+		margin: 67px 0
 		overflow: hidden
+		+lg
+			margin: 2.7vw 0 
+		+md
+			margin: 21px 0 
 	&__line
 		display: block
 		width: 1px
@@ -47,13 +81,19 @@
 		background-color: $greyMid
 		// transform: translateY(-100%)
 	&__text
-		max-width: 545px
+		max-width: 550px
+		+sm
+			line-height: 1.5
 	&__footer
 		position: absolute
 		left: 0
 		bottom: 0
 		right: 0
 		padding-bottom: 58px
+		+lg
+			padding-bottom: 30px
+		+sm
+			padding-bottom: 8px 
 		&-wrap
 			display: flex
 			justify-content: space-between
@@ -65,3 +105,8 @@
 		display: block
 		color: $greyHigh
 		text-decoration: none
+		transition: color .3s
+		+hover
+			color: darken($greyHigh, 10%)
+		+sm
+			display: none

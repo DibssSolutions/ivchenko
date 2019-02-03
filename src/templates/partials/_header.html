@@ -20,41 +20,53 @@
 		</div>
 	</div>
 	<div class="header__menu js-header-menu">
-		<div class="header__menu-top js-header-top">
-			<div class="header__inner inner-lg" js-header-top>
-				<div class="header__left">
-					<!-- begin logo -->
-					<a href="#" class="logo">
-						<h1 hidden>IVCHENKO. DESIGn</h1>
-						<img src="./img/logo.svg" alt="logo">
-					</a>
-					<!-- end logo -->
-				</div>
-				<div class="header__right">
-					<a href="#" class="header__btn btn">Get in touch</a>
-				</div>
-			</div>
-		</div>
-		<div class="header__inner inner-lg-pl">
-			<div class="header__wrap">
-				<div class="header__center">
-					<div class="header__text">
-						<div class="title-lg text-extra-light" data-anim-text-parent><span data-anim="text-from-bottom">Menu</span></div>
+		<div class="header__menu-wrap">
+			<div class="header__menu-top js-header-top">
+				<div class="header__inner inner-lg" js-header-top>
+					<div class="header__left">
+						<!-- begin logo -->
+						<a href="#" class="logo">
+							<h1 hidden>IVCHENKO. DESIGn</h1>
+							<img src="./img/logo.svg" alt="logo">
+						</a>
+						<!-- end logo -->
 					</div>
-					<nav class="header__nav nav">
-						<ul class="menu-list">
-							{% for value in ['Home', 'Works', 'Services', 'Services', 'Contacts'] %}
-							<li class="menu-item{% if loop.first %} is-active{% endif %}" data-anim="from-top">
-								<a href="#" class="menu-item__link">{{ value }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-					</nav>
+					<div class="header__right">
+						<a href="#" class="header__btn btn">Get in touch</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="header__footer">
-			{% include "partials/_footer-info.html" %}
+			<div class="header__inner inner-lg-pl">
+				<div class="header__wrap">
+					<div class="header__center">
+						<div class="header__text">
+							<div class="title-lg text-extra-light" data-anim-text-parent><span data-anim="text-from-bottom">Menu</span></div>
+						</div>
+						<nav class="header__nav nav">
+							<ul class="menu-list">
+								{% for value in ['Home', 'Works', 'Services', 'About Me', 'Contacts'] %}
+								<li class="menu-item{% if loop.first %} is-active{% endif %}" data-anim="from-top">
+									<a href="#" class="menu-item__link">{{ value }}</a>
+									<span class="menu-item__line-wrap" data-anim-wrap="line-from-left">
+										<span class="menu-item__line" data-anim-inner="line-from-left">
+											<span class="menu-item__line-inner"></span>
+										</span>
+									</span>
+								</li>
+								{% endfor %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="header__footer js-header-footer">
+				<div class="mob-hide">
+					{% include "partials/_footer-info.html" %}
+				</div>
+				<div class="mob-show">
+					<a href="#" class="btn">Get in touch</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>

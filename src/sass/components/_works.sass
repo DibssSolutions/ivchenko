@@ -1,19 +1,21 @@
 .works
-  // background-color: rgba(#FF6F61, 0.2)
-  // margin: 227px auto
   padding: 245px 0 105px
   overflow: hidden
-  &_recent
-    // min-height: 3000px
+  +lg
+    padding: 113px 0 0
+  +sm
+    padding: 78px 0 0 
   &__title-wrapper
     margin-bottom: 110px
     +sm
-      margin-bottom: 28px
+      margin-bottom: 23px
   &__title
     position: relative
     margin-bottom: 9px
+    +lg
+      margin-bottom: 5px 
     +sm
-      margin-bottom: 3px
+      margin-bottom: -5px
     &_filter
       span
         display: inline-block !important
@@ -52,7 +54,7 @@
       padding-left: 50px
       padding-right: 50px
     +sm
-      padding-bottom: 42px
+      padding-bottom: 52px
       padding-right: 0
       padding-left: 0
       width: 100%
@@ -78,7 +80,7 @@
       padding-left: 50px
     +sm
       padding-left: 0
-      bottom: 0
+      bottom: 15px
     .btn-to-left &
       bottom: 108px
       +sm
@@ -88,18 +90,21 @@
 
 .work
   display: block
+  +hover
+    .work__image-wrap
+      transform: scale(0.97)
+    .work__image_scale
+      transform: scale(1.1)
   &__image-wrap
     margin-bottom: 30px
     overflow: hidden
     transition: transform $tr
     background-color: #ccc
     backface-visibility: hidden
+    +lg
+      margin-bottom: 33px 
     +sm
-      margin-bottom: 20px
-    +hover
-      transform: scale(0.97)
-      .work__image_scale
-        transform: scale(1.1)
+      margin-bottom: 15px
   &__image
     transition: transform $tr
     img
@@ -108,8 +113,10 @@
       display: block
   &__title
     margin-bottom: 8px
-    +sm
+    +lg
       margin-bottom: 5px
+    +sm
+      margin-bottom: -5px 
 
 .js-masonry-width
   width: 50%
@@ -123,7 +130,7 @@
   height: 210px
   width: 40%
   +lg
-    height: 165px
+    height: 178px
   +sm
     height: 0
 

@@ -48,7 +48,11 @@
 					
 					<li class="tabs__item menu-item" data-tabs-control="{{ item.id }}" data-anim="from-top" data-anim-group="3.5" data-group-inner="true" data-duration-anim=".8">
 						{{ item.text }}
-						<span class="menu-item__line" data-anim-inner="line-from-left"><span class="menu-item__line-inner"></span></span>
+						<span class="menu-item__line-wrap" data-anim-wrap="line-from-left">
+							<span class="menu-item__line" data-anim-inner="line-from-left">
+								<span class="menu-item__line-inner"></span>
+							</span>
+						</span>
 					</li>
 
 				{% endfor %}
@@ -60,7 +64,7 @@
 				<div class="tabs__mobile js-accordeon-head" data-anim-group="1.{{loop.index}}" data-duration-anim=".5">
 					<h4 class="tabs__container-head" data-anim="from-top" data-anim-group="2" data-group-inner="true">
 						{{ items.text }}
-						<span class="tabs__container-icon" data-anim-inner="line-from-left">{{ icon('chevron-right') }}</span>
+						<span class="tabs__container-icon" data-anim-inner="line-from-left">{{ icon('arrrow') }}</span>
 					</h4>
 				</div>
 				<ul class="tabs__sublist js-accordeon-body">

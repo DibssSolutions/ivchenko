@@ -30,7 +30,7 @@
     &__out
         width: 50%
         +lg
-            width: 47.77%
+            width: 55.4%
         +sm
             display: none
     &__wrapper
@@ -42,14 +42,15 @@
             width: 100%
     .tabs__container
         padding: 4px 0 0 140px
+        +lg
+            padding: 41px 0 0 149px
         +sm
             padding: 0
             opacity: 1
             visibility: visible
             position: relative
-            // display: flex
-            // flex-direction: column
-            // align-items: center
+        &:not(:first-child)
+            margin-top: 10px
     &__mobile
         width: 100%
     &__sublist
@@ -58,12 +59,13 @@
 
         +sm
             display: none
-            padding-left: 90px
+            padding-left: 59px
             margin: 15px 0
     &__subitem
         position: relative
         padding-left: 31px
         +sm
+            padding-left: 24px 
             opacity: 1
             transform: translateY(0)
         &:before
@@ -101,14 +103,6 @@
             top: 50%
             transform: translateY(-50%)
             font-size: 14px
-        // &:after
-        //     content: ">"
-        //     position: absolute
-        //     right: 0
-        //     top: 50%
-        //     transform: translateY(-50%)
-        //     font-size: 10px
-        //     line-height: 1
         &:not(:first-child)
             margin-top: 10px
         .is-active &
@@ -118,7 +112,7 @@
                 color: $red
     &__container-icon
         position: absolute
-        font-size: 10px
+        font-size: 15px
         right: 0
         top: 10px
         .icon

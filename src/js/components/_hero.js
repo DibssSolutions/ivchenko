@@ -1,36 +1,28 @@
-import { OPEN, BODY } from '../constants';
+import { OPEN, BODY, ANIMATE } from '../constants';
 import { TimelineMax } from 'gsap';
 
-// const header = $('.js-header');
-// const btn = $('.js-btn-menu');
-// const wrap = $('.js-header-menu');
-
-// const items = $('.js-hero [data-anim="from-top"]');
 const bg = $('.js-hero-bg [data-anim="from-left"]');
 const spheres = $('.js-hero-content [data-anim="sphere-from-left"]');
 const header = $('.js-header .inner-lg [data-anim]');
 const titles = $('.js-hero-title [data-anim="text-from-bottom"]');
 const splitter = $('.js-hero-splitter [data-anim="from-top"]');
-console.log(splitter);
 const text = $('.js-hero-text [data-anim="text-from-bottom"]');
 const footer = $('.js-hero-footer [data-anim]');
-// const topEllements = $('.js-header-top');
-// const textElements = $('.js-header [data-anim="text-from-bottom"]');
+const rows = $('.js-hero [data-rows]');
 
-// const tlWrap = new TimelineMax({ paused: true });
-$('.js-hero [data-rows]').addClass('is-animate');
 const tlItems = new TimelineMax({ paused: true });
 
+rows.addClass(ANIMATE);
+
 tlItems
-  .to(bg, 1.6, {
+  .to(bg, 1.8, {
     x: 0,
     opacity: 1,
     ease: Power2.easeOut
   })
-  .staggerTo(spheres, 2.5, {
+  .staggerTo(spheres, 2.8, {
     x: 0,
-    opacity: 1,
-    ease: Circ.easeOut
+    ease: Power4.easeOut
   }, 0, 1.3)
   .staggerTo(header, 1.1, {
     y: 0,
@@ -40,8 +32,8 @@ tlItems
   .staggerTo(titles, 1, {
     y: 0,
     opacity: 1,
-    ease: Power4.easeOut
-  }, 0.6, 3.4)
+    ease: Power2.easeInOut
+  }, 0.6, 3)
   .to(splitter, 1.5, {
     y: 0,
     opacity: 1,
@@ -58,24 +50,5 @@ tlItems
     ease: Circ.easeOut
   }, 0.00001, 6.3);
 
-// tlWrap
-//   .to(wrap, 0.4, {
-//     opacity: 1,
-//     visibility: 'visible',
-//     ease: Power4.easeInOut
-//   })
-//   .eventCallback('onComplete', () => tlItems.play(0) )
-//   .eventCallback('onReverseComplete', () => TweenMax.set( [items, topEllements, textElements], { clearProps: 'all' }) );
+setTimeout(() => tlItems.play(), 1000);
 
-// btn.on('click', () => {
-//   if (!btn.hasClass(OPEN)) {
-//     btn.addClass(OPEN);
-//     tlWrap.play();
-//   }
-//   else {
-//     btn.removeClass(OPEN);
-//     tlWrap.reverse();
-//     tlItems.pause();
-//   }
-// });
-tlItems.play(0);

@@ -3,8 +3,8 @@
     
 .menu-item
     position: relative
-    padding: 0 40px 0 60px
-    font-family: $sofia
+    padding: 0 40px 0 58px
+    font-family: $averta
     font-size: 28px
     color: $greyMid
     transition: color .3s
@@ -15,7 +15,10 @@
     +sm
         font-size: 18px
     &:not(:first-child)
-        margin-top: 10px
+        margin-top: 14px
+        .header &
+            +sm
+                margin-top: 30px
     &.is-active
         color: $red
         +hover
@@ -27,6 +30,8 @@
                 animation: lineAppearLeft .3s ease-out .1s forwards
     .header &
         transform: translateY(-20px)
+        +sm
+            padding-left: 0
     &:before
         counter-increment: number
         content: "0"counter(number)
@@ -35,13 +40,21 @@
         top: 50%
         transform: translateY(-50%)
         font-size: 14px
-    &__line
-        // content: ""
-        opacity: 0
-        // visibility: hidden
+        .header &
+            +sm
+                display: none
+    &__line-wrap
         position: absolute
-        // top: 50%
-        transform: translateX(-100%)
+        top: 50%
+        right: 0
+        width: 40px
+        height: 1px
+        .header &
+            +md
+                right: -30px
+    &__line
+        position: absolute
+        top: 50%
         right: 0
         width: 40px
         overflow: hidden

@@ -13,6 +13,7 @@ export const FIXED = 'is-fixed';
 export const widthMD = 1024;
 export const widthSM = 768;
 
+export const HTML = $('html');
 export const BODY = $('body');
 export const WIN = $(window);
 export const DOC = $(document);
