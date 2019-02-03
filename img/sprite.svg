@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-behance" viewBox="0 0 25 17">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arrrow" viewBox="0 0 9 15">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M.29 14.293L.999 15l6.364-6.364.707-.707L.998.859l-.707.706L6.655 7.93.291 14.293z"/>
+</symbol><symbol id="icon-behance" viewBox="0 0 25 17">
     <path d="M19.366 4.112c-5.887 0-5.895 6.172-5.895 6.204 0 0-.403 6.18 5.895 6.18 0 0 5.252.314 5.252-4.301h-2.697s.09 1.737-2.466 1.737c0 0-2.697.189-2.697-2.807h7.95s.874-7.013-5.342-7.013zm-2.638 4.85s.329-2.484 2.698-2.484c2.376 0 2.338 2.485 2.338 2.485h-5.036zM9.99 7.376s2.338-.18 2.338-3.074C12.328 1.415 10.416 0 7.988 0H0v16.157h7.987s4.879.158 4.879-4.772c0 0 .21-4.01-2.876-4.01zM3.52 2.87h4.467s1.083 0 1.083 1.682-.635 1.926-1.36 1.926H3.52V2.87zm4.243 10.418H3.52V8.963h4.468s1.622-.016 1.614 2.225c0 1.887-1.203 2.084-1.838 2.1zM16.063.95v1.99H22.4V.95h-6.336z" fill-opacity=".7"/>
 </symbol><symbol id="icon-chevron-right" viewBox="0 0 7.4 12">
     <path d="M0 10.6L4.6 6 0 1.4 1.4 0l6 6-6 6L0 10.6z"/>
