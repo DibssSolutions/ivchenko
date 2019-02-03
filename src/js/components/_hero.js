@@ -50,5 +50,5 @@ tlItems
     ease: Circ.easeOut
   }, 0.00001, 6.3);
 
-setTimeout(() => tlItems.play(), 1000);
+setTimeout(() => tlItems.play(), 4000);
 
