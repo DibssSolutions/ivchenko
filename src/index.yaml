@@ -2,6 +2,6 @@ ProjectTitle: template
 
 PageList:
 - file: page.html
-  ready: 50
+  ready: 100
 - file: ui.html
   ready: 50
