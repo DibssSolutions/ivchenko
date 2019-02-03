@@ -1,4 +1,4 @@
-import LazyLoad from 'vanilla-lazyload';
+import LazyLoad from '../lib/lazyload.amd.js';
 import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
 import { INIT, ACTIVE, ANIMATE } from '../constants';
@@ -7,7 +7,6 @@ var iso;
 
 var myLazyLoad = new LazyLoad({
   elements_selector: '[data-masonry-lazy]',
-  // treshold: 1000,
   callback_finish: () => iso.layout()
 });
 
@@ -18,7 +17,6 @@ const masonry = '.js-filter';
 iso = new Isotope(masonry, {
   itemSelector: '.js-masonry-item',
   stamp: '.js-masonry-stamp',
-  // stamp: '.stamp',
   masonry: {
     columnWidth: '.js-masonry-width'
   },
