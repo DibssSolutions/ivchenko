@@ -47,7 +47,8 @@
 				{% for item in props %}
 					
 					<li class="tabs__item menu-item" data-tabs-control="{{ item.id }}" data-anim="from-top" data-anim-group="3.5" data-group-inner="true" data-duration-anim=".8">
-						{{ item.text }}
+            <a href="#" class="menu-item__link">{{ item.text }}</a>
+						
 						<span class="menu-item__line-wrap" data-anim-wrap="line-from-left">
 							<span class="menu-item__line" data-anim-inner="line-from-left">
 								<span class="menu-item__line-inner"></span>
@@ -84,6 +85,6 @@
 
 {% macro sphere(size) %}
 	<div class="sphere sphere_{{ size }}">
-		<img src="{% if size == "lg" %}./img/circle-lg.png{% endif %}{% if size == "sm" %}./img/circle-sm.png{% endif %}{% if size == "md" %}./img/circle-md.png{% endif %}" alt="">
+		<img src="{% if size == 'lg' %}./img/circle-lg.png{% endif %}{% if size == 'sm' %}./img/circle-sm.png{% endif %}{% if size == 'md' %}./img/circle-md.png{% endif %}{% if size == 'xs' %}./img/circle-xs.png{% endif %}" alt="decorative sphere">
 	</div>
 {% endmacro %}

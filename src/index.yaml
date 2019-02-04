@@ -5,3 +5,13 @@ PageList:
   ready: 100
 - file: ui.html
   ready: 50
+- file: works.html
+  ready: 50
+- file: work-item.html
+  ready: 50
+- file: services.html
+  ready: 50
+- file: about.html
+  ready: 50
+- file: get-it-touch.html
+  ready: 50

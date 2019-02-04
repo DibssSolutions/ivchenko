@@ -4,32 +4,29 @@
   +lg
     padding: 113px 0 0
   +sm
-    padding: 78px 0 0 
+    padding: 78px 0 0
+  &_filter
+    padding: 275px 0 105px
+    +lg
+      padding: 166px 0 0
+    +sm
+      padding: 90px 0 0
   &__title-wrapper
     margin-bottom: 110px
     +sm
       margin-bottom: 23px
   &__title
     position: relative
-    margin-bottom: 9px
-    +lg
-      margin-bottom: 5px 
-    +sm
-      margin-bottom: -5px
+    // margin-bottom: 9px
+    // +lg
+    //   margin-bottom: 5px
+    // +sm
+    //   margin-bottom: -5px
     &_filter
       span
         display: inline-block !important
-      &:after
-        content: ''
-        display: inline-block
-        vertical-align: middle
-        +arr(10, 6, $red, t)
-        transition: opacity 0.8s 1s, transform 0.8s
-        opacity: 0
-        .is-animate &
-          opacity: 1
-        .is-open &
-          transform: rotate(-180deg)
+        +sm
+          display: block !important
   &__container
     position: relative
     opacity: 0
@@ -59,22 +56,51 @@
       padding-left: 0
       width: 100%
   &__filter-wrapper
-    margin-bottom: 82px
+    padding-bottom: 209px
+    +lg
+      padding-bottom: 110px
+    +sm
+      padding-bottom: 52px
   &__filter
     display: none
+    position: absolute
     margin-top: 87px
+    +lg
+      margin-top: 30px
+    +sm
+      position: static
   &__filter-btn
+    display: inline-block
     @extend .title
     background-color: transparent
+    text-align: left
+    +sm
+      position: relative
+      margin-top: 10px
+    &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      margin-left: 20px
+      +arr(10, 6, $red, t)
+      transition: opacity 0.8s 1s, transform 0.8s
+      opacity: 0
+      .is-animate &
+        opacity: 1
+      .is-open &
+        transform: rotate(-180deg)
+      +sm
+        margin-left: 10px
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: -20px
   &__btn
     position: absolute
     z-index: 5
     width: 100%
     left: 0
     bottom: 0
-    // height: 30px
-    // display: flex
-    // align-items: center
     padding-left: 60px
     +lg
       padding-left: 50px
@@ -93,16 +119,16 @@
   +hover
     .work__image-wrap
       transform: scale(0.97)
-    .work__image_scale
+    // .work__image_scale
+    .work__image
       transform: scale(1.1)
   &__image-wrap
     margin-bottom: 30px
     overflow: hidden
     transition: transform $tr
-    background-color: #ccc
     backface-visibility: hidden
     +lg
-      margin-bottom: 33px 
+      margin-bottom: 33px
     +sm
       margin-bottom: 15px
   &__image
@@ -111,12 +137,12 @@
       max-width: 100%
       // width: 100%
       display: block
-  &__title
-    margin-bottom: 8px
-    +lg
-      margin-bottom: 5px
-    +sm
-      margin-bottom: -5px 
+  // &__title
+  //   margin-bottom: 8px
+  //   +lg
+  //     margin-bottom: 5px
+  //   +sm
+  //     margin-bottom: -5px
 
 .js-masonry-width
   width: 50%
@@ -134,10 +160,15 @@
   +sm
     height: 0
 
-
 .filter-controls
   display: flex
   align-items: center
+  +sm
+    flex-direction: column
+    align-items: flex-start
   &__item
-    +flex-size(20%)
+    &:not(:last-child)
+      margin-right: 140px
+      +sm
+        margin-right: 0
 

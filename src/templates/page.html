@@ -7,7 +7,7 @@ title: Index page
 
 {% block content %}
   <div class="main-wrapper">
-    {% include "partials/_header.html" %}
+    {{ headerBuilder.header({ mainPage: true }) }}
     {% include "partials/_hero.html" %}
     {{ worksBuilder.works({ works: true }) }}
     {% include "partials/_services.html" %}

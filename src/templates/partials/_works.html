@@ -1,7 +1,106 @@
 {% import "partials/_mixins.html" as mixins %}
 
 {% macro works(props) %}
-  <div class="works works_recent">
+
+  {% if props.works %}
+    {% set works = [
+      {
+        image: "works_Straboo.jpg",
+        title: "Straboo",
+        descr: "Web App Design, Website Design"
+      },
+      {
+        image: "works_Target.jpg",
+        title: "Target",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Chesseberry.jpg",
+        title: "Chesseberry",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Crossfit.jpg",
+        title: "Crossfit",
+        descr: "Web App Design, Mobile App Design"
+      }
+    ] %}
+  {% endif %}
+
+  {% if props.filter %}
+    {% set works = [
+      {
+        image: "works_Straboo.jpg",
+        title: "Straboo",
+        descr: "Web App Design, Website Design"
+      },
+      {
+        image: "works_Target.jpg",
+        title: "Target",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Chesseberry.jpg",
+        title: "Chesseberry",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Crossfit.jpg",
+        title: "Crossfit",
+        descr: "Web App Design, Mobile App Design"
+      },
+      {
+        image: "3.jpeg",
+        title: "Straboo",
+        descr: "Web App Design, Website Design"
+      },
+      {
+        image: "works_Target.jpg",
+        title: "Target",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Chesseberry.jpg",
+        title: "Chesseberry",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Crossfit.jpg",
+        title: "Crossfit",
+        descr: "Web App Design, Mobile App Design"
+      },
+      {
+        image: "works_Crossfit.jpg",
+        title: "Crossfit",
+        descr: "Web App Design, Mobile App Design"
+      },
+      {
+        image: "3.jpeg",
+        title: "Straboo",
+        descr: "Web App Design, Website Design"
+      },
+      {
+        image: "works_Target.jpg",
+        title: "Target",
+        descr: "Mobile App Design",
+        imageScale: true
+      },
+      {
+        image: "works_Chesseberry.jpg",
+        title: "Chesseberry",
+        descr: "Mobile App Design",
+        imageScale: true
+      }
+    ] %}
+  {% endif %}
+
+  <div class="works{% if props.filter %} works_filter{% endif %}">
     <div class="works__inner inner">
       {% if props.works %}
       <div class="works__title-wrapper" data-scroll-trigger data-delay-anim='0.5' data-anim-group>
@@ -10,7 +109,7 @@
       </div>
       {% endif %}
       {% if props.filter %}
-      <div class="works__filter-wrapper js-drop-container" data-scroll-trigger data-anim-duration="1">
+      <div class="works__filter-wrapper js-drop-container" data-scroll-trigger>
         <h2 class="works__title works__title_filter title" data-anim-text-parent>
           <span data-anim="text-from-bottom">
             <span class="text-light">Show me </span>
@@ -62,30 +161,7 @@
             </a>
           </div>
         {% endif %}
-        {% for item in [
-          {
-            image: "works_Straboo.jpg",
-            title: "Straboo",
-            descr: "Web App Design, Website Design"
-          },
-          {
-            image: "works_Target.jpg",
-            title: "Target",
-            descr: "Mobile App Design",
-            imageScale: true
-          },
-          {
-            image: "works_Chesseberry.jpg",
-            title: "Chesseberry",
-            descr: "Mobile App Design",
-            imageScale: true
-          },
-          {
-            image: "works_Crossfit.jpg",
-            title: "Crossfit",
-            descr: "Web App Design, Mobile App Design"
-          }
-        ] %}
+        {% for item in works %}
           <div class="works__item js-masonry-item {{ ['mobile-app', 'web-app', 'website'] | random }}">
             {{ mixins.work(item) }}
           </div>
