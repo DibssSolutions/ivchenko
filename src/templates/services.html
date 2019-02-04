@@ -1,0 +1,46 @@
+---
+title: Services
+---
+{% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
+
+{% block content %}
+  <div class="main-wrapper">
+    {{ headerBuilder.header() }}
+    {% include "partials/_services.html" %}
+  </div>
+  {{ footerBuilder.hero_footer({
+    title: 'Services',
+    spheres: [
+      {
+        class: 'md-right-top',
+        size: 'md',
+        modifier: 'lg-hide'
+      },
+      {
+        class: 'tablet-lg-services',
+        size: 'lg',
+        modifier: 'lg-show'
+      },
+      {
+        class: 'tablet-md-services',
+        size: 'md',
+        modifier: 'lg-show'
+      },
+      {
+        class: 'sm-left-bottom',
+        size: 'sm',
+        modifier: 'lg-hide'
+      },
+      {
+        class: 'xs-left-top',
+        size: 'xs'
+      }
+    ]
+  }) }}
+
+  {# {% include "partials/_main-loader.html" %} #}
+
+
+{% endblock %}
