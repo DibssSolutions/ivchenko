@@ -17,8 +17,8 @@
   &__inner
     position: relative
     display: block
-    padding-top: 100px
-    padding-bottom: 100px
+    padding-top: 150px
+    padding-bottom: 150px
     +lg
       padding-top: 100px
       padding-bottom: 100px
@@ -63,21 +63,40 @@
     +sm
       display: none
     &_lg
-      top: 4px
+      top: 54px
       right: 148px
       +lg
         top: 19px
         right: 118px
+    &_tablet-lg-services
+      +lg
+        top: 19px
+        right: 129px
+    &_tablet-md-services
+      +lg
+        bottom: 12px
+        left: 337px
     &_sm-left-center
-      left: 100px
-      top: 50%
-      transform: translateY(-50%)
+      left: 95px
+      top: 330px
       +lg
         left: 85px
         top: 98px
         transform: none
-      +md 
+      +md
         left: 20px
+    &_md-right-top
+      top: 31px
+      right: 230px
+    &_sm-left-bottom
+      left: 333px
+      bottom: 33px
+    &_xs-left-top
+      left: 173px
+      top: 110px
+      +lg
+        left: 102px
+        top: 10px
 
 .footer-info
   padding: 45px 0 50px

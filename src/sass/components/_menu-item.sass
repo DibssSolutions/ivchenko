@@ -10,8 +10,6 @@
     transition: color .3s
     display: flex
     align-items: center
-    +hover
-        color: $greyHigh
     +sm
         font-size: 18px
     &:not(:first-child)
@@ -48,7 +46,7 @@
         top: 50%
         right: 0
         width: 40px
-        height: 1px
+        height: 2px
         .header &
             +md
                 right: -30px
@@ -66,7 +64,9 @@
             transform: translateX(-100%)
             animation: lineHideRight .3s cubic-bezier(.8,0,.2,1) forwards
     &__link
-        color: inherit 
+        color: inherit
+        +hover
+          color: $greyHigh
 
 
 @keyframes lineHideRight
