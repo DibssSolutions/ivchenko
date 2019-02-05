@@ -1,6 +1,6 @@
 .work-item-header
   &__inner
-    padding-top: 280px
+    @extend %firstSectionPadding
     padding-bottom: 204px
   &__text
     max-width: 510px
@@ -28,9 +28,10 @@
     +sm
       margin-bottom: 0
   &__col
-    max-width: 460px
     +sm
       margin-bottom: 50px
+    p
+      max-width: 450px
 
 .images-section
   background-color: $imagesSectionBg

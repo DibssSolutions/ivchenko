@@ -1,20 +1,32 @@
 {% import "partials/_mixins.html" as mixins %}
 
-<div class="services"  data-scroll-trigger>
+{% macro services(props) %}
+  <div class="services{% if props.servicesPage %} services_secondary{% endif %}"  data-scroll-trigger>
     <div class="services__inner inner-lg-pl">
         <div class="services__content">
             <div class="services__bg">
                 <div data-anim-group="1.6" data-duration-anim="1.1" data-ease-anim="Power2.easeOut">
                     <div class="section-bg" data-anim="from-left"></div>
                 </div>
-                <div data-anim-group="2.25" data-duration-anim=".7" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
+                {% if props.servicesPage %}
+                  <div data-anim-group="2.25" data-duration-anim=".7" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
+                    <div class="services__sphere services__sphere_xmd" data-anim="sphere-from-top">
+                        {{ mixins.sphere('xmd') }}
+                    </div>
+                    <div class="services__sphere services__sphere_sm-secondary" data-anim="sphere-from-top">
+                        {{ mixins.sphere('sm') }}
+                    </div>
+                  </div>
+                {% else %}
+                  <div data-anim-group="2.25" data-duration-anim=".7" data-delay-anim=".1" data-ease-anim="Power1.easeOut">
                     <div class="services__sphere services__sphere_lg" data-anim="sphere-from-top">
                         {{ mixins.sphere('lg') }}
                     </div>
                     <div class="services__sphere services__sphere_sm" data-anim="sphere-from-top">
                         {{ mixins.sphere('sm') }}
                     </div>
-                </div>
+                  </div>
+                {% endif %}
             </div>
             <div class="services__header" data-anim-group>
                 <h2 class="services__title title" data-rows="text-row-parent">
@@ -68,4 +80,5 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
+{% endmacro %}

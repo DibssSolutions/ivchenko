@@ -49,12 +49,17 @@
     font-size: 28px
     line-height: 1.428
     margin-bottom: 32px
+    +sm
+      font-size: 18px
+      line-height: 1.667
+      margin-bottom: 18px
   &__author
     display: flex
-    align-items: center
+    // align-items: center
   &__avatar
     +cover
     +circle(50)
+    +flex-size(50px)
     background-color: $green
     margin-right: 30px
   &__name

@@ -4,13 +4,14 @@ title: Index page
 {% extends "layouts/_layout.html" %}
 {% import "partials/_works.html" as worksBuilder %}
 {% import "partials/_hero-footer.html" as footerBuilder %}
+{% import "partials/_services.html" as servicesBuilder %}
 
 {% block content %}
   <div class="main-wrapper">
     {{ headerBuilder.header({ mainPage: true }) }}
     {% include "partials/_hero.html" %}
     {{ worksBuilder.works({ works: true }) }}
-    {% include "partials/_services.html" %}
+    {{ servicesBuilder.services() }}
     {% include "partials/_clients.html" %}
   </div>
   {{ footerBuilder.hero_footer({

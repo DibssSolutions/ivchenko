@@ -1,0 +1,112 @@
+---
+title: Get In Touch
+---
+{% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
+
+{% block content %}
+  <div class="main-wrapper">
+    {{ headerBuilder.header() }}
+    
+    <div class="touch">
+      <div class="touch__inner inner">
+        <div class="touch__header">
+          <div class="touch__row row">
+            <div class="col">
+              <h2 class="touch__title title">Get in touch</h2>
+              <p>
+                I am currently available for selective opportunities. If you want to discuss a project or want to find out more about me or my work, get in touch!
+              </p>
+            </div>
+          </div>
+          <div class="touch__sphere">
+            {{ mixins.sphere('lg') }}
+          </div>
+        </div>
+        <div class="touch__contacts">
+          <div class="touch__contacts-row row">
+            <div class="col">
+              <div class="contact">
+                <div class="contact__title">Email</div>
+                <div class="contact__info"><a href="mailto:ivchenko.design@gmail.com">ivchenko.design@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="contact">
+                <div class="contact__title">Skype</div>
+                <div class="contact__info">alex-ivchenko</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="contact">
+                <div class="contact__title">Telegram, Viber, WhatsUp</div>
+                <div class="contact__info">38 (093) 466-3748</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="contact">
+                <div class="contact__title">Follow</div>
+                <div class="contact__info">
+                  <ul class="social-links">
+                    {% for item in [ 'dribbble', 'behance', 'instagram', 'facebook', 'linkedIn' ]%}
+                      <li class="social-links__item">
+                        <a href="#" class="social-links__link">{{ mixins.icon(item) }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="touch__line" data-scroll-trigger="150">
+          <span class="vertical-line" data-anim="from-top"></span>
+        </div>
+        <div class="touch__form-row row">
+          <div class="touch__form-wrapper col">
+            <div class="touch__form-header">
+              <h2 class="touch__title title">Let’s talk business</h2>
+              <p>Please complete the form below, so I can provide you a quick and efficient feedback.</p>
+            </div>
+            <div class="touch__form">
+              <form action="/" class="form">
+                <div class="form-group js-floating-group">
+                  <input type="text" class="form-group__input js-floating-input" id="name" data-validation="required">
+                  <label for="name" class="form-group__label js-floating-label">Name</label>
+                </div>
+                <div class="form-group js-floating-group">
+                  <input type="text" class="form-group__input js-floating-input" id="email">
+                  <label for="email" class="form-group__label js-floating-label" data-validation="email">Email</label>
+                </div>
+                <div class="form-group js-floating-group">
+                  <textarea type="text" class="form-group__input js-floating-input" id="message" data-validation="required"></textarea>
+                  <label for="message" class="form-group__label js-floating-label">Message text</label>
+                </div>
+                <div class="form-submit">
+                  <button class='particles-button' type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ footerBuilder.hero_footer({
+    title: 'Contacts',
+    spheres: [
+      {
+        class: 'lg-contacts',
+        size: 'lg'
+      }
+    ]
+  }) }}
+
+  {# {% include "partials/_main-loader.html" %} #}
+
+
+{% endblock %}

@@ -33,6 +33,9 @@
             width: 55.4%
         +sm
             display: none
+        .services_secondary &
+            +lg
+                width: 70.5%
     &__wrapper
         width: 50%
         counter-reset: number1
@@ -40,10 +43,16 @@
             width: 52.23%
         +sm
             width: 100%
+        .services_secondary &
+          padding-top: 58px
+          +lg
+            padding-top: 0
     .tabs__container
         padding: 4px 0 0 140px
         +lg
             padding: 41px 0 0 149px
+            .services_secondary &
+              padding: 32px 0 0 103px
         +sm
             padding: 0
             opacity: 1

@@ -1,0 +1,59 @@
+---
+title: Anout Me
+---
+{% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
+
+{% block content %}
+  <div class="main-wrapper">
+    {{ headerBuilder.header() }}
+    <div class="about">
+      <div class="about__inner inner" data-scroll-trigger>
+        <div class="about__row row">
+          <div class="about__text-col col" data-anim-group>
+            <h2 class="about__title title" data-rows>About Me</h2>
+            <div class="about__descr" data-rows>
+              Creative professional from Ukraine, working as a freelance designer. I developing design for website, web and mobile apps. I have a passion for minimal, clean and pixel perfect. Every project for me is a new opportunity to broaden my skill set without losing sight of my core skills.
+            </div>
+            <div class="about__motto" data-rows>
+              Design make the product faster
+            </div>
+            <div class="about__btn">
+              <a href="#" class="anim-btn anim-btn_with-line" data-anim-group='2.1' data-delay-anim="0.6">
+                <span class="anim-btn__line-wrapper">
+                  <span class="anim-btn__line" data-anim="line-from-left"></span>
+                </span>
+                <span class="anim-btn__text-wrapper"  data-anim="btn-text-from-bottom">
+                    <span class="anim-btn__text">Drop me a line</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="about__photo-col col" data-anim-group='1.1' data-delay-anim="0.6" data-duration-anim="1">
+            <div class="about__photo-bg" data-anim="from-right"></div>
+            <div class="about__photo-wrapper">
+              <div class="about__photo" data-anim="photo-from-right">
+                <img src="./img/photo_about.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ footerBuilder.hero_footer({
+    title: 'Contacts',
+    spheres: [
+      {
+        class: 'lg-contacts',
+        size: 'lg'
+      }
+    ]
+  }) }}
+
+  {# {% include "partials/_main-loader.html" %} #}
+
+
+{% endblock %}
