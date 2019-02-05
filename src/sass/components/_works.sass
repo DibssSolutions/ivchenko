@@ -1,16 +1,18 @@
 .works
-  padding: 245px 0 105px
+  padding-top: 245px
+  padding-bottom: 105px
   overflow: hidden
   +lg
-    padding: 113px 0 0
+    padding-top: 113px
+    padding-bottom: 0
   +sm
-    padding: 78px 0 0
+    padding-top: 78px
   &_filter
-    padding: 275px 0 105px
+    @extend %firstSectionPadding
     +lg
-      padding: 166px 0 0
+      padding-top: 166px
     +sm
-      padding: 90px 0 0
+      padding-top: 90px
   &__title-wrapper
     margin-bottom: 110px
     +sm

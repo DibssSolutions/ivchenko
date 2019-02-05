@@ -1,0 +1,51 @@
+.about
+  overflow: hidden
+  @extend %firstSectionPadding
+  padding-bottom: 266px
+  +lg
+    padding-top: 165px
+  &__row
+    // align-items: center
+  &__photo-col
+    position: relative
+    text-align: right
+    font-size: 0
+  &__photo-wrapper
+    display: inline-block
+    margin-right: -60px
+    margin-top: -15px
+    padding-left: 114px
+    +lg
+      // margin-right: -50px
+      margin-right: 0
+    // overflow: hidden
+  &__photo
+    position: relative
+    // width: 406px
+    
+    &:after
+      content: ''
+      +coverdiv
+      background: rgba(0, 71, 255, 0.22)
+    img
+      max-width: 100%
+      display: block
+  &__photo-bg
+    position: absolute
+    left: calc(50% + 130px)
+    top: -113px
+    bottom: -100px
+    width: 1000px
+    background: rgba(152, 149, 162, 0.1)
+    z-index: -1
+  &__title
+    margin-left: 0
+  &__descr
+    margin-bottom: 54px
+    margin-right: -10px
+    +lg
+      margin-bottom: 27px
+  &__motto
+    margin-bottom: 130px
+    +lg
+      margin-bottom: 60px

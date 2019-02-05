@@ -37,3 +37,35 @@
 
 .text-extra-light
   color: rgba(129, 125, 142, 0.1) 
+
+.text-center
+  text-align: center
+
+.blockquote
+  color: $dark
+  p
+    font-family: $averta
+    font-weight: 300
+    font-size: 28px
+    line-height: 1.428
+    margin-bottom: 32px
+    +sm
+      font-size: 18px
+      line-height: 1.667
+      margin-bottom: 18px
+  &__author
+    display: flex
+    // align-items: center
+  &__avatar
+    +cover
+    +circle(50)
+    +flex-size(50px)
+    background-color: $green
+    margin-right: 30px
+  &__name
+    font-size: 18px
+    line-height: 1.5
+    font-weight: 700
+    color: $greyHigh
+  &__position
+    color: $greyMid

@@ -1,0 +1,27 @@
+---
+title: Services
+---
+{% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
+{% import "partials/_services.html" as servicesBuilder %}
+
+{% block content %}
+  <div class="main-wrapper">
+    {{ headerBuilder.header() }}
+    {{ servicesBuilder.services({ servicesPage: true }) }}
+  </div>
+  {{ footerBuilder.hero_footer({
+    title: 'About Me',
+    spheres: [
+      {
+        class: 'sm-right-bottom',
+        size: 'sm'
+      }
+    ]
+  }) }}
+
+  {# {% include "partials/_main-loader.html" %} #}
+
+
+{% endblock %}

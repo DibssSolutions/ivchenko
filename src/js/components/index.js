@@ -10,3 +10,6 @@ import './helpers/_stagerGroups';
 import './_accordeon';
 import './_menu';
 import './_hero';
+import './_floating-label';
+import './_validation';
+import './_particle-btn';

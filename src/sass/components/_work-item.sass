@@ -1,0 +1,67 @@
+.work-item-header
+  &__inner
+    @extend %firstSectionPadding
+    padding-bottom: 204px
+  &__text
+    max-width: 510px
+
+.work-item-hero
+  +cover
+  height: 71.11vw
+  // max-height: 100vh
+  color: $white
+  &__inner
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+  &__title
+    color: $white
+  &__text
+    max-width: 510px
+    padding-top: 100px
+    padding-bottom: 100px
+
+.work-item-descr
+  &__top
+    margin-bottom: 100px
+    +sm
+      margin-bottom: 0
+  &__col
+    +sm
+      margin-bottom: 50px
+    p
+      max-width: 450px
+
+.images-section
+  background-color: $imagesSectionBg
+  &__image
+    padding-top: 140px
+    +lg
+      padding-top: 120px
+    +sm
+      padding-top: 30px
+    &:last-child
+      padding-bottom: 140px
+      +lg
+        padding-bottom: 120px
+      +sm
+        padding-bottom: 30px
+    img
+      max-width: 100%
+      display: block
+
+.text-section
+  padding: 210px 0 100px
+  +lg
+    padding: 114px 0 44px
+
+.blockquote-section
+  padding: 212px 0
+  +lg
+    padding: 112px 0
+  &__inner
+    max-width: 920px
+    width: 100%
+    margin: 0 auto
+    padding: 0 30px

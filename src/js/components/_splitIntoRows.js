@@ -60,6 +60,7 @@ export default class SplitIntoRows {
 }
 
 const rows = document.querySelectorAll('[data-rows]');
+
 rows.forEach(el => {
   const container = $(el);
   const wrap = container.data('rows') || '';
@@ -70,3 +71,4 @@ rows.forEach(el => {
     .attr('data-anim', 'text-from-bottom')
     .wrap(`<span class='js-text-parent ${wrap}' data-anim-text-parent></span>`);
 });
+
