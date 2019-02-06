@@ -10,6 +10,8 @@
           padding: 275px 0 280px
           +lg
             padding: 165px 0 110px
+          +sm
+            padding: 95px 0 50px
     &__bg
         position: absolute
         top: 0
@@ -24,17 +26,21 @@
         +sm
             display: none
         .services_secondary &
-          top: 200px
+          top: 210px
           bottom: 170px
           +lg
             top: 132px
             bottom: 70px
             right: 0%
             width: 42.5%
-    // &__title
+    &__title
+        .services_secondary &
+            margin-bottom: 9px
+            +sm
+                margin-bottom: 4px
     //     margin-bottom: 35px
     //     +lg
-    //         margin-bottom: 4px 
+    //         margin-bottom: 4px
     //     +sm
     //         margin-bottom: 0
     &__header
@@ -42,11 +48,14 @@
     &__tabs
         margin-top: 110px
         +lg
-            margin-top: 69px 
+            margin-top: 69px
         +sm
             margin-top: 25px
         .services_secondary &
-            margin-top: 50px
+            +lg
+                margin-top: 49px
+            +sm
+                margin-top: 30px
     &__sphere
         position: absolute
         &_lg
@@ -71,5 +80,5 @@
           top: 230px
           right: 100px
           +lg
-            top: 172px
-            right: 70px
+            top: 179px
+            right: 64px

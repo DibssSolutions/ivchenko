@@ -7,6 +7,6 @@ $('.js-floating-group').each((index, el) => {
 
   input.on('focus', () => group.addClass(ACTIVE));
   input.on('blur', () => {
-    input.val() ? false : group.removeClass(ACTIVE);
+    if (!input.val()) group.removeClass(ACTIVE);
   });
 });

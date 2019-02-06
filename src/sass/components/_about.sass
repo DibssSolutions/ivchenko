@@ -3,26 +3,36 @@
   @extend %firstSectionPadding
   padding-bottom: 266px
   +lg
-    padding-top: 165px
+    // padding-top: 168px
+    padding-bottom: 110px
+  +sm
+    // padding-top: 94px
+    padding-bottom: 52px
   &__row
     // align-items: center
   &__photo-col
     position: relative
     text-align: right
     font-size: 0
+    +sm
+      display: none
   &__photo-wrapper
     display: inline-block
     margin-right: -60px
-    margin-top: -15px
+    margin-top: -17px
     padding-left: 114px
+    position: relative
     +lg
-      // margin-right: -50px
       margin-right: 0
+      margin-top: 28px
+    +r(1100)
+      padding-left: 50px
+    +md
+      padding-left: 0
     // overflow: hidden
   &__photo
     position: relative
     // width: 406px
-    
     &:after
       content: ''
       +coverdiv
@@ -32,20 +42,34 @@
       display: block
   &__photo-bg
     position: absolute
-    left: calc(50% + 130px)
-    top: -113px
+    left: calc(50% + 100px)
+    // top: -113px
+    top: -95px
     bottom: -100px
     width: 1000px
     background: rgba(152, 149, 162, 0.1)
     z-index: -1
+    +lg
+      // top: -32px
+      top: -60px
+      bottom: -60px
+      left: calc(50% + 60px)
   &__title
     margin-left: 0
+    margin-bottom: 5px
+    +sm
+      margin-bottom: 8px
   &__descr
-    margin-bottom: 54px
+    margin-bottom: 52px
     margin-right: -10px
     +lg
       margin-bottom: 27px
+    +sm
+      margin-right: 0
+      margin-bottom: 23px
   &__motto
     margin-bottom: 130px
     +lg
       margin-bottom: 60px
+    +sm
+      margin-bottom: 42px

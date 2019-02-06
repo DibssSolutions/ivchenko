@@ -1,46 +1,107 @@
 .touch
   @extend %firstSectionPadding
+  padding-bottom: 210px
+  +lg
+    // padding-top: 168px
+    padding-bottom: 60px
+  +sm
+    // padding-top: 94px
   &__header
     position: relative
-    margin-bottom: 106px
+    margin-bottom: 102px
+    +lg
+      margin-bottom: 46px
+    +sm
+      margin-bottom: 22px
   &__sphere
     position: absolute
-    top: 0
-    right: 0
-  &__contacts-row
-    margin-bottom: 232px
+    top: -16px
+    right: 50px
+    +sm
+      display: none
+  &__contacts
+    margin-bottom: 236px
+    +lg
+      margin-bottom: 84px
+    +sm
+      margin-bottom: 60px
     .col
-      margin-bottom: 58px
+      margin-bottom: 48px
+      +lg
+        margin-bottom: 38px
+      +sm
+        margin-bottom: 28px
+  &__email
+    +sm
+      order: 1
+  &__skype
+    +sm
+      order: 3
+  &__viber
+    +sm
+      order: 2
+  &__social
+    +sm
+      order: 4
   &__line
-    margin-bottom: 213px
+    margin-bottom: 194px
+    +lg
+      margin-bottom: 60px
+    +sm
+      display: none
   &__title
-    margin-bottom: 25px
+    margin-bottom: 7px
+  &__form-header
+    margin-bottom: 44px
+    +lg
+      margin-bottom: 4px
+    +sm
+      margin-bottom: 0
+    .touch__title
+      +lg
+        margin-right: -100px
+      +sm
+        margin-right: 0
 
 .contact
   &__title
     color: $dark
     margin-bottom: 12px
+    +sm
+      margin-bottom: 0
   &__info
     color: $greyHigh
+    &_social
+      margin-top: 18px
+    a
+      color: inherit
 
 .form-group
   position: relative
-  padding-top: 33px
+  padding-top: 47px
+  textarea
+    border: none
+    border-bottom: 1px solid $greyLow
+    height: 52px
+    resize: none
+    box-sizing: border-box
+    display: block
+    overflow: hidden
   &__input
     width: 100%
     padding-top: 10px
-    padding-bottom: 20px
+    padding-bottom: 11px
     border-bottom: 1px solid $greyLow
     font-family: $proxima
     font-weight: 400
     font-size: 18px
     line-height: 1.667
-    coloe: $dark
+    color: $dark
     &.error
       border-color: $red !important
   &__label
     position: absolute
-    bottom: 20px
+    bottom: 17px
     left: 0
     color: $greyMid
     font-family: $proxima
@@ -49,18 +110,23 @@
     line-height: 1.428
     .is-active &
       bottom: auto
-      top: 20px
-  textarea
-    border: none
-    height: 80px
-    resize: auto
-    box-sizing: border-box
-    display: block
+      top: 32px
+
+.form__submit
+  margin-top: 80px
+  +lg
+    margin-top: 60px
+  +sm
+    text-align: center
+  +xs
+    .btn
+      width: 100%
+
 
 .form-error
   position: absolute
   right: 0
-  bottom: 20px
+  bottom: 17px
   color: $red
   font-family: $proxima
   font-weight: 600
