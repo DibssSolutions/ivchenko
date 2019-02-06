@@ -7,7 +7,7 @@ var iso;
 
 var myLazyLoad = new LazyLoad({
   elements_selector: '[data-masonry-lazy]',
-  callback_finish: () => iso.layout()
+  callback_finish: () => {iso.layout(); $(masonry).addClass(INIT);}
 });
 
 myLazyLoad.loadAll();
