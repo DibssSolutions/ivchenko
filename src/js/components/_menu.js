@@ -47,6 +47,7 @@ tlWrap
   })
   .eventCallback('onComplete', () => { 
     tlItems.play(0); 
+    // setTimeout(handler: any, timeout?: long, arguments...: any)
     HTML.addClass(OVERFLOW_HIDDEN); 
   } )
   .eventCallback('onReverseComplete', () => {

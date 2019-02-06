@@ -14,4 +14,5 @@ import './_contacts-sphere-animation';
 import './_floating-label';
 import './_resizeTextarea';
 import './_validation';
+import './_pageTransitions';
 // import './_particle-btn';
