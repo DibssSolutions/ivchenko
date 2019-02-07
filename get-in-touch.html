@@ -117,11 +117,11 @@
         <!-- end header -->
         <div class="touch">
           <div class="touch__inner inner">
-            <div class="touch__header">
+            <div class="touch__header" data-scroll-trigger>
               <div class="touch__row row">
                 <div class="col">
-                  <h2 class="touch__title title">Get in touch</h2>
-                  <p> I am currently available for selective opportunities. If you want to discuss a project or want to find out more about me or my work, get in touch! </p>
+                  <h2 class="touch__title title" data-rows>Get in touch</h2>
+                  <p data-rows> I am currently available for selective opportunities. If you want to discuss a project or want to find out more about me or my work, get in touch! </p>
                 </div>
               </div>
               <div class="touch__sphere js-contacts-sphere">
@@ -130,63 +130,65 @@
                 </div>
               </div>
             </div>
-            <div class="touch__contacts">
+            <div class="touch__contacts" data-scroll-trigger>
               <div class="touch__contacts-row row">
                 <div class="col touch__email">
-                  <div class="contact">
-                    <div class="contact__title">Email</div>
-                    <div class="contact__info">
-                      <a href="mailto:ivchenko.design@gmail.com">ivchenko.design@gmail.com</a>
+                  <div class="contact" data-anim-group='0.7'>
+                    <div class="contact__title" data-anim-text-parent>
+                      <span data-anim='text-from-bottom'>Email</span>
+                    </div>
+                    <div class="contact__info" data-anim-text-parent>
+                      <a href="mailto:ivchenko.design@gmail.com" data-anim='text-from-bottom'>ivchenko.design@gmail.com</a>
                     </div>
                   </div>
                 </div>
                 <div class="col touch__skype">
-                  <div class="contact">
-                    <div class="contact__title">Skype</div>
-                    <div class="contact__info">alex-ivchenko</div>
+                  <div class="contact" data-anim-group='0.7'>
+                    <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Skype</span></div>
+                    <div class="contact__info" data-anim-text-parent><span data-anim='text-from-bottom'>alex-ivchenko</span></div>
                   </div>
                 </div>
                 <div class="col touch__viber">
-                  <div class="contact">
-                    <div class="contact__title">Telegram, Viber, WhatsUp</div>
-                    <div class="contact__info">38 (093) 466-3748</div>
+                  <div class="contact" data-anim-group='0.7'>
+                    <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Telegram, Viber, WhatsUp</span></div>
+                    <div class="contact__info" data-anim-text-parent><span data-anim='text-from-bottom'>38 (093) 466-3748</span></div>
                   </div>
                 </div>
                 <div class="col touch__social">
-                  <div class="contact">
-                    <div class="contact__title">Follow</div>
+                  <div class="contact" data-anim-group='0.7'>
+                    <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Follow</span></div>
                     <div class="contact__info contact__info_social">
                       <ul class="social-links">
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link">
+                          <a href="#" class="social-links__link" data-anim="social-anim">
                             <svg class="icon icon-dribbble">
                               <use xlink:href="img/sprite.svg#icon-dribbble"></use>
                             </svg>
                           </a>
                         </li>
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link">
+                          <a href="#" class="social-links__link" data-anim="social-anim">
                             <svg class="icon icon-behance">
                               <use xlink:href="img/sprite.svg#icon-behance"></use>
                             </svg>
                           </a>
                         </li>
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link">
+                          <a href="#" class="social-links__link" data-anim="social-anim">
                             <svg class="icon icon-instagram">
                               <use xlink:href="img/sprite.svg#icon-instagram"></use>
                             </svg>
                           </a>
                         </li>
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link">
+                          <a href="#" class="social-links__link" data-anim="social-anim">
                             <svg class="icon icon-facebook">
                               <use xlink:href="img/sprite.svg#icon-facebook"></use>
                             </svg>
                           </a>
                         </li>
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link">
+                          <a href="#" class="social-links__link" data-anim="social-anim">
                             <svg class="icon icon-linkedIn">
                               <use xlink:href="img/sprite.svg#icon-linkedIn"></use>
                             </svg>
@@ -208,21 +210,26 @@
                   <p> Please complete the form below, so I can provide you a quick and efficient feedback. </p>
                 </div>
                 <div class="touch__form">
-                  <form action="/" class="form">
-                    <div class="form-group js-floating-group">
+                  <form action="/" class="form js-form">
+                    <div class="form__group form-group js-floating-group">
                       <input type="text" class="form-group__input js-floating-input" id="name" data-validation="required" data-validation-error-msg="This field is required" />
                       <label for="name" class="form-group__label js-floating-label">Name</label>
                     </div>
-                    <div class="form-group js-floating-group">
+                    <div class="form__group form-group js-floating-group">
                       <input type="text" class="form-group__input js-floating-input" id="email" data-validation="email" data-validation-error-msg="Please fill in right email address" />
                       <label for="email" class="form-group__label js-floating-label">Email</label>
                     </div>
-                    <div class="form-group js-floating-group">
+                    <div class="form__group form-group js-floating-group">
                       <textarea type="text" class="form-group__input js-floating-input js-textarea" id="message" data-validation="required" data-validation-error-msg="This field is required"></textarea>
                       <label for="message" class="form-group__label js-floating-label">Message text</label>
                     </div>
+                    <div class="form__success-message js-form-success">
+                      <h3 class="title-sm">Thank you!</h3>
+                      <h3 class="title-sm text-light">Your message has been sent.</h3>
+                      <p>I really appreciate your interest and I will try to respond to your message as soon as possible.</p>
+                    </div>
                     <div class="form__submit">
-                      <button class="btn btn_border-red" type="button"> Send Message </button>
+                      <button class="btn btn_border-red" type="submit"> Send Message </button>
                     </div>
                   </form>
                 </div>
@@ -258,7 +265,7 @@
           </div>
         </div>
       </footer>
-      <div class="loader js-loader"></div>
+      <div class="loader js-loader is-active"></div>
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
