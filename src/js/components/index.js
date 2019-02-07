@@ -15,4 +15,6 @@ import './_floating-label';
 import './_resizeTextarea';
 import './_validation';
 import './_pageTransitions';
+import './_formSuccess';
+import './_loader';
 // import './_particle-btn';

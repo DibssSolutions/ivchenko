@@ -17,6 +17,8 @@
     position: absolute
     top: -16px
     right: 50px
+    animation: touch-sphere 1s 1.4s forwards
+    opacity: 0
     +sm
       display: none
   &__contacts
@@ -63,18 +65,51 @@
       +sm
         margin-right: 0
 
+@keyframes touch-sphere
+  to
+    opacity: 1
+  // from
+  //   transform: translateX(-300px)
+  //   transform: translateX(0)
+
+
 .contact
   &__title
     color: $dark
     margin-bottom: 12px
+    display: block !important
     +sm
       margin-bottom: 0
   &__info
     color: $greyHigh
+    display: block !important
     &_social
       margin-top: 18px
     a
       color: inherit
+
+.form
+  position: relative
+  &__submit
+    margin-top: 80px
+    +lg
+      margin-top: 60px
+    +sm
+      text-align: center
+    +xs
+      .btn
+        width: 100%
+  &__success-message
+    +coverdiv
+    padding-top: 71px
+    background-color: $white
+    z-index: 5
+    +fadeout(0.8s)
+    &.is-active
+      +fadein
+    p
+      margin-top: 30px
+      max-width: 400px
 
 .form-group
   position: relative
@@ -97,6 +132,7 @@
     font-size: 18px
     line-height: 1.667
     color: $dark
+    background-color: transparent !important
     &.error
       border-color: $red !important
   &__label
@@ -112,17 +148,6 @@
       bottom: auto
       top: 32px
 
-.form__submit
-  margin-top: 80px
-  +lg
-    margin-top: 60px
-  +sm
-    text-align: center
-  +xs
-    .btn
-      width: 100%
-
-
 .form-error
   position: absolute
   right: 0
@@ -133,3 +158,10 @@
   font-size: 14px
   line-height: 1.428
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  transition: background-color 5000s ease-in-out 0s
+  -webkit-text-fill-color: $dark !important
+  -webkit-box-shadow: 0 0 0 50px white inset

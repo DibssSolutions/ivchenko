@@ -17,7 +17,7 @@
     <!-- BEGIN content -->
     <div class="out">
       {% block content %}{% endblock %}
-      <div class="loader js-loader"></div>
+      <div class="loader js-loader{% if not main %} is-active{% endif %}"></div>
     </div>
     <!-- END content -->
 
