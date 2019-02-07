@@ -62,25 +62,21 @@ export const staggerAnimation = item => {
     }
   });
 };
-
-// window.scrollTo(window.scrollX, window.scrollY + 1); // triggered scroll after load page
-setTimeout(() => {
-  new SCROLLTRIGGER({
-    onStart: item => {
-      const group = item.find('[data-anim-group]');
-      if (!group.length) {
-        staggerAnimation(item);
-      } else {
-        // init animation groups stagger
-        STAGGERGROUPS({
-          callback: container => {
-            staggerAnimation(container);
-          },
-          parent: item
-        });
-      }
+// triggered scroll after load page
+window.scrollTo(window.scrollX, window.scrollY + 1);
+new SCROLLTRIGGER({
+  onStart: item => {
+    const group = item.find('[data-anim-group]');
+    if (!group.length) {
+      staggerAnimation(item);
+    } else {
+      // init animation groups stagger
+      STAGGERGROUPS({
+        callback: container => {
+          staggerAnimation(container);
+        },
+        parent: item
+      });
     }
-  });
-}, 300);
-
-
+  }
+});
