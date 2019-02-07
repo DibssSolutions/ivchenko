@@ -45,9 +45,15 @@
               </div>
               <nav class="header__nav nav">
                 <ul class="menu-list">
-                  {% for value in ['Home', 'Works', 'Services', 'About Me', 'Contacts'] %}
+                  {% for value in [
+                    { text: 'Home', link: 'page' },
+                    { text: 'Works', link: 'works' },
+                    { text: 'Services', link: 'services' },
+                    { text: 'About Me', link: 'about' },
+                    { text: 'Contacts', link: 'get-in-touch' }
+                  ] %}
                   <li class="menu-item{% if loop.first %} is-active{% endif %}" data-anim="from-top">
-                    <a href="{% if loop.first %}home{% elif loop.index === 4 %}about{% else %}{{ value }}{% endif %}.html" class="menu-item__link js-page-link">{{ value }}</a>
+                    <a href="{{ value.link }}.html" class="menu-item__link js-page-link">{{ value.text }}</a>
                     <span class="menu-item__line-wrap" data-anim-wrap="line-from-left">
                       <span class="menu-item__line" data-anim-inner="line-from-left">
                         <span class="menu-item__line-inner"></span>
