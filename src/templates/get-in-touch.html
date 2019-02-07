@@ -9,136 +9,131 @@ block content %}
   {{ headerBuilder.header() }}
   <div class="touch">
     <div class="touch__inner inner">
-      <div class="touch__header" data-scroll-trigger>
-        <div class="touch__row row">
-          <div class="col">
-            <h2 class="touch__title title" data-rows>Get in touch</h2>
-            <p data-rows>
-              I am currently available for selective opportunities. If you want
-              to discuss a project or want to find out more about me or my work,
-              get in touch!
-            </p>
-          </div>
+      <div class="touch__anim-group" data-scroll-trigger>
+        <div class="touch__header" data-anim-group>
+            <div class="touch__row row">
+              <div class="col">
+                <h2 class="touch__title title" data-rows>Get in touch</h2>
+                <p data-rows>
+                  I am currently available for selective opportunities. If you want
+                  to discuss a project or want to find out more about me or my work,
+                  get in touch!
+                </p>
+              </div>
+            </div>
+            <div class="touch__sphere js-contacts-sphere">
+              {{ mixins.sphere("lg") }}
+            </div>
         </div>
-        <div class="touch__sphere js-contacts-sphere">
-          {{ mixins.sphere("lg") }}
-        </div>
-      </div>
-      <div class="touch__contacts" data-scroll-trigger>
-        <div class="touch__contacts-row row">
-          <div class="col touch__email">
-            <div class="contact" data-anim-group='0.7'>
-              <div class="contact__title" data-anim-text-parent>
-               <span data-anim='text-from-bottom'>Email</span>
+        <div class="touch__contacts" data-anim-group='1.4' data-duration-anim="0.6" data-delay-anim="0.1">
+              <div class="touch__contacts-row row">
+                <div class="col" data-anim='contacts-from-bottom'>
+                  <div class="contact">
+                    <div class="contact__title">
+                     <span>Email</span>
+                    </div>
+                    <div class="contact__info">
+                      <a class="contact__link" href="mailto:ivchenko.design@gmail.com">ivchenko.design@gmail.com</a>
+                    </div>
+                  </div>
+                  <div class="contact">
+                    <div class="contact__title">Telegram, Viber, WhatsUp</div>
+                    <a class="contact__link" href="tel:+380934663748">38 (093) 466-3748</a>
+                  </div>
+                </div>
+                <div class="col" data-anim='contacts-from-bottom'>
+                  <div class="contact">
+                    <div class="contact__title">Skype</div>
+                    <a class="contact__link" href="skype:alex-ivchenko">alex-ivchenko</a>
+                  </div>
+                  <div class="contact">
+                    <div class="contact__title">Follow</div>
+                    <div class="contact__info contact__info_social">
+                      <ul class="social-links">
+                        {% for item in [ 'dribbble', 'behance', 'instagram',
+                        'facebook', 'linkedIn' ]%}
+                        <li class="social-links__item">
+                          <a href="#" class="social-links__link" data-anim="social-anim">{{
+                            mixins.icon(item)
+                          }}</a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="contact__info" data-anim-text-parent>
-                <a href="mailto:ivchenko.design@gmail.com" data-anim='text-from-bottom'
-                  >ivchenko.design@gmail.com</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col touch__skype">
-            <div class="contact" data-anim-group='0.7'>
-              <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Skype</span></div>
-              <div class="contact__info" data-anim-text-parent><span data-anim='text-from-bottom'>alex-ivchenko</span></div>
-            </div>
-          </div>
-          <div class="col touch__viber">
-            <div class="contact" data-anim-group='0.7'>
-              <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Telegram, Viber, WhatsUp</span></div>
-              <div class="contact__info" data-anim-text-parent><span data-anim='text-from-bottom'>38 (093) 466-3748</span></div>
-            </div>
-          </div>
-          <div class="col touch__social">
-            <div class="contact" data-anim-group='0.7'>
-              <div class="contact__title" data-anim-text-parent><span data-anim='text-from-bottom'>Follow</span></div>
-              <div class="contact__info contact__info_social">
-                <ul class="social-links">
-                  {% for item in [ 'dribbble', 'behance', 'instagram',
-                  'facebook', 'linkedIn' ]%}
-                  <li class="social-links__item">
-                    <a href="#" class="social-links__link" data-anim="social-anim">{{
-                      mixins.icon(item)
-                    }}</a>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-      <div class="touch__line" data-scroll-trigger="150">
-        <span
-          class="vertical-line vertical-line_short"
-          data-anim="from-top"
-        ></span>
-      </div>
-      <div class="touch__form-row row" data-contacts-sphere-trigger>
-        <div class="touch__form-wrapper col">
-          <div class="touch__form-header">
-            <h2 class="touch__title title js-contacts-sphere-bottom-position">
-              Let’s talk business
-            </h2>
-            <p>
-              Please complete the form below, so I can provide you a quick and
-              efficient feedback.
-            </p>
-          </div>
-          <div class="touch__form">
-            <form action="/" class="form js-form">
-              <div class="form__group form-group js-floating-group">
-                <input
-                  type="text"
-                  class="form-group__input js-floating-input"
-                  id="name"
-                  data-validation="required"
-                  data-validation-error-msg="This field is required"
-                />
-                <label for="name" class="form-group__label js-floating-label"
-                  >Name</label
-                >
-              </div>
-              <div class="form__group form-group js-floating-group">
-                <input
-                  type="text"
-                  class="form-group__input js-floating-input"
-                  id="email"
-                  data-validation="email"
-                  data-validation-error-msg="Please fill in right email address"
-                />
-                <label for="email" class="form-group__label js-floating-label"
-                  >Email</label
-                >
-              </div>
-              <div class="form__group form-group js-floating-group">
-                <textarea
-                  type="text"
-                  class="form-group__input js-floating-input js-textarea"
-                  id="message"
-                  data-validation="required"
-                  data-validation-error-msg="This field is required"
-                ></textarea>
-                <label for="message" class="form-group__label js-floating-label"
-                  >Message text</label
-                >
-              </div>
-              <div class="form__success-message js-form-success">
-                <h3 class="title-sm">Thank you!</h3>
-                <h3 class="title-sm text-light">Your message has been sent.</h3>
-                <p>I really appreciate your interest and I will try to respond to your message as soon as possible.</p>
-              </div>
-              <div class="form__submit">
-                <button
-                  class="btn btn_border-red"
-                  type="submit"
-                >
-                  Send Message
-                </button>
-              </div>
-              
-            </form>
+      <div class="touch__anim-group">
+        <div class="touch__line" data-scroll-trigger>
+          <span class="vertical-line vertical-line_short" data-anim="from-top"></span>
+        </div>
+        <div class="touch__form-row row" data-contacts-sphere-trigger>
+          <div class="touch__form-wrapper col">
+            <div class="touch__form-header" data-anim-group data-scroll-trigger>
+              <h2 class="touch__title title js-contacts-sphere-bottom-position" data-rows>
+                Let’s talk business
+              </h2>
+              <p data-rows>
+                Please complete the form below, so I can provide you a quick and
+                efficient feedback.
+              </p>
+            </div>
+            <div class="touch__form" data-scroll-trigger >
+              <form class="form js-form" data-anim-group>
+                <div class="form__group form-group js-floating-group" data-anim="from-bottom">
+                  <input
+                    type="text"
+                    class="form-group__input js-floating-input"
+                    id="name"
+                    data-validation="required"
+                    data-validation-error-msg="This field is required"
+                  />
+                  <label for="name" class="form-group__label js-floating-label"
+                    >Name</label
+                  >
+                </div>
+                <div class="form__group form-group js-floating-group" data-anim="from-bottom">
+                  <input
+                    type="text"
+                    class="form-group__input js-floating-input"
+                    id="email"
+                    data-validation="email"
+                    data-validation-error-msg="Please fill in right email address"
+                  />
+                  <label for="email" class="form-group__label js-floating-label"
+                    >Email</label
+                  >
+                </div>
+                <div class="form__group form-group js-floating-group" data-anim="from-bottom">
+                  <textarea
+                    type="text"
+                    class="form-group__input js-floating-input js-textarea"
+                    id="message"
+                    data-validation="required"
+                    data-validation-error-msg="This field is required"
+                  ></textarea>
+                  <label for="message" class="form-group__label js-floating-label"
+                    >Message text</label
+                  >
+                </div>
+                <div class="form__success-message js-form-success">
+                  <h3 class="title-sm">Thank you!</h3>
+                  <h3 class="title-sm text-light">Your message has been sent.</h3>
+                  <p>I really appreciate your interest and I will try to respond to your message as soon as possible.</p>
+                </div>
+                <div class="form__submit" data-anim="from-bottom">
+                  <button
+                    class="btn btn_border-red"
+                    type="submit"
+                  >
+                    Send Message
+                  </button>
+                </div>
+                
+              </form>
+            </div>
           </div>
         </div>
       </div>

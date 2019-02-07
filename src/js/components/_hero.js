@@ -88,4 +88,4 @@ tlItems
     6.3
   );
 
-OBSERVER.SUB(EVENT.MAIN_LOADER_COMPLETE, tlItems.play());
+OBSERVER.SUB(EVENT.MAIN_LOADER_COMPLETE, () => tlItems.play());

@@ -4,6 +4,9 @@ import { IS_FUNC } from '../utils';
 import { STAGGER } from './helpers/_stagger';
 import { STAGGERGROUPS } from './helpers/_stagerGroups';
 
+import OBSERVER from '../communication/_observer';
+import EVENT from '../communication/_events';
+
 export default class SCROLLTRIGGER {
   constructor(prop) {
     this._container = prop.container || $('[data-scroll-trigger]');
@@ -63,20 +66,31 @@ export const staggerAnimation = item => {
   });
 };
 // triggered scroll after load page
-window.scrollTo(window.scrollX, window.scrollY + 1);
-new SCROLLTRIGGER({
-  onStart: item => {
-    const group = item.find('[data-anim-group]');
-    if (!group.length) {
-      staggerAnimation(item);
-    } else {
-      // init animation groups stagger
-      STAGGERGROUPS({
-        callback: container => {
-          staggerAnimation(container);
-        },
-        parent: item
-      });
+
+function initScrollAnimations() {
+  new SCROLLTRIGGER({
+    onStart: item => {
+      const group = item.find('[data-anim-group]');
+      if (!group.length) {
+        staggerAnimation(item);
+      } else {
+        // init animation groups stagger
+        STAGGERGROUPS({
+          callback: container => {
+            staggerAnimation(container);
+          },
+          parent: item
+        });
+      }
     }
-  }
+  });
+}
+
+OBSERVER.SUB(EVENT.LOAD_COMPLETE, () => {
+  // window.scrollTo(window.scrollX, window.scrollY + 1);
+  initScrollAnimations();
+});
+
+OBSERVER.SUB(EVENT.MAIN_LOADER_COMPLETE, () => {
+  initScrollAnimations();
 });
