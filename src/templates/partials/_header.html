@@ -1,7 +1,7 @@
 {% macro header(props) %}
   <!-- begin header -->
-  <header class="header js-header"{% if not props.mainPage %} data-scroll-trigger{% endif %}>
-    <div class="header__inner inner-lg">
+  <header class="header js-header">
+    <div class="header__inner inner-lg" {% if not props.mainPage %} data-scroll-trigger data-anim-group data-delay-anim="0.0001"{% endif %}>
       <div class="header__left">
         <!-- begin logo -->
         <a href="#" class="logo" data-anim="from-top">

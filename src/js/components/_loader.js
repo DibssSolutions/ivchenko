@@ -1,6 +1,9 @@
 import mainLoader from './_mainLoader';
 import secondaryLoader from './_pageTransitions';
-import { DOC, HTML } from '../constants';
+import { DOC, HTML, OVERFLOW_HIDDEN } from '../constants';
+import OBSERVER from '../communication/_observer';
+import EVENT from '../communication/_events';
+
 
 
 DOC.ready(() => {
@@ -8,7 +11,9 @@ DOC.ready(() => {
   if (mainPage) {
     mainLoader();
   } else {
-    console.log('load');
-    secondaryLoader();
+    HTML.addClass(OVERFLOW_HIDDEN);
+    setTimeout(() => {
+      HTML.removeClass(OVERFLOW_HIDDEN);
+    }, 2000);
   }
 });

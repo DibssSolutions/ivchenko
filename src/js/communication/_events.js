@@ -1,0 +1,4 @@
+export default {
+  // LOADERS
+  MAIN_LOADER_COMPLETE: 'MAIN_LOADER_COMPLETE'
+};
