@@ -5,6 +5,6 @@ $('.js-page-link').each((index, el) => {
   link.on('click', e => {
     e.preventDefault();
     $('.js-loader').addClass(ACTIVE);
-    setTimeout(() => (window.location = link[0].href), 700);
+    setTimeout(() => (window.location = link[0].href), 500);
   });
 });

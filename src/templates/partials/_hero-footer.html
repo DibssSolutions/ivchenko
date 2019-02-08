@@ -3,7 +3,7 @@
 {% macro hero_footer(props) %}
   <footer class="footer js-footer">
     <div class="footer__mask js-footer-mask"></div>
-    <a href="#footer-link-1" class="footer__link"></a>
+    <a href="{{ props.link }}.html" class="footer__link"></a>
     <div class="footer__inner inner-lg">
       <div class="footer__wrapper footer__wrapper_left">
         Next Section
@@ -11,7 +11,7 @@
       <div class="footer__title title-lg">{{ props.title }}</div>
       <div class="footer__wrapper footer__wrapper_right">
         <div class="footer__btn-wrapper">
-          <a href="#footer-link-2" class="anim-btn anim-btn_with-line anim-btn_no-scroll-anim">
+          <a href="{{ props.link }}.html" class="anim-btn anim-btn_with-line anim-btn_no-scroll-anim">
             <span class="anim-btn__line-wrapper">
               <span class="anim-btn__line"></span>
             </span>

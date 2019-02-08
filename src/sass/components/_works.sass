@@ -19,6 +19,7 @@
       margin-bottom: 23px
   &__title
     position: relative
+    margin-left: 0
     // margin-bottom: 9px
     // +lg
     //   margin-bottom: 5px
@@ -33,7 +34,7 @@
     position: relative
     opacity: 0
     visibility: hidden
-    transition: opacity $tr, visibility $tr
+    transition: opacity $tr, visibility $tr, transform ease-out 0.25s
     margin: 0 -60px
     +lg
       margin: 0 -50px
@@ -61,7 +62,8 @@
       padding-left: 0
       width: 100%
   &__filter-wrapper
-    padding-bottom: 209px
+    padding-bottom: 206px
+    position: relative
     +lg
       padding-bottom: 110px
     +sm
@@ -69,7 +71,8 @@
   &__filter
     display: none
     position: absolute
-    margin-top: 87px
+    margin-top: 30px
+    top: 117px
     +lg
       margin-top: 30px
     +sm
@@ -86,8 +89,8 @@
       content: ''
       display: inline-block
       vertical-align: middle
-      margin-left: 20px
-      +arr(10, 6, $red, t)
+      margin-left: 16px
+      +arr(10, 6, $red, b)
       transition: opacity 0.8s 1s, transform 0.8s
       opacity: 0
       .is-animate &
