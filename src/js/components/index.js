@@ -1,3 +1,4 @@
+import 'nodelist-foreach-polyfill';
 import './_scrollTrigger';
 import './_splitIntoRows';
 import './_mainLoader';

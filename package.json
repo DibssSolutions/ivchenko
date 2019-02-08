@@ -70,6 +70,7 @@
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "jquery-bridget": "^2.0.1",
+    "nodelist-foreach-polyfill": "^1.2.0",
     "vanilla-lazyload": "^8.17.0"
   }
 }

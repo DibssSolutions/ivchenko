@@ -1,5 +1,6 @@
 import { TweenLite } from 'gsap';
 import SCROLLTRIGGER from './_scrollTrigger';
+import { mediaWidth } from '../utils';
 
 if ($('.js-contacts-sphere')[0]) {
   const sphere = $('.js-contacts-sphere');
@@ -16,6 +17,12 @@ if ($('.js-contacts-sphere')[0]) {
 
   new SCROLLTRIGGER({
     container: $('[data-contacts-sphere-trigger]'),
-    onStart: () => sphereAnim.play()
+    onStart: () => {
+      if (mediaWidth(900)) {
+        setTimeout(() => sphereAnim.play(), 1500);
+      } else {
+        sphereAnim.play();
+      }
+    }
   });
 }

@@ -51,36 +51,40 @@ title: Work Item
     <div class="images-section">
       <div class="images-section__inner inner">
         {% for item in ['straboo img2.jpg', 'straboo img3.jpg', 'straboo img4.jpg'] %}
-          <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
+          <div class="images-section__image">
             <img data-src="img/{{ item }}" alt="work-item-image" data-lazy>
           </div>
         {% endfor %}
       </div>
     </div>
-    <div class="text-section" data-scroll-trigger='100'>
-      <div class="inner">
-        <h4 class="text-section__title title-sm" data-rows>Dark version</h4>
-        <p data-rows>Straboo is a digital platform for fitness trainers.</p>
+    <div class="text-section">
+      <div class="inner" data-scroll-trigger data-anim-group data-duration-anim='0.7'>
+        <div class="text-section__anim-group" data-anim="text-block-from-bottom">
+          <h4 class="text-section__title title-sm">Dark version</h4>
+          <p>Straboo is a digital platform for fitness trainers.</p>
+        </div>
       </div>
     </div>
     <div class="images-section">
       <div class="images-section__inner inner">
         {% for item in ['straboo img5.jpg', 'straboo img6.jpg'] %}
-          <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
+          <div class="images-section__image">
             <img data-src="img/{{ item }}" alt="work-item-image" data-lazy>
           </div>
         {% endfor %}
       </div>
     </div>
-    <div class="text-section text-center" data-scroll-trigger='100'>
-      <div class="inner">
-        <h4 class="text-section__title title-sm" data-rows>Landing page for Straboo</h4>
-        <p data-rows>Straboo is a digital platform for fitness trainers.</p>
+    <div class="text-section text-center">
+      <div class="inner" data-scroll-trigger data-anim-group data-duration-anim='0.7'>
+        <div class="text-section__anim-group" data-anim="text-block-from-bottom">
+          <h4 class="text-section__title title-sm">Landing page for Straboo</h4>
+          <p>Straboo is a digital platform for fitness trainers.</p>
+        </div>
       </div>
     </div>
     <div class="images-section">
       <div class="images-section__inner inner">
-        <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
+        <div class="images-section__image">
           <img data-src="img/straboo img7.jpg" alt="work-item-image" data-lazy>
         </div>
       </div>
