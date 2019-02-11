@@ -79,30 +79,30 @@
       position: static
   &__filter-btn
     display: inline-block
+    position: relative
+    padding-right: 26px
     @extend .title
     background-color: transparent
     text-align: left
     +sm
-      position: relative
       margin-top: 10px
+      padding-right: 20px
     &:after
       content: ''
       display: inline-block
       vertical-align: middle
-      margin-left: 16px
+      position: absolute
+      top: 60%
+      transform: translateY(-50%)
+      right: 0
       +arr(10, 6, $red, b)
+      transform-origin: center
       transition: opacity 0.8s 1s, transform 0.8s
       opacity: 0
       .is-animate &
         opacity: 1
       .is-open &
-        transform: rotate(-180deg)
-      +sm
-        margin-left: 10px
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        right: -20px
+        transform: translateY(-50%) rotate(-180deg)
   &__btn
     position: absolute
     z-index: 5

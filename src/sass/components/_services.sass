@@ -1,4 +1,7 @@
 .services
+    &_secondary
+      min-height: 100vh
+      background-color: $white
     &__content
         position: relative
         padding: 265px 0 320px
@@ -7,7 +10,7 @@
         +sm
             padding: 65px 0 44px
         .services_secondary &
-          padding: 275px 0 280px
+          padding: 275px 0 220px
           +lg
             padding: 165px 0 110px
           +sm
@@ -26,18 +29,18 @@
         +sm
             display: none
         .services_secondary &
-          top: 210px
-          bottom: 170px
+          top: 180px
+          bottom: 70px
           +lg
-            top: 132px
+            top: 112px
             bottom: 70px
             right: 0%
             width: 42.5%
-    &__title
-        .services_secondary &
-            margin-bottom: 9px
-            +sm
-                margin-bottom: 4px
+    // &__title
+        // .services_secondary &
+        //     margin-bottom: 9px
+        //     +sm
+        //         margin-bottom: 4px
     //     margin-bottom: 35px
     //     +lg
     //         margin-bottom: 4px
