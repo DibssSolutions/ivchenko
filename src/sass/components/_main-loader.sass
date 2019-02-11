@@ -45,7 +45,7 @@
   background-position: 0 0
   background-size: 100% 300px
   background-repeat: no-repeat
-  animation: loaderIn 0.3s forwards ease-in
+  animation: loaderIn 0.9s forwards ease-in-out
   will-change: transform
   &.is-active
     animation: loaderOut 0.5s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955)
@@ -53,10 +53,15 @@
 @keyframes loaderIn
   0%
     transform: translateY(0)
+    opacity: 1
+    box-shadow: 0 200px 100px -10px rgba(0,0,0,.01)
+    // opacity: 0
     // box-shadow: 0 60px 100px -10px rgba(0,0,0,.1)
     // box-shadow: 0 60px 200px -10px rgba(0,0,0,.2)
   98%
     transform: translateY(-100%)
+    opacity: 0.6
+    box-shadow: 0 200px 100px -10px rgba(0,0,0,.01)
   99%
     transform: translateY(-100%)
   100%
@@ -65,8 +70,8 @@
 @keyframes loaderOut
   0%
     transform: translateY(calc(100% + 320px))
-    // box-shadow: 0 -60px 100px -10px rgba(0,0,0,.1)
-    box-shadow: 0 0 400px 50px $dark
+    box-shadow: 0 -200px 100px -10px rgba(0,0,0,.1)
+    // box-shadow: 0 0 400px 50px $dark
   100%
     transform: translateY(-300px)
 
