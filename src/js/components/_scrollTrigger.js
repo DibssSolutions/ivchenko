@@ -65,9 +65,8 @@ export const staggerAnimation = item => {
     }
   });
 };
-// triggered scroll after load page
 
-function initScrollAnimations() {
+setTimeout(() => {
   new SCROLLTRIGGER({
     onStart: item => {
       const group = item.find('[data-anim-group]');
@@ -84,13 +83,4 @@ function initScrollAnimations() {
       }
     }
   });
-}
-
-OBSERVER.SUB(EVENT.LOAD_COMPLETE, () => {
-  // window.scrollTo(window.scrollX, window.scrollY + 1);
-  initScrollAnimations();
-});
-
-OBSERVER.SUB(EVENT.MAIN_LOADER_COMPLETE, () => {
-  initScrollAnimations();
-});
+}, 500);

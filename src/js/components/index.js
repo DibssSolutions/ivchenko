@@ -1,4 +1,7 @@
+
 import 'nodelist-foreach-polyfill';
+
+import './_loader';
 import './_scrollTrigger';
 import './_splitIntoRows';
 import './_mainLoader';
@@ -17,5 +20,4 @@ import './_resizeTextarea';
 import './_validation';
 import './_pageTransitions';
 import './_formSuccess';
-import './_loader';
 // import './_particle-btn';

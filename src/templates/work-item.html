@@ -51,7 +51,7 @@ title: Work Item
     <div class="images-section">
       <div class="images-section__inner inner">
         {% for item in ['straboo img2.jpg', 'straboo img3.jpg', 'straboo img4.jpg'] %}
-          <div class="images-section__image">
+          <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
             <img data-src="img/{{ item }}" alt="work-item-image" data-lazy>
           </div>
         {% endfor %}
@@ -65,10 +65,10 @@ title: Work Item
         </div>
       </div>
     </div>
-    <div class="images-section">
+    <div class="images-section images-section_light">
       <div class="images-section__inner inner">
         {% for item in ['straboo img5.jpg', 'straboo img6.jpg'] %}
-          <div class="images-section__image">
+          <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
             <img data-src="img/{{ item }}" alt="work-item-image" data-lazy>
           </div>
         {% endfor %}
@@ -84,7 +84,7 @@ title: Work Item
     </div>
     <div class="images-section">
       <div class="images-section__inner inner">
-        <div class="images-section__image">
+        <div class="images-section__image" data-scroll-trigger data-anim='from-bottom'>
           <img data-src="img/landing_full.jpg" alt="work-item-image" data-lazy>
         </div>
       </div>

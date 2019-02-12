@@ -110,12 +110,14 @@
       {% endif %}
       {% if props.filter %}
       <div class="works__filter-wrapper js-drop-container" data-scroll-trigger>
-        <h2 class="works__title works__title_filter title" data-anim-text-parent>
-          <span data-anim="text-from-bottom">
-            <span class="text-light">Show me </span>
-            <button class="works__filter-btn js-filter-category-text js-drop-toggler">Everything</button>
-          </span>
-        </h2>
+        <div class="works__title-wrapper_filter">
+          <h2 class="works__title works__title_filter title" data-anim-text-parent>
+            <span data-anim="text-from-bottom">
+              <span class="text-light">Show me </span>
+              <button class="works__filter-btn js-filter-category-text js-drop-toggler">Everything</button>
+            </span>
+          </h2>
+        </div>
          <div class="works__filter js-drop-hidden">
           <ul class="filter-controls">
             {% for item in [

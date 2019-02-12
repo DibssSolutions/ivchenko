@@ -8,13 +8,25 @@ DOC.ready(() => {
   const hero = document.querySelector('.js-hero');
   const mainLoaderEl = document.querySelector('.js-main-loader');
   const secondaryLoaderEl = document.querySelector('.js-loader');
+  const myStorage = window.sessionStorage;
+  const visit = myStorage.getItem('siteVisites');
 
   if (hero) {
-    if (mainLoaderEl) {
-      mainLoader();
-      setTimeout(() => OBSERVER.ON_FIRE(EVENT.MAIN_LOADER_COMPLETE), 4000);
+    if (visit) {
+      $('.js-main-loader').remove();
+      OBSERVER.ON_FIRE(EVENT.MAIN_PAGE_REVISITED);
+      console.log('Revisit');
     } else {
-      OBSERVER.ON_FIRE(EVENT.MAIN_LOADER_COMPLETE);
+      if (mainLoaderEl) {
+        mainLoader();
+        myStorage.setItem('siteVisites', 'visited');
+        setTimeout(() => OBSERVER.ON_FIRE(EVENT.MAIN_LOADER_COMPLETE), 4000);
+        console.log('MAIN_LOADER');
+      } else {
+        OBSERVER.ON_FIRE(EVENT.MAIN_LOADER_COMPLETE);
+        myStorage.setItem('siteVisites', 'visited');
+        console.log('NO_LOADER');
+      }
     }
   }
 
@@ -23,7 +35,7 @@ DOC.ready(() => {
     setTimeout(() => {
       HTML.removeClass(OVERFLOW_HIDDEN);
     }, 2000);
-    setTimeout(() => OBSERVER.ON_FIRE(EVENT.LOAD_COMPLETE), 0);
+    setTimeout(() => OBSERVER.ON_FIRE(EVENT.LOAD_COMPLETE), 500);
   } else {
     OBSERVER.ON_FIRE(EVENT.LOAD_COMPLETE);
   }

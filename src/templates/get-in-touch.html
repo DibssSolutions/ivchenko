@@ -50,11 +50,31 @@ block content %}
                     <div class="contact__title">Follow</div>
                     <div class="contact__info contact__info_social">
                       <ul class="social-links">
-                        {% for item in [ 'dribbble', 'behance', 'instagram',
-                        'facebook', 'linkedIn' ]%}
+                        {% for item in [
+                          {
+                            icon: 'dribbble',
+                            link: 'https://dribbble.com/Ivchenko'
+                          },
+                          {
+                            icon: 'behance',
+                            link: 'https://www.behance.net/AlexandrIvchenko'
+                          },
+                          {
+                            icon: 'instagram',
+                            link: 'https://www.instagram.com/alex.ivchenko'
+                          },
+                          {
+                            icon: 'facebook',
+                            link: 'https://www.facebook.com/profile.php?id=100001766925839'
+                          },
+                          {
+                            icon: 'linkedIn',
+                            link: 'https://www.linkedin.com/in/ivchenko/'
+                          }
+                        ]%}
                         <li class="social-links__item">
-                          <a href="#" class="social-links__link" data-anim="social-anim">{{
-                            mixins.icon(item)
+                          <a href="{{ item.link }}" target="_blank" class="social-links__link" data-anim="social-anim">{{
+                            mixins.icon(item.icon)
                           }}</a>
                         </li>
                         {% endfor %}

@@ -20,12 +20,9 @@
   //         $transition-delay: $transition-delay + .25s
 
 [data-anim="text-from-bottom"]
-  display: inline-block
+  display: block
   position: relative
   transform: translateY(102%)
-  // transition: transform 10s
-  [data-rows] &
-    transition: inherit
 
 [data-anim-inner="line-from-left"]
   position: relative
@@ -43,16 +40,12 @@
   transform: translateX(100%)
 
 [data-anim="photo-from-right"]
-  // transform: translateX(150px)
-  // opacity: 0
   transform: translateX(220%)
 
 [data-anim="from-bottom"]
   transition: opacity 1s, visibility 1s, transform 1s
   transform: translateY(100px)
   opacity: 0
-
-// [data-anim="works-item-text-from-bottom"]
 
 [data-anim="blockquote-from-bottom"],
 [data-anim="social-anim"],
