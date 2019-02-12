@@ -34,7 +34,7 @@ DOC.ready(() => {
     HTML.addClass(OVERFLOW_HIDDEN);
     setTimeout(() => {
       HTML.removeClass(OVERFLOW_HIDDEN);
-    }, 2000);
+    }, 700);
     setTimeout(() => OBSERVER.ON_FIRE(EVENT.LOAD_COMPLETE), 500);
   } else {
     OBSERVER.ON_FIRE(EVENT.LOAD_COMPLETE);

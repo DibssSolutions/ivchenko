@@ -97,7 +97,7 @@ function heroAnimation(_delay) {
   return tlItems;
 }
 
-OBSERVER.SUB(EVENT.MAIN_PAGE_REVISITED, () => heroAnimation(0).play());
+OBSERVER.SUB(EVENT.MAIN_PAGE_REVISITED, () => heroAnimation(0.5).play());
 OBSERVER.SUB(EVENT.MAIN_LOADER_COMPLETE, () => heroAnimation(2.8).play());
 
 
