@@ -153,22 +153,51 @@
 //   100%
 //     transform: translateY(-300px)
     
-// body
-//   background: #FFF
-//   line-height: 1.4
-//   font-family: 'ProximaNova', Helvetica, sans-serif
-//   font-weight: 400
-//   font-size: 18px
-//   line-height: 1.667
-//   color: #817D8E
-//   padding-bottom: 100vh
-//   min-width: 320px
-//   -webkit-font-smoothing: antialiased
-//   -moz-osx-font-smoothing: grayscale
-//   @media only screen and (max-width: 767px)
-//     font-size: 14px
-//     line-height: 1.5
-// html
+body
+  background: #FFF
+  line-height: 1.4
+  font-family: 'ProximaNova', Helvetica, sans-serif
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.667
+  color: #817D8E
+  min-width: 320px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  margin: 0
+  padding: 0 0 100vh 0
+  border: 0
+  vertical-align: baseline
+  @media only screen and (max-width: 767px)
+    font-size: 14px
+    line-height: 1.5
+  html
+    &.is-overflow-hidden
+      overflow-x: hidden
+      overflow-y: scroll
+      body
+        overflow: hidden
+        height: 100vh
+
+body
+  background: $white
+  line-height: 1.4
+  font-family: $proxima
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.667
+  color: $greyHigh
+  // padding-bottom: 100vh
+  min-width: 320px
+  margin: 0
+  padding: 0 0 100vh 0
+  border: 0
+  vertical-align: baseline
+  +smooth-font
+  +sm
+    font-size: 14px
+    line-height: 1.5
+html
   &.is-overflow-hidden
     overflow-x: hidden
     overflow-y: scroll

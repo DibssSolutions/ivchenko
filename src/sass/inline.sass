@@ -1,0 +1,105 @@
+.main-loader
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 10
+  background-color: #FFF
+  transition: opacity 1s, visibility 1s
+  text-align: center
+  font-size: 0
+  &:before
+    content: ""
+    display: inline-block
+    vertical-align: middle
+    width: 0
+    height: 100%
+  &.is-hidden
+    opacity: 0
+    visibility: hidden
+  &__text
+    position: relative
+    line-height: 1
+    font-size: 200px
+    color: #FFF
+    font-family: 'Averta', Helvetica Neue, Helvetica, Arial, sans-serif
+    vertical-align: middle
+    font-weight: 900
+    text-shadow: 0px 20px 69px rgba(78, 73, 122, 0.11)
+    opacity: 0
+    visibility: hidden
+    transition: opacity 1s, visibility 1s
+    display: inline-block
+    @media only screen and (max-width: 1366px)
+      font-size: 140px
+    @media only screen and (max-width: 767px)
+      font-size: 60px
+      text-shadow: 0px 12px 45px rgba(78, 73, 122, 0.15)
+    body.is-loaded &
+      opacity: 1
+      visibility: visible
+      transition-delay: 1s
+
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: calc(100% + 300px)
+  z-index: 100
+  background-color: #FFF
+  background-position: 0 0
+  background-size: 100% 300px
+  background-repeat: no-repeat
+  animation: loaderIn 0.9s forwards ease-in-out
+  will-change: transform
+  &.is-active
+    animation: loaderOut 0.5s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955)
+
+@keyframes loaderIn
+  0%
+    transform: translateY(0)
+    opacity: 1
+    box-shadow: 0 200px 100px -10px rgba(0,0,0,.01)
+  98%
+    transform: translateY(-100%)
+    opacity: 0.6
+    box-shadow: 0 200px 100px -10px rgba(0,0,0,.01)
+  99%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(calc(100% + 320px))
+
+@keyframes loaderOut
+  0%
+    transform: translateY(calc(100% + 320px))
+    box-shadow: 0 -200px 100px -10px rgba(0,0,0,.1)
+  100%
+    transform: translateY(-300px)
+
+body
+  background: #FFF
+  line-height: 1.4
+  font-family: 'ProximaNova', Helvetica, sans-serif
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.667
+  color: #817D8E
+  min-width: 320px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  margin: 0
+  padding: 0 0 100vh 0
+  border: 0
+  vertical-align: baseline
+  @media only screen and (max-width: 767px)
+    font-size: 14px
+    line-height: 1.5
+  html
+    &.is-overflow-hidden
+      overflow-x: hidden
+      overflow-y: scroll
+      body
+        overflow: hidden
+        height: 100vh
