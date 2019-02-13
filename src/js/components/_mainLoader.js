@@ -10,5 +10,5 @@ export default function mainLoader() {
   setTimeout(() => {
     container.remove();
     HTML.removeClass(OVERFLOW_HIDDEN);
-  }, 5000);
+  }, 3500);
 }
