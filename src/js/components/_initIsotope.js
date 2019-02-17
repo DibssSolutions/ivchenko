@@ -3,22 +3,21 @@ import Isotope from 'isotope-layout';
 import imagesLoaded from 'imagesloaded';
 import { INIT, ACTIVE, ANIMATE } from '../constants';
 
-var iso;
-
-var myLazyLoad = new LazyLoad({
-  elements_selector: '[data-masonry-lazy]',
-  callback_finish: () => {
-    iso.layout();
-    $(masonry).addClass(INIT);
-  }
-});
-
-myLazyLoad.loadAll();
 
 const masonry = '.js-filter';
-/* eslint-disable */
 if (document.querySelector(masonry)) {
-  /* eslint-enable */
+  var iso;
+
+  var myLazyLoad = new LazyLoad({
+    elements_selector: '[data-masonry-lazy]',
+    callback_load: () => {
+      iso.layout();
+      $(masonry).addClass(INIT);
+    }
+  });
+
+  myLazyLoad.loadAll();
+  
   iso = new Isotope(masonry, {
     itemSelector: '.js-masonry-item',
     stamp: '.js-masonry-stamp',
