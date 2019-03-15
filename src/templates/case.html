@@ -1,0 +1,208 @@
+--- title: Work Item ---
+
+{% extends "layouts/_layout.html" %}
+{% import "partials/_works.html" as
+worksBuilder %}
+{% import "partials/_hero-footer.html" as footerBuilder %}
+{% block content %}
+  <div class="main-wrapper">
+    {{ headerBuilder.header() }}
+    <div class="work-item-header" data-scroll-trigger>
+      <div class="work-item-header__inner inner">
+        <h2 class="work-item-header__title title" data-anim="works-item-text-from-bottom">
+          Straboo
+        </h2>
+        <div class="work-item-header__text" data-anim="works-item-text-from-bottom">
+          Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results.
+        </div>
+      </div>
+    </div>
+    <div class="work-item-hero" data-scroll-trigger data-anim="from-bottom">
+      <div class="work-item-hero__bg">
+        <img src="./img/straboo-img1.jpg" alt="straboo-img1"/>
+      </div>
+      <div class="work-item-hero__inner inner">
+        <div class="work-item-hero__text">
+          <h2 class="work-item-hero__title title" data-anim="works-item-text-from-bottom">
+            Straboo
+          </h2>
+          <p data-anim="works-item-text-from-bottom">
+            Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="text-section work-item-descr">
+      <div class="work-item-descr__inner inner">
+        <div class="work-item-descr__top row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
+          <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
+            <h4 class="title-sm work-item-descr__title">Goal</h4>
+            <p>
+              Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results.
+            </p>
+          </div>
+          <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
+            <h4 class="work-item-descr__title title-sm">What I did</h4>
+            <p>Web App Design, Website Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% macro singleImageItem(props) %}
+      <div class="work-item">
+        <div class="work-item__text-wrapper inner">
+          <div class="work-item__text" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
+            <div class="work-item__text-anim-group" data-anim="text-block-from-bottom">
+              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
+              <p>{{ props.text }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-item__image-wrapper inner-works">
+          <div 
+            class="work-item__image{% if props.imageModifier %} {{ props.imageModifier }}{% endif %}" 
+            data-scroll-trigger='50' 
+            data-anim="from-bottom"
+          >
+            <img {% if props.image === "landing_full.jpg" %} data-src="img/{{ props.image }}" {% else %}data-src="img/case/{{ props.image }}"{% endif %} alt="work-item-image" data-lazy="data-lazy"/>
+          </div>
+        </div>
+      </div>
+    {% endmacro %}
+
+    {% macro galleryItem(props) %}
+      <div class="work-item">
+        <div class="work-item__text-wrapper inner">
+          <div class="work-item__text" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
+            <div class="work-item__text-anim-group" data-anim="text-block-from-bottom">
+              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
+              <p>{{ props.text }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-item__gallery-wrapper inner-works">
+          <div class="gallery" data-scroll-trigger data-anim="from-bottom">
+            {% if props.fullWidth %}
+              <div class="gallery__full-width">
+                <div class="gallery__image" data-bg="url(./img/case/{{ props.fullWidth.src }})"></div>
+              </div>
+            {% endif %}
+            <div class="gallery__left">
+              {% for img in props.leftImages %}
+                <div class="gallery__image gallery__image_{{ img.size }}" data-bg="url(./img/case/{{ img.src }})" data-lazy></div>
+              {% endfor %}
+            </div>
+            <div class="gallery__right">
+              {% for img in props.rightImages %}
+                <div class="gallery__image gallery__image_{{ img.size }}" data-bg="url(./img/case/{{ img.src }})" data-lazy></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endmacro %}
+
+    {% for item in[
+      {
+        title: 'Dashboard',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'straboo_full_img1.png '
+      }, 
+      {
+        title: 'Members',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'straboo_full_img3.png'
+      }, 
+      {
+        title: 'Groups',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'straboo_full_img1.png'
+      }, 
+      {
+        title: 'Dark version',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'straboo_dashboard_members_dark.png'
+      },
+      {
+        title: 'Landing Page for Straboo',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'landing_full.jpg',
+        imageModifier: 'work-item__image_border work-item__image_light work-item__image_shadow'
+      },
+      {
+        title: 'Dark version',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        image: 'case_0_1.png'
+      }
+    ] %}
+      {{ singleImageItem(item) }}
+    {% endfor %}
+
+    {% for item in [
+      {
+        title: 'Dark version',
+        text: 'Straboo is a digital platform for fitness trainers.',
+        leftImages: [
+          {
+            src: 'case_1_1.png',
+            size: 'lg'
+          }
+        ],
+        rightImages: [
+          {
+            src: 'case_1_2.png',
+            size: 'sm'
+          },
+          {
+            src: 'case_1_3.png',
+            size: 'sm'
+          }
+        ]
+      }
+    ] %}
+      {{ galleryItem(item) }}
+    {% endfor %}
+
+
+    <div class="blockquote-section">
+      <div class="blockquote-section__inner">
+        <blockquote class="blockquote" data-scroll-trigger="data-scroll-trigger" data-anim-group="0.2" data-delay-anim="0.2" data-duration-anim="1">
+          <p data-anim="text-block-from-bottom">
+            "It’s beed a great pleasure to work with Alexandr side-by-side developing a UI design that was successfully turned into highly valued production grade product. I so much enjoyed the passion and strengths that Alex has. The work atmosphere that we both were in was as synergetic as you can imagine."
+          </p>
+          <footer class="blockquote__author">
+            <div class="blockquote__avatar" style="background-image: url('img/avatar-icon-png-1.png');" data-anim="avatar-anim"></div>
+            <div class="blockquote__info" data-anim="blockquote-from-bottom">
+              <div class="blockquote__name">
+                Name Surname
+              </div>
+              <div class="blockquote__position">
+                Software Architect & Information Security Professional
+              </div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  {{ footerBuilder.hero_footer(
+    {
+      title: "Works",
+      link: "works",
+      spheres: [
+        {
+          class: "lg",
+          size: "lg"
+        },
+        {
+          class: "sm-left-center",
+          size: "sm"
+        }
+      ]
+    })
+  }}
+
+  {# {% include "partials/_main-loader.html" %} #}
+{% endblock %}
