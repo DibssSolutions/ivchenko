@@ -103,7 +103,7 @@ worksBuilder %}
       </div>
     {% endmacro %}
 
-    {% for item in[
+    {# {% for item in[
       {
         title: 'Dashboard',
         text: 'Straboo is a digital platform for fitness trainers.',
@@ -137,7 +137,7 @@ worksBuilder %}
       }
     ] %}
       {{ singleImageItem(item) }}
-    {% endfor %}
+    {% endfor %} #}
 
     {% for item in [
       {
@@ -183,6 +183,20 @@ worksBuilder %}
             </div>
           </footer>
         </blockquote>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-item__inner inner-works">
+        <div class="video">
+          <button class="video__play">
+            {{ mixins.icon('play_btn') }}
+          </button>
+          <video muted data-video='paused'>
+            <source src="./video/A short ocean video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </div>
