@@ -32,9 +32,10 @@ worksBuilder %}
         </div>
       </div>
     </div>
-    <div class="text-section work-item-descr">
+
+    <div class="work-item-descr">
       <div class="work-item-descr__inner inner">
-        <div class="work-item-descr__top row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
+        <div class="work-item-descr__row row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
           <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
             <h4 class="title-sm work-item-descr__title">Goal</h4>
             <p>
@@ -49,15 +50,26 @@ worksBuilder %}
       </div>
     </div>
 
+    {% macro video(props) %}
+      <div class="video js-video-wrapper">
+        <video class='js-video' muted{% if props.autoplay %} autoplay{% endif %} >
+          <source src="./video/A short ocean video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button class="video__play js-video-play-btn">
+          {{ mixins.icon('play_btn') }}
+        </button>
+      </div>
+    {% endmacro %}
+
     {% macro singleImageItem(props) %}
       <div class="work-item">
-        <div class="work-item__text-wrapper inner">
-          <div class="work-item__text" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
-            <div class="work-item__text-anim-group" data-anim="text-block-from-bottom">
-              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
-              <p>{{ props.text }}</p>
-            </div>
+        <div class="work-item__text inner" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
+          <div class="text-section" data-anim="text-block-from-bottom">
+            <h4 class="text-section__title title-sm">{{ props.title }}</h4>
+            <p>{{ props.text }}</p>
           </div>
+        </div>
         </div>
         <div class="work-item__image-wrapper inner-works">
           <div 
@@ -73,29 +85,39 @@ worksBuilder %}
 
     {% macro galleryItem(props) %}
       <div class="work-item">
-        <div class="work-item__text-wrapper inner">
-          <div class="work-item__text" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
-            <div class="work-item__text-anim-group" data-anim="text-block-from-bottom">
-              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
-              <p>{{ props.text }}</p>
-            </div>
+        <div class="work-item__text inner" data-scroll-trigger data-anim-group data-duration-anim="0.7">
+          <div class="text-section" data-anim="text-block-from-bottom">
+            {% for textItem in props.texts %}
+              <div class="text-section__col">
+                <h4 class="text-section__title title-sm">{{ textItem.title }}</h4>
+                <p>{{ textItem.text }}</p>
+              </div>
+            {% endfor %}
           </div>
         </div>
         <div class="work-item__gallery-wrapper inner-works">
           <div class="gallery" data-scroll-trigger data-anim="from-bottom">
             {% if props.fullWidth %}
               <div class="gallery__full-width">
-                <div class="gallery__image" data-bg="url(./img/case/{{ props.fullWidth.src }})"></div>
+                <div class="gallery__media gallery__media_full" data-bg="url(./img/case/{{ props.fullWidth.src }})" data-lazy></div>
               </div>
             {% endif %}
             <div class="gallery__left">
-              {% for img in props.leftImages %}
-                <div class="gallery__image gallery__image_{{ img.size }}" data-bg="url(./img/case/{{ img.src }})" data-lazy></div>
+              {% for media in props.leftMedia %}
+                <div class="gallery__media gallery__media_{{ media.size }}"
+                  {% if media.type === 'image' %}data-bg="url(./img/case/{{ media.src }})" data-lazy{% endif %}
+                >
+                  {% if media.type === 'video' %}{{ video() }}{% endif %}
+                </div>
               {% endfor %}
             </div>
             <div class="gallery__right">
-              {% for img in props.rightImages %}
-                <div class="gallery__image gallery__image_{{ img.size }}" data-bg="url(./img/case/{{ img.src }})" data-lazy></div>
+              {% for media in props.rightMedia %}
+                <div class="gallery__media gallery__media_{{ media.size }}" 
+                  {% if media.type === 'image' %}data-bg="url(./img/case/{{ media.src }})" data-lazy{% endif %}
+                >
+                {% if media.type === 'video' %}{{ video() }}{% endif %}
+              </div>
               {% endfor %}
             </div>
           </div>
@@ -141,22 +163,59 @@ worksBuilder %}
 
     {% for item in [
       {
-        title: 'Dark version',
-        text: 'Straboo is a digital platform for fitness trainers.',
-        leftImages: [
+        texts: [
           {
+            title: 'Dark version',
+            text: 'Straboo is a digital platform for fitness trainers.'
+          }
+        ],
+        leftMedia: [
+          {
+            type: 'image',
             src: 'case_1_1.png',
             size: 'lg'
           }
         ],
-        rightImages: [
+        rightMedia: [
           {
+            type: 'image',
             src: 'case_1_2.png',
             size: 'sm'
           },
           {
+            type: 'image',
             src: 'case_1_3.png',
             size: 'sm'
+          }
+        ]
+      },
+      {
+        texts: [
+          {
+            title: 'Goal',
+            text: 'Straboo is a digital platform for fitness trainers.'
+          },
+          {
+            title: 'What I did',
+            text: 'Web App Design, Website Design'
+          }
+        ],
+        fullWidth: {
+          type: 'image',
+          src: 'case_2_1.png'
+        },
+        leftMedia: [
+          {
+            type: 'image',
+            src: 'case_2_2.png',
+            size: 'lg'
+          }
+        ],
+        rightMedia: [
+          {
+            type: 'image',
+            src: 'case_2_3.png',
+            size: 'lg'
           }
         ]
       }
@@ -188,17 +247,14 @@ worksBuilder %}
 
     <div class="work-item">
       <div class="work-item__inner inner-works">
-        <div class="video">
-          <button class="video__play">
-            {{ mixins.icon('play_btn') }}
-          </button>
-          <video muted data-video='paused'>
-            <source src="./video/A short ocean video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <div class="work-item__video-full">
+          {{ video() }}
         </div>
       </div>
     </div>
+
+    {# {{ video({ autoplay: true }) }} #}
+
   </div>
 
   {{ footerBuilder.hero_footer(

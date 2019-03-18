@@ -78,18 +78,18 @@
 			display: block
 
 .text-section
-	padding: 202px 0 105px
-	+lg
-		padding: 110px 0 49px
+	display: flex
+	justify-content: space-between
 	+sm
-		padding: 50px 0 22px
 		text-align: left
-	// &__title
-	//   margin-bottom: 10px
-	//   +lg
-	//     margin-bottom: 6px
-	//   +sm
-	//     margin-bottom: 0
+	&__title
+	  margin-bottom: 10px
+	  +lg
+	    margin-bottom: 6px
+	  +sm
+	    margin-bottom: 0
+	// &__col
+	// 	+flex-size(50%)
 
 .blockquote-section
 	padding: 205px 0
@@ -107,7 +107,7 @@
 	&:not(:last-child)
 		padding-top: 50px
 		padding-bottom: 150px
-	&__text-wrapper
+	&__text
 		padding-bottom: 80px
 	&__image
 		&_border
@@ -121,46 +121,68 @@
 		img
 			max-width: 100%
 			display: block
+	&__video-full
+		position: relative
+		padding-bottom: 60%
+		overflow: hidden
+		.video__play
+			+circle(240)
+			.icon
+				font-size: 216px
+
+$galleryGutter: 10px
 
 .gallery
 	display: flex
-	margin: 0 -10px
+	flex-wrap: wrap
+	margin: 0 -#{$galleryGutter}
 	&__left,
 	&__right
 		+flex-size(50%)
-		padding: 0 10px
-		height: 400px
-	&__image
+		padding: 0 $galleryGutter
+	&__media
+		position: relative
 		+cover
 		&_lg
 			padding-bottom: 123%
 		&_sm
-			padding-bottom: calc(61.5% - 10px)
-		+ .gallery__image
+			padding-bottom: calc(61.5% - #{$galleryGutter})
+		&_full
+			padding-bottom: 30.75%
+		+ .gallery__media
 			margin-top: 20px
+		.video__play
+			+circle(120)
+			.icon
+				font-size: 108px
+	&__full-width
+		+flex-size(100%)
+		padding: 0 $galleryGutter
+		margin-bottom: 20px
+
 
 .video
-	position: relative
-	padding-bottom: 60%
+	+coverdiv
 	overflow: hidden
+	+hover
+		.video__play
+			+fadein
+		video[autoplay] ~
+			.video__play
+				+fadeout($tr)
 	video
 		display: block
 		object-fit: cover
-		position: absolute
-		top: 0
-		left: 0
-		width: 100% 
-		height: 100%
+		+coverdiv
 	&__play
-		+circle(240)
 		background-color: rgba(0, 0, 0, 0.4)
 		+vcenter
 		+vertical
 		z-index: 3
+		+fadeout($tr)
 		.icon
 			display: inline-block
 			vertical-align: middle
-			font-size: 216px
 			color: $white
 			+sm 
 				font-size: 80px
