@@ -133,9 +133,9 @@
             </div>
           </div>
         </div>
-        <div class="text-section work-item-descr">
+        <div class="work-item-descr">
           <div class="work-item-descr__inner inner">
-            <div class="work-item-descr__top row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
+            <div class="work-item-descr__row row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
               <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
                 <h4 class="title-sm work-item-descr__title">Goal</h4>
                 <p> Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. </p>
@@ -148,9 +148,9 @@
           </div>
         </div>
         <div class="work-item">
-          <div class="work-item__text-wrapper inner">
-            <div class="work-item__text" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
-              <div class="work-item__text-anim-group" data-anim="text-block-from-bottom">
+          <div class="work-item__text inner" data-scroll-trigger data-anim-group data-duration-anim="0.7">
+            <div class="text-section" data-anim="text-block-from-bottom">
+              <div class="text-section__col">
                 <h4 class="text-section__title title-sm">Dark version</h4>
                 <p>Straboo is a digital platform for fitness trainers.</p>
               </div>
@@ -159,11 +159,43 @@
           <div class="work-item__gallery-wrapper inner-works">
             <div class="gallery" data-scroll-trigger data-anim="from-bottom">
               <div class="gallery__left">
-                <div class="gallery__image gallery__image_lg" data-bg="url(./img/case/case_1_1.png)" data-lazy></div>
+                <div class="gallery__media gallery__media_lg" data-bg="url(./img/case/case_1_1.png)" data-lazy>
+                </div>
               </div>
               <div class="gallery__right">
-                <div class="gallery__image gallery__image_sm" data-bg="url(./img/case/case_1_2.png)" data-lazy></div>
-                <div class="gallery__image gallery__image_sm" data-bg="url(./img/case/case_1_3.png)" data-lazy></div>
+                <div class="gallery__media gallery__media_sm" data-bg="url(./img/case/case_1_2.png)" data-lazy>
+                </div>
+                <div class="gallery__media gallery__media_sm" data-bg="url(./img/case/case_1_3.png)" data-lazy>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="work-item">
+          <div class="work-item__text inner" data-scroll-trigger data-anim-group data-duration-anim="0.7">
+            <div class="text-section" data-anim="text-block-from-bottom">
+              <div class="text-section__col">
+                <h4 class="text-section__title title-sm">Goal</h4>
+                <p>Straboo is a digital platform for fitness trainers.</p>
+              </div>
+              <div class="text-section__col">
+                <h4 class="text-section__title title-sm">What I did</h4>
+                <p>Web App Design, Website Design</p>
+              </div>
+            </div>
+          </div>
+          <div class="work-item__gallery-wrapper inner-works">
+            <div class="gallery" data-scroll-trigger data-anim="from-bottom">
+              <div class="gallery__full-width">
+                <div class="gallery__media gallery__media_full" data-bg="url(./img/case/case_2_1.png)" data-lazy></div>
+              </div>
+              <div class="gallery__left">
+                <div class="gallery__media gallery__media_lg" data-bg="url(./img/case/case_2_2.png)" data-lazy>
+                </div>
+              </div>
+              <div class="gallery__right">
+                <div class="gallery__media gallery__media_lg" data-bg="url(./img/case/case_2_3.png)" data-lazy>
+                </div>
               </div>
             </div>
           </div>
@@ -184,14 +216,16 @@
         </div>
         <div class="work-item">
           <div class="work-item__inner inner-works">
-            <div class="video">
-              <button class="video__play">
-                <svg class="icon icon-play_btn">
-                  <use xlink:href="img/sprite.svg#icon-play_btn"></use>
-                </svg>
-              </button>
-              <video muted data-video='paused'>
-                <source src="./video/A short ocean video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+            <div class="work-item__video-full">
+              <div class="video js-video-wrapper">
+                <video class='js-video' muted>
+                  <source src="./video/A short ocean video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+                <button class="video__play js-video-play-btn">
+                  <svg class="icon icon-play_btn">
+                    <use xlink:href="img/sprite.svg#icon-play_btn"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
