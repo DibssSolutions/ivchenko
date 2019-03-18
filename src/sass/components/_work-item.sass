@@ -1,3 +1,7 @@
+$mainPadding: 200px
+$mainPaddingLG: 140px
+$mainPaddingSm: 100px
+
 .work-item-header
 	@extend %firstSectionPadding
 	padding-bottom: 220px
@@ -17,9 +21,11 @@
 	background-repeat: no-repeat
 	background-position: 50% 0
 	color: $white
-	// +rmin(1440)
-	//   padding-bottom: 0
-	//   height: 1024px
+	margin-bottom: 195px
+	+lg 
+		margin-bottom: 95px
+	+sm 
+		margin-bottom: 43px
 	&__bg
 		position: absolute
 		top: 0
@@ -39,76 +45,88 @@
 		transform: translate(-50%, -50%)
 	&__title
 		color: $white
+		+sm 
+			font-size: 18px
 	&__text
 		max-width: 510px
 
 .work-item-descr
-	&__top
-		margin-bottom: 203px
-		+lg
-			margin-bottom: 100px
-		+sm
-			margin-bottom: 46px
+	padding-bottom: 185px
+	+lg 
+		padding-bottom: 85px
+	+sm 
+		padding-bottom: 0
+	&__row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -20px
+		+lg 
+			justify-content: space-between
+			margin: 0 -10px
+		+sm 
+			flex-direction: column
 	&__col
-		&:not(:last-child)
-			+sm
-				margin-bottom: 46px
+		+flex-size(50%)
+		padding: 0 20px
+		+lg 
+			padding: 0 10px
+			flex: 0 0 auto
+			max-width: none
+		+sm 
+			margin-bottom: 40px
+		&_right
+			padding-left: 108px
+			+lg 
+				padding: 0 10px
 		p
-			max-width: 450px
-
-.images-section
-	background-color: $imagesSectionBg
-	&_light
-		background-color: rgba(152, 149, 162, 0.1)
-	&__image
-		padding-top: 140px
-		+lg
-			padding-top: 120px
-		+sm
-			padding-top: 30px
-		&:last-child
-			padding-bottom: 140px
-			+lg
-				padding-bottom: 120px
-			+sm
-				padding-bottom: 30px
-		img
-			max-width: 100%
-			height: auto
-			display: block
+			max-width: 460px
 
 .text-section
 	display: flex
 	justify-content: space-between
 	+sm
 		text-align: left
+		flex-direction: column
 	&__title
-	  margin-bottom: 10px
-	  +lg
-	    margin-bottom: 6px
-	  +sm
-	    margin-bottom: 0
-	// &__col
-	// 	+flex-size(50%)
+		margin-bottom: 10px
+		+lg
+			margin-bottom: 6px
+		+sm
+			margin-bottom: 0
+	&__col
+		max-width: 540px
+		+ .text-section__col
+			+sm 
+				margin-top: 40px
 
 .blockquote-section
-	padding: 205px 0
+	padding-bottom: 200px
 	+lg
-		padding: 112px 0
+		padding-bottom: 100px
 	+sm
-		padding: 52px 0
+		padding-bottom: 43px
+		margin-top: -5px
 	&__inner
-		max-width: 920px
+		max-width: 1222px
 		width: 100%
 		margin: 0 auto
 		padding: 0 30px
+		+lg 
+			max-width: 963px
 
 .work-item
 	&:not(:last-child)
-		padding-top: 50px
-		padding-bottom: 150px
+		padding-bottom: 190px
+		+lg 
+			padding-bottom: 90px
+		+sm 
+			padding-bottom: 43px
 	&__text
-		padding-bottom: 80px
+		padding-bottom: 70px
+		+lg 
+			padding-bottom: 30px
+		+sm 
+			padding-bottom: 15px
 	&__image
 		&_border
 			padding: 160px 180px
@@ -127,8 +145,34 @@
 		overflow: hidden
 		.video__play
 			+circle(240)
+			+lg 
+				+circle(120)
+			+sm 
+				+circle(60)
 			.icon
 				font-size: 216px
+				+lg
+					font-size: 108px
+				+sm 
+					font-size: 54px
+
+.full-width-media
+	&__media
+		position: relative
+		padding-bottom: 56.25%
+		+cover
+		&:not(:last-child)
+			margin-bottom: 20px
+			+lg 
+				margin-bottom: 12px
+			+sm 
+				margin-bottom: 20px
+
+.wide-media
+	&__media
+		position: relative
+		+cover
+		padding-bottom: 60%
 
 $galleryGutter: 10px
 
@@ -136,30 +180,62 @@ $galleryGutter: 10px
 	display: flex
 	flex-wrap: wrap
 	margin: 0 -#{$galleryGutter}
+	+lg 
+		margin: 0 -12px
+	+sm 
+		margin: 0
 	&__left,
 	&__right
 		+flex-size(50%)
 		padding: 0 $galleryGutter
+		+lg 
+			padding: 0 6px
+		+sm 
+			+flex-size(100%)
+			padding: 0
+	&__left
+		+sm 
+			margin-bottom: 20px
 	&__media
 		position: relative
 		+cover
 		&_lg
 			padding-bottom: 123%
+			+sm 
+				padding-bottom: 121%
 		&_sm
 			padding-bottom: calc(61.5% - #{$galleryGutter})
+			+lg 
+				padding-bottom: calc(61.5% - 6px)
+				+sm 
+					padding-bottom: 60.5%
 		&_full
-			padding-bottom: 30.75%
+			padding-bottom: calc(30.75% - 20px)
+			+sm 
+				padding-bottom: 29%
 		+ .gallery__media
 			margin-top: 20px
+			+lg 
+				margin-top: 12px
+			+sm 
+				margin-top: 20px
 		.video__play
 			+circle(120)
+			+lg
+				+circle(60)
 			.icon
 				font-size: 108px
+				+lg
+					font-size: 54px
 	&__full-width
 		+flex-size(100%)
 		padding: 0 $galleryGutter
 		margin-bottom: 20px
-
+		+lg 
+			margin-bottom: 12px
+		+sm 
+			padding: 0
+			margin-bottom: 20px
 
 .video
 	+coverdiv
@@ -184,5 +260,5 @@ $galleryGutter: 10px
 			display: inline-block
 			vertical-align: middle
 			color: $white
-			+sm 
+			+sm
 				font-size: 80px

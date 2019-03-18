@@ -41,30 +41,19 @@
   text-align: center
 
 .blockquote
-  color: $dark
-  p
-    font-family: $averta
-    font-weight: 300
+  text-align: center
+  &__main
+    font-family: $freightPro
+    font-weight: 500
     font-size: 28px
-    line-height: 1.428
-    margin-bottom: 44px
+    line-height: 1.5
+    margin-bottom: 20px
+    color: $dark
+    font-style: italic
     +sm
       font-size: 18px
-      line-height: 1.667
-      margin-bottom: 27px
+      line-height: 40px
+      margin-bottom: 14px
   &__author
-    display: flex
-    // align-items: center
-  &__avatar
-    +cover
-    +circle(50)
-    +flex-size(50px)
-    background-color: $green
-    margin-right: 30px
-  &__name
-    font-size: 18px
-    line-height: 1.5
-    font-weight: 700
-    color: $greyHigh
-  &__position
-    color: $greyMid
+    line-height: 1.6
+    font-weight: 400

@@ -35,14 +35,12 @@ worksBuilder %}
 
     <div class="work-item-descr">
       <div class="work-item-descr__inner inner">
-        <div class="work-item-descr__row row" data-scroll-trigger data-anim-group="data-anim-group" data-delay-anim="0.0001" data-duration-anim="0.7">
-          <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
+        <div class="work-item-descr__row" data-scroll-trigger data-anim-group data-delay-anim='0.0001' data-duration-anim='0.7'>
+          <div class="work-item-descr__col" data-anim="text-block-from-bottom">
             <h4 class="title-sm work-item-descr__title">Goal</h4>
-            <p>
-              Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results.
-            </p>
+            <p>Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. Straboo is a digital platform for fitness trainers and their clients to communicate, mentor and motivate for great results. </p>
           </div>
-          <div class="work-item-descr__col col" data-anim="text-block-from-bottom">
+          <div class="work-item-descr__col work-item-descr__col_right"  data-anim="text-block-from-bottom">
             <h4 class="work-item-descr__title title-sm">What I did</h4>
             <p>Web App Design, Website Design</p>
           </div>
@@ -52,8 +50,8 @@ worksBuilder %}
 
     {% macro video(props) %}
       <div class="video js-video-wrapper">
-        <video class='js-video' muted{% if props.autoplay %} autoplay{% endif %} >
-          <source src="./video/A short ocean video.mp4" type="video/mp4">
+        <video class='js-video' muted{% if props.autoplay %} autoplay{% endif %} data-lazy>
+          <source data-src="./video/A short ocean video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <button class="video__play js-video-play-btn">
@@ -64,20 +62,21 @@ worksBuilder %}
 
     {% macro singleImageItem(props) %}
       <div class="work-item">
-        <div class="work-item__text inner" data-scroll-trigger data-anim-group="data-anim-group" data-duration-anim="0.7">
-          <div class="text-section" data-anim="text-block-from-bottom">
-            <h4 class="text-section__title title-sm">{{ props.title }}</h4>
-            <p>{{ props.text }}</p>
+        <div class="work-item__text inner">
+          <div class="text-section" data-scroll-trigger='50'>
+            <div class="text-section__col" data-anim="text-block-from-bottom">
+              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
+              <p>{{ props.text }}</p>
+            </div>
           </div>
-        </div>
         </div>
         <div class="work-item__image-wrapper inner-works">
           <div 
             class="work-item__image{% if props.imageModifier %} {{ props.imageModifier }}{% endif %}" 
-            data-scroll-trigger='50' 
+            data-scroll-trigger='1' 
             data-anim="from-bottom"
           >
-            <img {% if props.image === "landing_full.jpg" %} data-src="img/{{ props.image }}" {% else %}data-src="img/case/{{ props.image }}"{% endif %} alt="work-item-image" data-lazy="data-lazy"/>
+            <img data-src="img/case/{{ props.image }}" alt="work-item-image" data-lazy="data-lazy"/>
           </div>
         </div>
       </div>
@@ -88,15 +87,15 @@ worksBuilder %}
         <div class="work-item__text inner" data-scroll-trigger data-anim-group data-duration-anim="0.7">
           <div class="text-section" data-anim="text-block-from-bottom">
             {% for textItem in props.texts %}
-              <div class="text-section__col">
+              <div class="text-section__col{% if textItem.modifier %} text-section__col_{{ textItem.modifier }}{% endif %}">
                 <h4 class="text-section__title title-sm">{{ textItem.title }}</h4>
                 <p>{{ textItem.text }}</p>
               </div>
             {% endfor %}
           </div>
         </div>
-        <div class="work-item__gallery-wrapper inner-works">
-          <div class="gallery" data-scroll-trigger data-anim="from-bottom">
+        <div class="work-item__gallery inner-works" data-scroll-trigger='0'>
+          <div class="gallery" data-anim="from-bottom">
             {% if props.fullWidth %}
               <div class="gallery__full-width">
                 <div class="gallery__media gallery__media_full" data-bg="url(./img/case/{{ props.fullWidth.src }})" data-lazy></div>
@@ -125,7 +124,53 @@ worksBuilder %}
       </div>
     {% endmacro %}
 
-    {# {% for item in[
+    {% macro blockquote() %}
+      <div class="blockquote-section">
+        <div class="blockquote-section__inner">
+          <blockquote class="blockquote" data-scroll-trigger data-anim-group="0.2" data-delay-anim="0.2" data-duration-anim="1">
+            <div class="blockquote__main" data-anim="text-block-from-bottom">
+              “It’s beed a great pleasure to work with Alexandr side-by-side developing a UI design that was successfully turned into highly valued production grade product. I so much enjoyed the passion and strengths that Alex has. The work atmosphere that we both were in was as synergetic as you can imagine.”
+            </div>
+            <footer class="blockquote__author">
+              <p data-anim="blockquote-from-bottom">
+                Name Surname, Software Architect
+              </p>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    {% endmacro %}
+
+    {% macro bigImages(props) %}
+      <div class="work-item">
+        <div class="work-item__text inner" data-scroll-trigger>
+          <div class="text-section" data-anim="text-block-from-bottom">
+            <div class="text-sectiomn__col">
+              <h4 class="text-section__title title-sm">{{ props.title }}</h4>
+              <p>Straboo is a digital platform for fitness trainers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="work-item__media{% if props.container %} inner-works{% endif %}">
+          <div class="{{ props.modifier }}">
+            <div class="{{ props.modifier }}__media-wrapper" data-scroll-trigger='0'>
+              {% for item in props.media %}
+                {% if item.type === 'image' %}
+                  <div class="{{ props.modifier }}__media"  data-anim="from-bottom" style="background-image: url(./img/case/{{ item.src }})"></div>
+                {% endif %}
+                {% if item.type === 'video' %}
+                  <div class="{{ props.modifier }}__media">
+                    {{ video({ autoplay: true }) }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endmacro %}
+
+    {% for item in[
       {
         title: 'Dashboard',
         text: 'Straboo is a digital platform for fitness trainers.',
@@ -134,12 +179,12 @@ worksBuilder %}
       {
         title: 'Members',
         text: 'Straboo is a digital platform for fitness trainers.',
-        image: 'straboo_full_img3.png'
+        image: 'straboo_full_img2.png'
       }, 
       {
         title: 'Groups',
         text: 'Straboo is a digital platform for fitness trainers.',
-        image: 'straboo_full_img1.png'
+        image: 'straboo_full_img3.png'
       }, 
       {
         title: 'Dark version',
@@ -149,8 +194,7 @@ worksBuilder %}
       {
         title: 'Landing Page for Straboo',
         text: 'Straboo is a digital platform for fitness trainers.',
-        image: 'landing_full.jpg',
-        imageModifier: 'work-item__image_border work-item__image_light work-item__image_shadow'
+        image: 'landing_full.png'
       },
       {
         title: 'Dark version',
@@ -159,9 +203,10 @@ worksBuilder %}
       }
     ] %}
       {{ singleImageItem(item) }}
-    {% endfor %} #}
+      {# imageModifier: 'work-item__image_border work-item__image_light work-item__image_shadow' #}
+    {% endfor %}
 
-    {% for item in [
+    {% set galleryItems = [
       {
         texts: [
           {
@@ -206,8 +251,7 @@ worksBuilder %}
         },
         leftMedia: [
           {
-            type: 'image',
-            src: 'case_2_2.png',
+            type: 'video',
             size: 'lg'
           }
         ],
@@ -218,32 +262,40 @@ worksBuilder %}
             size: 'lg'
           }
         ]
+      },
+      {
+        texts: [
+          {
+            title: 'Dark version',
+            text: 'Straboo is a digital platform for fitness trainers. Straboo is a digital platform for fitness trainers. Straboo is a digital platform for fitness trainers.',
+            modifier: 'wide'
+          }
+        ],
+        leftMedia: [
+          {
+            type: 'image',
+            src: 'case_4_1.png',
+            size: 'sm'
+          },
+          {
+            type: 'image',
+            src: 'case_4_2.png',
+            size: 'sm'
+          }
+        ],
+        rightMedia: [
+          {
+            type: 'image',
+            src: 'case_4_3.png',
+            size: 'lg'
+          }
+        ]
       }
     ] %}
-      {{ galleryItem(item) }}
-    {% endfor %}
 
+    {{ galleryItem(galleryItems[0]) }}
 
-    <div class="blockquote-section">
-      <div class="blockquote-section__inner">
-        <blockquote class="blockquote" data-scroll-trigger="data-scroll-trigger" data-anim-group="0.2" data-delay-anim="0.2" data-duration-anim="1">
-          <p data-anim="text-block-from-bottom">
-            "It’s beed a great pleasure to work with Alexandr side-by-side developing a UI design that was successfully turned into highly valued production grade product. I so much enjoyed the passion and strengths that Alex has. The work atmosphere that we both were in was as synergetic as you can imagine."
-          </p>
-          <footer class="blockquote__author">
-            <div class="blockquote__avatar" style="background-image: url('img/avatar-icon-png-1.png');" data-anim="avatar-anim"></div>
-            <div class="blockquote__info" data-anim="blockquote-from-bottom">
-              <div class="blockquote__name">
-                Name Surname
-              </div>
-              <div class="blockquote__position">
-                Software Architect & Information Security Professional
-              </div>
-            </div>
-          </footer>
-        </blockquote>
-      </div>
-    </div>
+    {{ blockquote() }}
 
     <div class="work-item">
       <div class="work-item__inner inner-works">
@@ -253,7 +305,45 @@ worksBuilder %}
       </div>
     </div>
 
-    {# {{ video({ autoplay: true }) }} #}
+    {{ galleryItem(galleryItems[1]) }}
+
+    {{ bigImages({
+      title: 'Goal',
+      modifier: 'full-width-media',
+      media: [
+        {
+          type: 'image',
+          src: 'case_3_1.png'
+        },
+        {
+          type: 'image',
+          src: 'case_3_2.png'
+        }
+      ]
+    }) }}
+
+    {{ galleryItem(galleryItems[2]) }}
+
+    {{ bigImages({
+      title: 'Goal',
+      modifier: 'wide-media',
+      container: true,
+      media: [
+        {
+          type: 'video'
+        },
+        {
+          type: 'image',
+          src: 'case_5_2.png'
+        },
+        {
+          type: 'image',
+          src: 'case_5_3.png'
+        }
+      ]
+    }) }}
+
+    {{ blockquote() }}
 
   </div>
 
