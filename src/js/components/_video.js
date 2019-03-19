@@ -16,4 +16,5 @@ videos.each((index, el) => {
     $(el).addClass('is-paused');
     $(el).removeClass('is-playing');
   });
+
 });
