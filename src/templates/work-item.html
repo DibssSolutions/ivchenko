@@ -59,8 +59,8 @@ worksBuilder %}
     </div>
 
     {% macro video(props) %}
-      <div class="video js-video-wrapper">
-        <video class='js-video' muted playsinline{% if props.autoplay %} autoplay loop{% endif %} data-lazy>
+      <div class="video js-video-wrapper" {% if props.autoplay %}data-scroll-trigger{% endif %}>
+        <video class='js-video {% if props.autoplay %} js-video-autoplay{% endif %}' muted playsinline{% if props.autoplay %} loop{% endif %} data-lazy>
           <source data-src="./video/A short ocean video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>

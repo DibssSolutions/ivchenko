@@ -62,6 +62,7 @@ export const staggerAnimation = item => {
     ease: animEase,
     onComplete: tl => {
       animContainers.css('display', 'inline');
+      videoPlay(item);
     }
   });
 };
@@ -84,3 +85,12 @@ setTimeout(() => {
     }
   });
 }, 500);
+
+function videoPlay(el) {
+  const autoplayVideo = $(el).find('.js-video-autoplay')[0];
+  console.log(el);
+  if (autoplayVideo && autoplayVideo.paused) {
+    autoplayVideo.play();
+  }
+  $(autoplayVideo).attr('playsinline', '');
+}
