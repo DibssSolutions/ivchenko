@@ -48,13 +48,19 @@ worksBuilder %}
               <p>Web App Design, Website Design</p>
             </div>
           </div>
+          <div class="work-item-descr__col"  data-anim="text-block-from-bottom">
+            <div class="work-item-descr__content">
+              <h4 class="work-item-descr__title title-sm">What I did</h4>
+              <p>Web App Design, Website Design</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     {% macro video(props) %}
       <div class="video js-video-wrapper">
-        <video class='js-video' muted{% if props.autoplay %} autoplay loop{% endif %} data-lazy>
+        <video class='js-video' muted playsinline{% if props.autoplay %} autoplay loop{% endif %} data-lazy>
           <source data-src="./video/A short ocean video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
