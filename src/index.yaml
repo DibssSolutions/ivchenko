@@ -15,5 +15,3 @@ PageList:
   ready: 50
 - file: get-in-touch.html
   ready: 50
-- file: case.html
-  ready: 50

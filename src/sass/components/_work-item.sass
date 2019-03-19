@@ -51,53 +51,88 @@ $mainPaddingSm: 100px
 		max-width: 510px
 
 .work-item-descr
-	padding-bottom: 185px
+	padding-bottom: 165px
 	+lg 
-		padding-bottom: 85px
+		padding-bottom: 75px
 	+sm 
-		padding-bottom: 0
+		padding-bottom: 25px
 	&__row
 		display: flex
 		flex-wrap: wrap
 		margin: 0 -20px
 		+lg 
-			justify-content: space-between
 			margin: 0 -10px
 		+sm 
 			flex-direction: column
 	&__col
 		+flex-size(50%)
-		padding: 0 20px
-		+lg 
-			padding: 0 10px
+		padding: 0 20px 20px
+		+lg
+			padding: 0 10px 10px
+		+md 
 			flex: 0 0 auto
 			max-width: none
 		+sm 
-			margin-bottom: 40px
-		&_right
+			padding: 0 10px 40px
+		&:nth-child(even)
 			padding-left: 108px
-			+lg 
-				padding: 0 10px
+			+lg
+				padding: 0 10px 10px 
+				text-align: right
+			+md 
+				padding: 0 10px 10px
+			+sm 
+				padding: 0 10px 40px
+				text-align: left
+				&:last-child
+					padding-bottom: 0
 		p
 			max-width: 460px
+	&__content
+		display: inline-block
+		text-align: left
 
 .text-section
 	display: flex
 	justify-content: space-between
+	flex-wrap: wrap
+	margin: 0 -10px
 	+sm
 		text-align: left
 		flex-direction: column
-	&__title
-		margin-bottom: 10px
+		margin: 0
+	p + p
+		margin-top: 10px
 		+lg
-			margin-bottom: 6px
+			margin-top: 6px
+		+sm
+			margin-top: 4px
+	&__col
+		padding: 0 10px 20px
+		+flex-size(50%)
+		+sm
+			flex: 0 0 auto
+			max-width: none
+			padding: 10px 0 0
+		&:nth-child(even)
+			text-align: right
+			padding-right: 40px
+			+lg 
+				padding-right: 20px
+			+sm 
+				text-align: left
+				padding-right: 10px
+		&_wide
+			+flex-size(100%)
+	&__content
+		display: inline-block
+		max-width: 540px
+		text-align: left
+	&__title
+		margin-bottom: 6px
 		+sm
 			margin-bottom: 0
-	&__col
-		max-width: 540px
-		+ .text-section__col
-			+sm 
-				margin-top: 40px
+
 
 .blockquote-section
 	padding-bottom: 200px
@@ -105,7 +140,7 @@ $mainPaddingSm: 100px
 		padding-bottom: 100px
 	+sm
 		padding-bottom: 43px
-		margin-top: -5px
+		margin-top: 5px
 	&__inner
 		max-width: 1222px
 		width: 100%
@@ -120,12 +155,12 @@ $mainPaddingSm: 100px
 		+lg 
 			padding-bottom: 90px
 		+sm 
-			padding-bottom: 43px
+			padding-bottom: 33px
 	&__text
-		padding-bottom: 70px
-		+lg 
-			padding-bottom: 30px
-		+sm 
+		padding-bottom: 50px
+		+lg
+			padding-bottom: 10px
+		+sm
 			padding-bottom: 15px
 	&__image
 		&_border
@@ -143,7 +178,7 @@ $mainPaddingSm: 100px
 		position: relative
 		padding-bottom: 60%
 		overflow: hidden
-		.video__play
+		.video__control
 			+circle(240)
 			+lg 
 				+circle(120)
@@ -181,7 +216,7 @@ $galleryGutter: 10px
 	flex-wrap: wrap
 	margin: 0 -#{$galleryGutter}
 	+lg 
-		margin: 0 -12px
+		margin: 0 -6px
 	+sm 
 		margin: 0
 	&__left,
@@ -219,7 +254,7 @@ $galleryGutter: 10px
 				margin-top: 12px
 			+sm 
 				margin-top: 20px
-		.video__play
+		.video__control
 			+circle(120)
 			+lg
 				+circle(60)
@@ -233,6 +268,7 @@ $galleryGutter: 10px
 		margin-bottom: 20px
 		+lg 
 			margin-bottom: 12px
+			padding: 0 6px
 		+sm 
 			padding: 0
 			margin-bottom: 20px
@@ -240,22 +276,25 @@ $galleryGutter: 10px
 .video
 	+coverdiv
 	overflow: hidden
-	+hover
-		.video__play
-			+fadein
-		video[autoplay] ~
-			.video__play
-				+fadeout($tr)
+	&.is-playing
+		+hover
+			.video__control_pause
+				+fadein
 	video
 		display: block
 		object-fit: cover
 		+coverdiv
-	&__play
+	&__control
 		background-color: rgba(0, 0, 0, 0.4)
 		+vcenter
 		+vertical
 		z-index: 3
-		+fadeout($tr)
+		&_play
+			+fadein
+			.is-playing &
+				+fadeout($tr)
+		&_pause
+			+fadeout($tr)
 		.icon
 			display: inline-block
 			vertical-align: middle
