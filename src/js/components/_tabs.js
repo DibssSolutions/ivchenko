@@ -62,14 +62,9 @@ export default (() => {
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
           let selector = container.find('[data-anim]');
-          // let lines = control.find('[data-anim-inner]');
-          // selector.push(lines[0]);
-          // console.log(selector);
           const animDelay = container.data('delay-anim');
           const animDuration = container.data('duration-anim');
           const animEase = container.data('ease-anim');
-          //   if (this.activeContainerTL) this.activeContainerTL.set($('[data-anim]'),{clearProps:'all'});
-          //   this.flag = false;
           STAGGER({
             elements: selector,
             duration: animDuration,

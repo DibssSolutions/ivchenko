@@ -103,7 +103,6 @@ import Particles from './particles';
 
   const items = document.querySelectorAll('.form');
   items.forEach((el, pos) => {
-    console.log("I'w Working");
     const bttn = el.querySelector('button.particles-button');
     const bttnBack = el.querySelector('button.action');
 
