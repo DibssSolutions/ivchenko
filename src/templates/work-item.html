@@ -230,7 +230,6 @@ worksBuilder %}
       }
     ] %}
       {{ singleImageItem(item) }}
-      {# imageModifier: 'work-item__image_border work-item__image_light work-item__image_shadow' #}
     {% endfor %}
 
     {% set galleryItems = [
@@ -329,7 +328,7 @@ worksBuilder %}
     ] %}
 
     {{ galleryItem(galleryItems[0]) }}
-
+    
     {{ blockquote() }}
 
     <div class="work-item">
@@ -339,7 +338,20 @@ worksBuilder %}
         </div>
       </div>
     </div>
-
+    <div class="work-item">
+      <div class="work-item__inner inner-works">
+        <div class="work-item__video-full">
+          {{ video({ autoplay: true }) }}
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-item__inner inner-works">
+        <div class="work-item__video-full">
+          {{ video({ autoplay: true }) }}
+        </div>
+      </div>
+    </div>
     {{ galleryItem(galleryItems[1]) }}
 
     {{ bigImages({

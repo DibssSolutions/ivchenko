@@ -6,7 +6,19 @@ videos.each((index, el) => {
   const pauseBtn = $(el).find('.js-video-pause-btn');
 
   playBtn.on('click', () => {
+    videos.each((i, el) => {
+      $(el)
+        .addClass('is-paused')
+        .removeClass('is-playing');
+
+      const _video = $(el).find('.js-video');
+
+      if (_video.hasClass('js-video-autoplay')) return;
+      _video[0].pause();
+    });
+
     video.play();
+
     $(el).addClass('is-playing');
     $(el).removeClass('is-paused');
   });
@@ -17,4 +29,9 @@ videos.each((index, el) => {
     $(el).removeClass('is-playing');
   });
 
+  video.addEventListener('ended', () =>
+    $(el)
+      .removeClass('is-playing')
+      .addClass('is-paused')
+  );
 });

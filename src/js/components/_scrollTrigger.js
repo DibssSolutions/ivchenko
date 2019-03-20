@@ -88,6 +88,7 @@ setTimeout(() => {
 
 function videoPlay(el) {
   const autoplayVideo = $(el).find('.js-video-autoplay')[0];
+  if (!autoplayVideo) return;
   if (autoplayVideo && autoplayVideo.paused) {
     autoplayVideo.play();
   }
