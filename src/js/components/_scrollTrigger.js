@@ -66,7 +66,6 @@ export const staggerAnimation = item => {
     }
   });
 };
-
 setTimeout(() => {
   new SCROLLTRIGGER({
     onStart: item => {

@@ -26,16 +26,13 @@
   &__title
     position: relative
     margin-left: 0
-    // margin-bottom: 9px
-    // +lg
-    //   margin-bottom: 5px
-    // +sm
-    //   margin-bottom: -5px
+    display: block !important
     &_filter
       span
-        // display: inline-block 
         +sm
           display: block !important
+    [data-anim="text-from-bottom"]
+      display: inline-block !important
   &__container
     position: relative
     opacity: 0
@@ -57,12 +54,9 @@
     padding-left: 60px
     padding-right: 60px
     +lg
-      // padding-bottom: 111px
-      // padding-bottom: 120px
       padding-left: 50px
       padding-right: 50px
     +sm
-      // padding-bottom: 52px
       padding-bottom: 47px
       padding-right: 0
       padding-left: 0
@@ -75,7 +69,6 @@
     +sm
       padding-bottom: 28px
   &__filter
-    // display: none
     padding-top: 0
     visibility: hidden
     opacity: 0
@@ -93,7 +86,7 @@
         padding: 0
 
   &__filter-btn
-    display: inline-block
+    display: inline-block !important
     position: relative
     padding-right: 26px
     @extend .title
@@ -102,20 +95,19 @@
     +sm
       margin-top: 10px
       padding-right: 20px
-    &:after
+    &:before
       content: ''
-      display: inline-block
       vertical-align: middle
       position: absolute
       top: 60%
-      transform: translateY(-50%)
       right: 0
-      +arr(10, 6, $red, b)
+      transform: translateY(-50%)
       transform-origin: center
-      transition: opacity 0.8s 1s, transform 0.25s
+      transition: transform 0.35s
       opacity: 0
+      +arr(10, 6, $red, b)
       .is-animate &
-        opacity: 1
+        animation: arrowAnimn 0.8s ease-in 0.8s forwards
       .is-open &
         transform: translateY(-50%) rotate(-180deg)
   &__btn
@@ -136,7 +128,12 @@
         bottom: 0
     .anim-line
       margin-right: 16px
-
+@keyframes arrowAnimn
+  from
+    opacity: 0
+  to
+    opacity: 1
+    
 .work
   display: block
   +hover
