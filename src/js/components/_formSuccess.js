@@ -9,7 +9,7 @@ $('.js-form').on('submit', e => {
   };
   $.ajax({
     type: 'POST',
-    url: './send-email.php',
+    url: '../send-email.php',
     data: data,
     success: function() {
       $('.js-form-success').addClass(ACTIVE);
